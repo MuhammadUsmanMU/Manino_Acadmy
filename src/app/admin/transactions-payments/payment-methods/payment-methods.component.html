@@ -1,0 +1,107 @@
+<div class="main">
+  <!-- Top Row -->
+  <div class="top-row">
+    <!-- LEFT: Default Payment Method -->
+    <div class="left">
+      <div class="container1">
+        <div class="payment">
+          <p>Select your default payment method for checkout</p>
+        </div>
+
+        <div class="dropdown">
+          <label for="defaultMethod">Select method</label><br />
+          <div class="dropdownlist">
+            <select
+              id="defaultMethod"
+              class="form-select"
+              [(ngModel)]="defaultMethod"
+            >
+              <option *ngFor="let item of payment" [value]="item.name">
+                {{ item.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <button class="save" (click)="saveDefaultMethod()">Save Method</button>
+      </div>
+    </div>
+
+    <!-- RIGHT: Edit / Placeholder -->
+    <div class="right" *ngIf="selectedMethod">
+      <div class="edit">
+        <img [src]="selectedMethod.img" alt="" />
+      </div>
+      <p>
+        Editing: <strong>{{ selectedMethod.name }}</strong><br />
+        <small>Update credentials or settings for this payment method</small>
+      </p>
+
+      <form class="edit-form" (ngSubmit)="updateMethod()">
+        <input
+          type="text"
+          placeholder="API Key"
+          [(ngModel)]="selectedMethodDetails.apiKey"
+          name="apiKey"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Secret Key"
+          [(ngModel)]="selectedMethodDetails.secretKey"
+          name="secretKey"
+          required
+        />
+        <button type="submit" class="save">Update</button>
+      </form>
+    </div>
+
+    <div class="right" *ngIf="!selectedMethod">
+      <div class="edit">
+        <img src="../../../../assets/admin/paymeny.png" alt="" />
+      </div>
+      <p>
+        Click on the 'Edit' <i class="fa-regular fa-pen-to-square"></i> to add
+        or update your payment method details
+      </p>
+    </div>
+  </div>
+
+  <!-- Full Width: Available Payment Methods -->
+  <div class="container2">
+    <div class="header">
+      <p>Available payment methods</p>
+    </div>
+
+    <div class="contant">
+      <div *ngFor="let item of payment" class="method-card">
+        <img [src]="item.img" alt="{{ item.name }}" />
+        <p>{{ item.name }}</p>
+
+        <div class="action-icons">
+          <label class="switch">
+          <input
+            type="checkbox"
+            [(ngModel)]="item.enabled"
+            (change)="toggleMethod(item)"
+          />
+          <span class="slider"></span>
+        </label>
+        <span
+          class="status"
+          [class.enabled]="item.enabled"
+          [class.disabled]="!item.enabled"
+        >
+          {{ item.enabled ? "Enabled" : "Disabled" }}
+        </span>
+
+        <div class="line"></div>
+
+        <p class="edit" (click)="editMethod(item)">
+          Edit <i class="fa-regular fa-pen-to-square"></i>
+        </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

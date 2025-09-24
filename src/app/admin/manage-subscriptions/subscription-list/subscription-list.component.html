@@ -1,0 +1,164 @@
+<div class="manage-pages-container">
+  <div class="add-page-form">
+    <h3>Add Subscription</h3>
+    <form>
+      <label for="name">Name <span>*</span></label>
+            <input type="text" placeholder="Enter subscription name">
+
+            <label for="period">Period <span>*</span></label>
+            <div class="dropdown">
+                <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Select Period
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+
+            <label for="price">Price <span>*</span></label>
+            <input type="text" placeholder="Enter Subscription Price">
+
+            <label for="sessions">Maximum sessions can buy <span>*</span></label>
+            <input type="text" placeholder="Enter maximum sessions can buy">
+
+            <label for="enroll">Maximum sessions can enroll <span>*</span></label>
+            <input type="text" placeholder="Enter maximum sessions can enroll">
+
+            <label for="admin">Admin Share(%) <span>*</span></label>
+            <div class="input">
+                <input type="text" placeholder="Enter admin share (%)">
+                <i class="fa-solid fa-circle-info"></i>
+
+            </div>
+
+            <label for="revenueOfSessions">Revenue for sessions(%) <span>*</span></label>
+            <div class="input">
+                <input type="text" placeholder="Enter Revenue for sessions(%)  ">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <label for="revenueOfCourses">Revenue for courses(%) <span>*</span></label>
+            <div class="input">
+                <input type="text" placeholder="Enter revenue for courses(%) ">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <h5>Auto Renew</h5>
+            <div class="toggle-container">
+                <div class="toggle-wrapper">
+                    <span>Auto renew subscription on expire</span>
+                    <label class="switch">
+                        <input type="checkbox" [(ngModel)]="autoRenew" (change)="onToggleChange()" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <label for="image">Upload subscription image <span>*</span></label>
+            <div class="imageUpload">
+                <p>You can upload jpg png file formate only, make sure your file size should not exceed 3MB</p>
+                <label for="input"><input type="file" name="" id="input"> <br>Click here to upload</label>
+            </div>
+
+            <label for="description">Description</label>
+            <textarea name="" id="" rows="6" placeholder="Enter subscription description"></textarea>
+            <button type="submit" class="subscription">Add Subscription</button>
+    </form>
+  </div>
+
+  <div class="pages-table">
+    <div class="table-header">
+      <h3>Subscription lists ({{ table.length }})</h3>
+      <div class="filters">
+        <!-- Sort Dropdown -->
+        <div class="custom-dropdown" (click)="toggleSortDropdown()">
+          <span>{{ selectedSort || 'Sort By' }}</span>
+          <i class="fa-solid fa-caret-down"></i>
+          <ul *ngIf="showSortDropdown" class="dropdown-options">
+              <li (click)="selectSort('Asc')">Asc</li>
+              <li (click)="selectSort('Desc')">Desc</li>
+          </ul>
+        </div>
+
+        <!-- Limit Dropdown -->
+        <div class="custom-dropdown" (click)="toggleLimitDropdown()">
+          <span>{{ selectedLimit || 'Items per page' }}</span>
+          <i class="fa-solid fa-caret-down"></i>
+          <ul *ngIf="showLimitDropdown" class="dropdown-options">
+            <li (click)="selectLimit(10)">10</li>
+            <li (click)="selectLimit(20)">20</li>
+            <li (click)="selectLimit(30)">30</li>
+            <li (click)="selectLimit(40)">40</li>
+          </ul>
+        </div>
+
+        <!-- Search -->
+        <div class="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input 
+             type="text" 
+             placeholder="Search"
+             [(ngModel)]="searchTerm"
+             (ngModelChange)="currentPage = 1"
+            />
+        </div>
+      </div>
+    </div>
+
+   <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr class="heading">
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Period</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th class="actions-heading">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of paginatedTable" class="data">
+                    <td>{{ item.id }}</td>
+                    <td class="name"><img [src]="item.img" alt=""> {{ item.name}}</td>
+                    <td>{{ item.price}}</td>
+                    <td>{{ item.period}}</td>
+                    <td>{{ item.role}}</td>
+                    <td>
+                       <span class="tag">
+                       <span
+                         class="dot"
+                         [ngStyle]="{
+                          background: item.Status === 'Active' ? '#28a745' : '#d9534f'
+                         }"
+                        ></span>
+                        {{ item.Status }}
+                        </span>
+                    </td>
+                    <td data-label="Actions" class="action-icons">
+                        <i class="bi bi-pencil"></i>
+                        <i class="fa-solid fa-eye"></i>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    <div class="pagination">
+     <i class="bi bi-chevron-left" (click)="prevPage()" [class.disabled]="currentPage === 1"></i>
+  
+     <span 
+      *ngFor="let page of [].constructor(totalPages); let i = index"
+       [class.active]="currentPage === i + 1"
+       (click)="changePage(i + 1)">
+       {{ i + 1 }}
+     </span>
+
+     <i class="bi bi-chevron-right" (click)="nextPage()" [class.disabled]="currentPage === totalPages"></i>
+    </div>
+  </div>
+</div>

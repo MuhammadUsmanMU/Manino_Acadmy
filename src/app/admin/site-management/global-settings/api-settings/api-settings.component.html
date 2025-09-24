@@ -1,0 +1,95 @@
+<div class="ai-settings-container">
+  <div class="ai-settings-header">
+    <h2>API Settings</h2>
+    <div class="bottom-buttons-container">
+      <button class="reset-all">Reset all</button>
+      <button class="reset-section">Reset section</button>
+      <button class="save-button">Save Changes</button>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button
+      *ngFor="let tab of tabs"
+      [ngClass]="{ active: activeTab === tab.id }"
+      (click)="setActiveTab(tab.id)"
+    >
+      {{ tab.label }}
+    </button>
+  </div>
+
+  <div class="tab-section">
+    <div *ngIf="activeTab === 'googleMap'">
+      <app-api-subsection
+        [title]="'Google Map Settings'"
+        [(promptText)]="googleMapSetting.profilePrompt"
+      ></app-api-subsection>
+
+      <app-api-subsection
+        [title]="'Headline Settings'"
+        [enableLabel]="'Enable AI writer on headline'"
+        [promptLabel]="'Prompt for headline'"
+        [idPrefix]="'profile-headline'"
+        [(isEnabled)]="googleMapSetting.enableHeadline"
+        [(promptText)]="googleMapSetting.headlinePrompt"
+      ></app-api-subsection>
+    </div>
+
+    <div *ngIf="activeTab === 'googleCalender'">
+      <app-api-subsection
+        *ngFor="let field of googleCalenderSetting"
+        [title]="field.title"
+        [(promptText)]="field.promptText"
+      ></app-api-subsection>
+    </div>
+
+    <div *ngIf="activeTab === 'OpenAi'" class="openai-key-section">
+      <label for="openai-key" class="openai-key-label">OpenAI key</label>
+      <input
+        type="text"
+        id="openai-key"
+        class="openai-key-input"
+        placeholder="Enter OpenAI key"
+        [(ngModel)]="OpenAiSetting.apiKey"
+      />
+    </div>
+
+    <div *ngIf="activeTab === 'socialLogin'">
+      <app-api-subsection
+        [title]="'Enable Social Login'"
+        [promptLabel]="'Prompt for assignment descriptions'"
+        [idPrefix]="'social-assignment-description'"
+        [(isEnabled)]="socialLoginSetting.enableAssignmentDescription"
+        [(promptText)]="socialLoginSetting.assignmentDescriptionPrompt"
+      ></app-api-subsection>
+
+      <app-api-subsection
+        [title]="'Assignment Feedback'"
+        [enableLabel]="'Enable AI writer for assignment feedback'"
+        [promptLabel]="'Prompt for assignment feedback'"
+        [idPrefix]="'social-assignment-feedback'"
+        [(isEnabled)]="socialLoginSetting.enableAssignmentFeedback"
+        [(promptText)]="socialLoginSetting.assignmentFeedbackPrompt"
+      ></app-api-subsection>
+    </div>
+
+    <div *ngIf="activeTab === 'meetingSettings'">
+      <app-api-subsection
+        [title]="'Enable social Login'"
+        [promptLabel]="'Enble or disable social login for the website'"
+        [idPrefix]="'meeting-assignment-description'"
+        [(isEnabled)]="meetingSettingsSetting.enableAssignmentDescription"
+        [(promptText)]="meetingSettingsSetting.assignmentDescriptionPrompt"
+      ></app-api-subsection>
+
+      <app-api-subsection
+        [title]="'Meeting Assignment Feedback'"
+        [enableLabel]="'Enable AI writer for assignment feedback'"
+        [promptLabel]="'Prompt for assignment feedback'"
+        [idPrefix]="'meeting-assignment-feedback'"
+        [(isEnabled)]="meetingSettingsSetting.enableAssignmentFeedback"
+        [(promptText)]="meetingSettingsSetting.assignmentFeedbackPrompt"
+      ></app-api-subsection>
+    </div>
+  </div>
+</div>

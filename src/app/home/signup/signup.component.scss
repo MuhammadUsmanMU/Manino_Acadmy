@@ -1,0 +1,836 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Make sure Font Awesome is linked in your index.html or imported */
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+@import '../../../styles.scss';
+
+.main {
+  background: linear-gradient(to right, #05267c, #0466bd);
+  font-family: $font;
+  color: white;
+  width: 100%;
+
+  .contant {
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 2px;
+    font-weight: 500;
+
+    button {
+      border: none;
+      font-weight: 600;
+      background: white;
+    }
+
+    .ebook-button {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+
+:host {
+  display: block;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  overflow-y: auto; /* Allow vertical scrolling on the host element if content overflows */
+  background-color: #f8f9fa; /* Background for entire page */
+}
+/* Add this to your existing styles or create new ones if they don't exist */
+
+.error-message {
+  color: #dc3545; /* Bootstrap's danger red */
+  font-size: 0.85em;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.signup-failed-message {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #dc3545;
+  background-color: #f8d7da; /* Light red background */
+  border-radius: 4px;
+  text-align: center;
+}
+
+.success-message {
+  color: #28a745; /* Bootstrap's success green */
+  font-size: 0.9em;
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #28a745;
+  background-color: #d4edda; /* Light green background */
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Optional: Adjust input borders on error if you want visual feedback */
+input.ng-invalid.ng-touched,
+input.ng-invalid.submitted { /* 'submitted' class needs to be explicitly added if you want to highlight invalid fields on first submit */
+  border-color: #dc3545;
+}
+
+/* Style for custom checkbox error if needed */
+.terms-checkbox .error-message {
+    margin-left: 0; /* Adjust as needed */
+    margin-top: 5px;
+}
+
+.signup-container {
+  display: flex;
+  min-height: 100vh; /* Use min-height to ensure it takes full height but can grow */
+  width: 100vw;
+  overflow: hidden;
+  padding: 25px;
+  background: whitesmoke;
+}
+
+/* Left Section Styles */
+.left-section {
+  background-image: url(../../../assets/table.jpeg);
+  background-size: cover;
+  background-position: center; /* Ensure the background image is centered */
+  flex: 0 0 50%; /* Fixed 50% width on larger screens */
+  position: relative;
+  overflow: hidden; /* Hide overflow within this section, mainly for image */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #060d64; /* Changed to dark blue */
+  padding: 40px 20px; /* Internal padding */
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+// Added an overlay to darken the background image, similar to the reference
+.left-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 13, 100, 0.7); /* Dark blue with transparency */
+  z-index: 0;
+}
+
+.mannino-logo {
+  z-index: 1;
+      position: relative;
+    top: -13%;
+
+  img {
+    width: 120px;
+    height: auto;
+    filter: brightness(0) invert(1);
+  }
+}
+
+.progress-message {
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+  margin-bottom: 10px;
+    position: relative;
+    bottom: 11%;
+
+  h1 {
+    font-size: 2.8vw;
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.1;
+  }
+  p {
+    font-size: 1.3vw;
+    font-weight: 300;
+    margin-top: 0;
+  }
+}
+
+.main-content-block {
+  height: 320px;
+  width: 70%;
+  max-width: 450px;
+  aspect-ratio: 16/9;
+  background-color: #000;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+      bottom: 8%;
+  z-index: 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+
+.video-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px; /* Size of the play button circle */
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.3); /* Transparent white for the circle */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2; /* Above the video thumbnail */
+  &::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid #fff; /* White triangle for play icon */
+    margin-left: 5px; /* Adjust to visually center the triangle */
+  }
+}
+
+.popup-card {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 2;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+
+    .popup-title {
+      font-weight: 600;
+      font-size: 1.1vw;
+      color: #333;
+      margin-bottom: 3px;
+    }
+
+    .popup-description {
+      font-size: 0.8vw;
+      color: #777;
+      line-height: 1.3;
+      i {
+        margin-right: 5px;
+        color: #999;
+      }
+    }
+  }
+}
+
+.tutors-popup {
+  top: 29%;
+    left: 5%;
+  transform: none;
+  padding: 8px 12px; /* Adjusted padding for a tighter look */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  display: flex; /* Ensure flexbox for image and text */
+  align-items: center; /* Vertically align items */
+
+  .tutors-group-img {
+    height: 35px; /* Smaller image height */
+    margin-right: 8px; /* Space between image and text */
+  }
+
+  .popup-title {
+    font-size: 0.95rem; /* Adjusted font size */
+    white-space: nowrap;
+    line-height: 1; /* Tighter line height for single line */
+  }
+}
+
+.profile-popup {
+  bottom: 34%;
+  right: 5%;
+  align-items: flex-start;
+  padding: 12px 18px;
+
+  .profile-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+    border: 2px solid #EEE;
+  }
+  .popup-content {
+    align-items: flex-start;
+  }
+  .popup-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 2px;
+  }
+  .popup-description {
+    font-size: 0.8rem;
+    color: #777;
+    line-height: 1.3;
+    text-align: left;
+    i {
+      margin-right: 5px;
+      color: #999;
+    }
+  }
+  .rating {
+    font-size: 0.9rem;
+    color: #f7a006;
+    font-weight: 600;
+    margin-left: 15px;
+    white-space: nowrap;
+    .stars {
+      color: #f7a006;
+      font-size: 1rem;
+    }
+  }
+}
+
+.explore-tutor-badge {
+  position: absolute;
+  bottom: 10%; /* Adjusted to match image */
+  left: 10%; /* Adjusted to match image */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  background-color: transparent; /* Assuming the badge image has its own background */
+  padding: 0; /* No padding if the image is the badge itself */
+
+  img {
+    width: 100px; /* Adjust size to match the reference image */
+    height: 100px; /* Adjust size to match the reference image */
+    object-fit: contain;
+    // The text "Explore & Find the Best Tutor" appears to be part of the image
+  }
+}
+
+.bottom-message {
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+  margin-bottom: 20px;
+  position: relative;
+  bottom: 8%;
+
+  p {
+    font-size: 0.9vw;
+    line-height: 1.5;
+        padding: 5px 14%;
+  }
+}
+
+
+/* Right Section Styles - No changes needed here based on the request */
+.right-section {
+  flex: 0 0 50%; /* Fixed 50% width on larger screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background: none;
+}
+
+.signup-content {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.create-account-text {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.community-text {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+  flex: 1;
+
+  &.half-width {
+    margin-bottom: 0;
+  }
+
+  label {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 500;
+    .required {
+      color: #e74c3c; /* Red color for required asterisk */
+      margin-left: 2px;
+    }
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #060d64; /* Dark blue focus color */
+      box-shadow: 0 0 0 3px rgba(6, 13, 100, 0.2); /* Dark blue shadow */
+    }
+
+    &::placeholder {
+      color: #bbb;
+    }
+  }
+
+  &.password-group {
+    position: relative;
+    input {
+      padding-right: 45px;
+    }
+    .password-toggle {
+      position: absolute;
+      right: 15px;
+      top: 60%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #999;
+      font-size: 1.1rem;
+
+      i{
+        position: relative;
+        top: 7px;
+      }
+    }
+  }
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: left;
+
+  input[type="checkbox"] {
+    display: none;
+
+    + .custom-checkbox {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #bbb;
+      border-radius: 4px;
+      margin-right: 8px;
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      transition: all 0.2s ease-in-out;
+      flex-shrink: 0;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 5px;
+        width: 6px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+      }
+    }
+
+    &:checked + .custom-checkbox {
+      background-color: #060d64; /* Dark blue for checked */
+      border-color: #060d64;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  span {
+    line-height: 1.4;
+  }
+
+  .terms-link {
+    color: #060d64; /* Dark blue link color */
+    text-decoration: none;
+    font-weight: 500;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.register-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #060d64; /* Dark blue primary button color */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 25px;
+
+  &:hover {
+    background-color: darken(#060d64, 10%); /* Slightly darker blue on hover */
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #aaa;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #eee;
+  }
+
+  &:not(:empty)::before {
+    margin-right: .5em;
+  }
+
+  &:not(:empty)::after {
+    margin-left: .5em;
+  }
+
+  span {
+    padding: 0 10px;
+    background-color: #fff;
+  }
+}
+
+.google-signup-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #fff;
+  color: #555;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+
+  .google-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    border-color: #060d64;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+  }
+}
+
+.already-have-account {
+  font-size: 0.9rem;
+  color: #777;
+
+  .signin-link {
+    color: #060d64; /* Dark blue link color */
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .signup-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .left-section {
+    height: 350px;
+    padding: 20px;
+    justify-content: space-around;
+  }
+
+  .progress-message {
+    h1 { font-size: 2rem; }
+    p { font-size: 1rem; }
+    margin-bottom: 20px;
+  }
+
+  .main-content-block {
+    width: 80%;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+
+  .popup-card {
+    padding: 10px 15px;
+    .popup-title { font-size: 0.9rem; }
+    .popup-description { font-size: 0.75rem; }
+  }
+
+  .tutors-popup {
+    top: 10%; /* Closer to the top-left corner on smaller screens */
+    left: 10%;
+    .tutors-group-img { height: 30px; }
+    .popup-title { font-size: 0.85rem; }
+  }
+  .profile-popup { bottom: 10%; right: 5%; }
+  .profile-popup .rating { font-size: 0.8rem; .stars { font-size: 1rem; } }
+
+  .explore-tutor-badge {
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    img { width: 80px; height: 80px; }
+  }
+
+  .bottom-message {
+    p { font-size: 0.8rem; }
+    margin-top: 15px;
+  }
+
+  .right-section {
+    padding: 30px 20px;
+  }
+
+  .signup-content {
+    padding: 30px 25px;
+    max-width: 90%;
+  }
+
+  .create-account-text { font-size: 2rem; }
+  .community-text { font-size: 0.95rem; }
+  .form-row { flex-direction: column; gap: 0; }
+  .form-group { margin-bottom: 20px; &.half-width { margin-bottom: 20px; } }
+  .form-group label, .terms-checkbox, .already-have-account { font-size: 0.85rem; }
+  .register-button { font-size: 1rem; padding: 12px; }
+  .google-signup-button { font-size: 0.95rem; padding: 10px; }
+}
+
+@media (max-width: 576px) {
+  .left-section {
+    height: 280px;
+    padding: 15px;
+  }
+
+  .mannino-logo {
+    img { width: 80px; }
+    margin-bottom: 10px;
+  }
+
+  .progress-message {
+    h1 { font-size: 20px; }
+    p { font-size: 0.9rem; }
+    margin-bottom: 15px;
+  }
+
+  .main-content-block {
+    width: 90%;
+    max-width: 300px;
+    margin-bottom: 15px;
+  }
+
+  .popup-card {
+    padding: 8px 12px;
+    .popup-title { font-size: 0.85rem; }
+    .popup-description { font-size: 0.7rem; }
+  }
+
+  .tutors-popup {
+    top: 8%;
+    left: 8%;
+    .tutors-group-img { height: 25px; margin-right: 6px; }
+    .popup-title { font-size: 0.8rem; }
+  }
+  .profile-popup { bottom: 5%; right: 3%; }
+  .profile-popup .profile-avatar { width: 40px; height: 40px; margin-right: 10px; }
+  .profile-popup .rating { font-size: 0.7rem; .stars { font-size: 0.9rem; } }
+
+  .explore-tutor-badge {
+    bottom: 3%;
+    img { width: 60px; height: 60px; }
+  }
+
+  .bottom-message {
+    p { font-size: 0.75rem; }
+    margin-top: 10px;
+  }
+
+  .signup-content {
+    padding: 25px 20px;
+    max-width: 100%;
+  }
+
+  .create-account-text { font-size: 1.8rem; }
+  .community-text { font-size: 0.85rem; }
+  .form-group label, .terms-checkbox, .already-have-account { font-size: 0.8rem; }
+  .register-button { font-size: 1rem; padding: 10px; }
+  .google-signup-button { font-size: 0.9rem; padding: 8px; }
+}
+
+// Media Queries
+@media (max-width: 767px) {
+   .main .contant {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .main .contant p {
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+
+  .main .contant button {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: auto;
+    max-width: 80%;
+    position: static;
+    top: auto;
+    transform: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main .contant {
+    display: flex;
+    font-size: 19px;
+    padding: 12px 26px;
+
+    p {
+      position: relative;
+      top: 6px;
+    }
+    button {
+      padding: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      position: relative;
+      top: 0px;
+      width: 190px;
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1307px) {
+    .main .contant {
+    display: flex;
+    font-size: 22px;
+    padding: 14px 28px 14px 48px;
+
+    p {
+      position: relative;
+      top: 6px;
+    }
+    button {
+      padding: 9px 14px;
+      font-size: 18px;
+      font-weight: 600;
+      position: relative;
+      top: -1px;
+    }
+  }
+}
+
+@media (min-width: 1308px) and (max-width: 1440px) {
+     .main .contant {
+    display: flex;
+    font-size: 29px;
+    padding: 14px 30px 7px 93px;
+
+    button {
+      padding: 11px 20px;
+      font-size: 19px;
+      font-weight: 600;
+      position: relative;
+      top: -4px;
+    }
+  }
+}
+
+@media (min-width: 1441px) {
+     .main .contant {
+    display: flex;
+    font-size: 30px;
+    padding: 18px 30px 10px 93px;
+
+    button {
+              padding: 10px 40px;
+        font-size: 25px;
+      font-weight: 600;
+      position: relative;
+      top: -4px;
+    }
+  }
+}

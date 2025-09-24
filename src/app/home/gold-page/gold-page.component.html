@@ -1,0 +1,160 @@
+<div class="main">
+    <div class="contant">
+        <p>Download our Free Coaching e-Book and Begin Your Certification Now!</p>
+        <button>    
+            <a href="../../../assets/coaching e-book.pdf" target="_blank" class="ebook-button">
+                Download free e-Book
+            </a>
+        </button>
+
+    </div>
+</div>
+
+<app-navbar></app-navbar>
+
+<div class="main-package-container">
+    <div class="left">
+      <app-brochure-button
+         fileName="Gold package.pdf"
+         label="Download Brochure"
+         className="dark-btn">
+      </app-brochure-button>
+
+      <h2>Gold Package</h2>
+      <ul>
+        <li>On-demand access to pre-recorded video lessons</li>
+        <li>Downloadable study flashcards for ICF Core Competencies</li>
+        <li>Quizzes and self-assessments per module to test knowledge retention</li>
+      </ul>
+    </div>
+    <div class="right">
+      <img src="../../../assets/goldpage/1.png" alt="Gold Package Illustration" />
+    </div>
+</div>
+
+<div class="Executive-Coaching-container">
+  <div class="left">
+    <h5>Executive Coaching Certification</h5>
+    <h3>The M.E.C. Gold Package</h3>
+    <p>
+      For aspiring Executive Coaches who want to earn a certification without pursuing ICF accreditation, this
+      package offers an accelerated track to earn an Executive Coaching Certification and build a thriving coaching career.
+    </p>
+  </div>
+  <div class="right">
+    <img src="../../../assets/goldpage/2.png" alt="Executive Coaching" />
+  </div>
+</div>
+
+<div class="AI-Powered-container">
+  <div class="left">
+    <img src="../../../assets/goldpage/3.png" alt="AI Learning" />
+  </div>
+  <div class="right">
+    <div class="icon">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <h5>AI-Powered Learning</h5>
+    <h2>Why Choose The M.E.C.?</h2>
+
+    <p><span>Flexibility:</span> Start and complete your training at your own pace. Join anytime.</p>
+
+    <p><span>In-Depth Modern Content:</span> Our curriculum includes comprehensive training on coaching models, frameworks, case studies, and best practices. We leverage cutting-edge techniques such as AI coaching, neuroscience, cognitive coaching, cultural intelligence, and emotional intelligence (EQ).</p>
+
+    <p><span>Practical Real-World Approach:</span> Our program includes a workshop on how to start and launch a successful Executive Coaching business.</p>
+
+    <p><span>Business Building:</span> Practical workshops and tools to support the launch and success of your coaching practice.</p>
+
+    <p><span>Exclusive LMS Platform:</span> Access our state-of-the-art, AI-driven Learning Management System (LMS) for an immersive learning experience.</p>
+  </div>
+</div>
+
+<div class="platinum-include-container">
+  <div class="left">
+    <a href="https://youtu.be/Ktw2Ssdi7Co?si=V0vHXPGz9KT8uGKX" target="_blank">
+    <img src="../../../assets/goldpage/4.png" alt="Included in Platinum" />
+    </a>
+  </div>
+  <div class="right">
+    <h2>What’s Included in the Gold Package?</h2>
+    <ul>
+      <li>
+        <h5><i class="fa-solid fa-star"></i> Live Virtual 3-Day Intensive Seminar</h5>
+        <p>Live immersive training over three full days.</p>
+      </li>
+
+      <li>
+        <h5><i class="fa-solid fa-star"></i> Business Builder Workshop</h5>
+        <p>Live interactive one-day virtual workshop to help you build and launch a thriving Executive Coaching business.</p>
+      </li>
+
+      <li>
+        <h5><i class="fa-solid fa-star"></i> Individual EQ2.0i Assessment</h5>
+        <p>Includes a detailed report and scoring on five EQ domains: Self-Perception, Self-Expression, Interpersonal, Decision Making, and Stress Management.</p>
+      </li>
+
+      <li>
+        <h5><i class="fa-solid fa-star"></i> 60hrs (30hrs synchronous plus 30hrs asynchronous)</h5>
+        <p>Track your progress through the specialized The M.E.C. LMS platform.</p>
+      </li>
+
+      <li>
+        <h5><i class="fa-solid fa-star"></i> Upload a Live Coaching Video</h5>
+        <p>Demonstrate your coaching skills with a practical submission.</p>
+      </li>
+
+      <li>
+        <h5><i class="fa-solid fa-star"></i> Brief Quiz</h5>
+        <p>Assess your understanding and coaching readiness.</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="Exclusive-Features-container">
+  <div class="heading">
+    <h3>Exclusive Features – Elevate Your Coaching Career</h3>
+    <p>Explore a wealth of articles, guides, tutorials, and more—curated by experts to enhance your learning experience.</p>
+  </div>
+
+  <div class="cards">
+    <div class="contant" *ngFor="let item of goldCards">
+      <div class="img">
+        <img [src]="item.img" alt="Feature Image" />
+      </div>
+      <h4>{{item.head}}</h4>
+      <p>{{item.para}}</p>
+      <p>{{item.para2}}</p>
+      <p>{{item.para3}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="ICF-Certification-container">
+  <h3>Certification Pathway:</h3>
+  <div class="contant">
+    <div class="left">
+      <img src="../../../assets/goldpage/5.png" alt="Certification Pathway" />
+    </div>
+    <div class="right">
+      <h5>The M.E.C. Certificate:</h5>
+      <p><i class="fa-solid fa-star"></i> Awarded after completing all 60 hours of training</p>
+      <p><i class="fa-solid fa-star"></i> Includes both synchronous and asynchronous components</p>
+      <p><i class="fa-solid fa-star"></i> Includes Business Builder Workshop</p>
+      <p><i class="fa-solid fa-star"></i> Individual EQ2.0i Assessment with Readout</p>
+      <p><i class="fa-solid fa-star"></i> Passing an Assessment Quiz</p>
+      <p><i class="fa-solid fa-star"></i> Total: 60hrs (30hrs synchronous plus 30hrs asynchronous)</p>
+      <p><i class="fa-solid fa-star"></i> Live Interactive Webinars (weekday evenings and weekends)</p>
+    </div>
+  </div>
+</div>
+
+<div class="Join-Now-container">
+  <h4>Cost of Program: $7,995</h4>
+  <p>
+    This comprehensive package ensures that aspiring Executive Coaches are well-equipped with the knowledge, skills, and credentials needed to excel—building a successful coaching business and advancing their careers.
+  </p>
+  <button routerLink="/live-session">Join Now</button>
+</div>
+
+<app-footer></app-footer>

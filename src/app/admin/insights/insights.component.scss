@@ -1,0 +1,1441 @@
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f3f3f3;
+  padding: 10px 20px;
+  box-shadow: 0px 1px 8px -1px #c7c7c7;
+  border: 1px solid #ebebeb;
+}
+
+.content-area {
+  display: flex;
+  flex: 1;
+}
+
+.main-content {
+  flex-grow: 1;
+  background-color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+}
+
+/* Unified feedback-list */
+.feedback-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 0.75rem;
+    }
+
+    .feedback-info {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+
+      span:first-child {
+        font-weight: 700;
+        color: #333;
+        font-size: 0.9vw;
+      }
+
+      span:nth-child(2) {
+        font-size: 0.8vw;
+        color: #888;
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .stars {
+        color: #ffc107;
+        font-size: 1.3vw;
+      }
+
+      .review-button {
+        background: none;
+        border: none;
+        color: #007bff;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #e0f7fa;
+        }
+      }
+    }
+
+    button {
+      color: black;
+      border: 1px solid grey !important;
+      border-radius: 10px !important;
+      cursor: pointer;
+      font-size: 0.8vw;
+      font-weight: 600;
+      white-space: nowrap;
+      padding: 6px 30px;
+    }
+  }
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100% !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: none;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+
+    h2 {
+      font-size: 1.2vw;
+
+      i {
+        color: #28a745;
+        margin-right: 5px;
+      }
+    }
+
+    .calendar-header {
+      border: 1px solid rgb(211, 209, 209);
+      border-radius: 8px;
+      padding-inline: 10px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+
+      i {
+        color: grey;
+      }
+
+      span {
+        font-size: 0.7vw;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+/* Chart Section (unchanged) */
+.chart-section {
+  padding: 1.25rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    .sss {
+      display: flex;
+      align-items: center;
+      background-color: #f9f9f9;
+      padding: 5px 15px;
+      border-radius: 10px;
+      gap: 5px;
+
+      span {
+        color: grey;
+      }
+    }
+
+    .select-wrapper {
+      position: relative;
+
+      .time-period-select {
+        padding: 0.3rem 2rem 0.3rem 0.75rem;
+        border-radius: 0.375rem;
+        appearance: none;
+        font-size: 0.85rem;
+        color: #555;
+        cursor: pointer;
+        outline: none;
+        width: 100px;
+        font-weight: 700;
+        border: none;
+        background: none;
+      }
+
+      .select-arrow {
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: #666;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  .chart-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+    position: relative;
+
+    .chart-summary-overlay {
+      position: absolute;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      white-space: nowrap;
+      z-index: 10;
+
+      .chart-value {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0;
+        color: #333;
+      }
+
+      .chart-label {
+        font-size: 12px;
+        color: #666;
+      }
+    }
+
+    .bar-container {
+      display: flex;
+      align-items: flex-end;
+      width: calc(100% - 40px);
+      height: 250px;
+      padding-bottom: 5px;
+      position: relative;
+    }
+
+    .y-axis-labels {
+      position: absolute;
+      left: -40px;
+      top: -15px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 0.8rem;
+      color: #888;
+      width: 35px;
+
+      span:last-child {
+        height: 0;
+      }
+    }
+
+    .bars-and-lines {
+      flex-grow: 1;
+      display: flex;
+      align-items: flex-end;
+      gap: 0.75rem;
+      height: 250px;
+      border: 1px solid #f7f0f0;
+      position: relative;
+      padding: 10px 15px 0;
+    }
+
+    .horizontal-line {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      border-top: 1px dashed #eee;
+    }
+
+    .bar {
+      flex-grow: 1;
+      max-width: 10%;
+      background-color: #fbeedc;
+      border-radius: 0.25rem 0.25rem 0 0;
+
+      &.active-bar {
+        background-color: #ffbd59;
+      }
+    }
+
+    .month-labels {
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 40px);
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #888;
+      padding: 0 10px;
+    }
+  }
+}
+
+/* Grid sections */
+.grid-section {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 1rem;
+
+  &.three-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &.two-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Cards using feedback-list */
+.student-feedback-card,
+.congratulate-student-card,
+.instructors-details-card,
+.new-users-card {
+  h2 {
+    font-size: 1.2vw;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    @extend .feedback-list;
+  }
+}
+
+.live-sessions-card {
+  .header {
+    display: flex; /* Ensure d-flex works, or explicitly set here */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px; /* Space between header and calendar */
+
+    h2 {
+      font-size: 1.1vw; /* Slightly adjusted for visual match */
+      font-weight: 600; /* Match visual weight */
+      color: #333; /* Darker text for main title */
+      display: flex;
+      align-items: center;
+
+      i {
+        margin-right: 8px; /* Space between icon and text */
+        color: #4db3b5; /* Icon color from the image */
+        font-size: 1.2vw; /* Slightly larger icon */
+      }
+    }
+
+    .calendar-header {
+      display: flex;
+      align-items: center;
+      background-color: #f0f2f5; /* Light grey background for the date */
+      padding: 5px 10px; /* Padding inside the date box */
+      border-radius: 5px; /* Slightly rounded corners */
+      font-size: 0.85vw; /* Match the font size in the image */
+      color: #555; /* Darker grey for the date text */
+      font-weight: 500;
+
+      i {
+        margin-right: 5px; /* Space between calendar icon and date text */
+        color: #888; /* Icon color */
+      }
+    }
+  }
+
+  .calendar-component {
+    width: 100%;
+
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      margin-bottom: 1rem;
+      /* Removed align-content and align-items as direct grid items handle alignment better */
+      padding-inline: 5px; /* Small padding if needed to prevent edge sticking */
+
+      .day-header {
+        font-size: 0.85vw; /* Adjusted for visual match */
+        font-weight: 600; /* Adjusted for visual weight */
+        color: #5e5e5e;
+        background-color: #f5f5f5; /* Lighter background than previous */
+        padding: 5px 0; /* Vertical padding */
+        border-radius: 8px 8px 0px 0px; /* More rounded top corners */
+        width: 100%; /* Make it fill the grid column */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box; /* Include padding in width */
+      }
+
+      .day {
+        padding: 5px 0; /* Vertical padding, consistent with header */
+        border-radius: 0px 0px 8px 8px; /* More rounded bottom corners */
+        cursor: pointer;
+        transition: background-color 0.2s;
+        font-size: 0.85vw; /* Adjusted for visual match */
+        color: #888; /* Darker grey for inactive days */
+        width: 100%; /* Make it fill the grid column */
+        height: 35px; /* Fixed height for uniform squares */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box; /* Include padding in width */
+
+
+        &:hover {
+          background-color: #f0f0f0; /* Slightly darker hover */
+        }
+
+        &.active {
+          background-color: #4db3b5; /* Solid blue-green as in image */
+          color: white;
+          font-weight: 600; /* Bold for active day */
+          border-radius: 8px; /* Fully rounded for active day */
+          position: relative; /* For potential future tooltips/borders */
+        }
+      }
+    }
+
+    .search-client-wrapper {
+      display: flex;
+      gap: 10px; /* Increased gap for visual spacing */
+      margin-top: 15px; /* More space above search bar */
+      margin-bottom: 20px; /* Space between search and list */
+
+      .search {
+          display: flex;
+          align-items: center;
+          padding: 0px 8px;
+          border-radius: 8px;
+          border: 1px solid #ddd;;
+          transition: border-color 0.2s ease, box-shadow 0.2s ease;
+          color: gray;
+
+          i {
+            color: gray;
+            margin-right: 5px;
+          }
+
+          input {
+            border: none;
+            width: 100%;
+            &:focus {
+              outline: none;
+              box-shadow: none;
+            }
+          }
+        }
+
+      .filter-button {
+         background: none;
+        color: #666;
+        border: 1px solid #ddd;
+        padding: 0px 15px; /* Adjusted padding */
+        border-radius: 8px; /* More rounded corners */
+        cursor: pointer;
+        font-size: 0.9vw; /* Match font size */
+        height: 38px; /* Fixed height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box; /* Include padding in height */
+        transition: background-color 0.2s;
+
+        i {
+          margin-right: 5px; /* Space between icon and text */
+          color: #888; /* Icon color */
+        }
+
+        &:hover {
+          background-color: #e0e2e5; /* Slight darken on hover */
+        }
+      }
+    }
+
+    .session-list {
+      list-style: none; /* Remove default list bullets */
+      padding: 0; /* Remove default padding */
+      margin: 0; /* Remove default margin */
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 10px 0; /* Vertical padding for each session item */
+        border-bottom: 1px solid #eee; /* Light separator line */
+
+        &:last-child {
+          border-bottom: none; /* No border for the last item */
+        }
+
+        .avatar {
+          width: 40px; /* Larger avatar size */
+          height: 40px; /* Larger avatar size */
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: 15px; /* More space to the right of avatar */
+          border: 2px solid #f0f0f0; /* Subtle border for avatars */
+        }
+
+        .session-details {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          margin-right: 10px; /* Space between details and button */
+
+          .session-title {
+            font-weight: 600; /* Adjusted for visual weight */
+            color: #333;
+            font-size: 0.95vw; /* Slightly larger for readability */
+            margin-bottom: 3px; /* Space between title and time */
+            /* width: auto !important; Remove fixed width */
+          }
+
+          .session-time {
+            font-size: 0.8vw;
+            color: #888;
+            display: flex;
+            align-items: center;
+
+            i {
+              color: #bbb; /* Lighter icon color */
+              margin-right: 5px; /* Space between icon and text */
+              font-size: 0.8vw; /* Match text size */
+            }
+          }
+        }
+
+        /* Common button styles */
+        button {
+          border: none;
+          border-radius: 20px;
+          padding: 6px 12px; /* Adjusted padding */
+          font-size: 0.75vw; /* Adjusted font size */
+          font-weight: 700;
+          cursor: pointer;
+          transition: background-color 0.2s;
+          white-space: nowrap; /* Prevent button text from wrapping */
+          min-width: 90px; /* Ensure buttons have consistent width */
+          text-align: center;
+        }
+
+        .schedule-button {
+          background-color: #e6f7f8; /* Lighter blue-green background */
+          color: #4db3b5; /* Matching text color */
+          /* Removed absolute positioning offsets like margin-top/left if they were causing issues */
+          margin-left: auto; /* Push button to the right */
+        }
+
+        .cancel-button {
+          background-color: #ffeaea; /* Lighter red background */
+          color: #e74c3c; /* Matching text color */
+          /* Removed absolute positioning offsets like margin-top/left if they were causing issues */
+          margin-left: auto; /* Push button to the right */
+        }
+
+        /* Three dots icon */
+        .three-dots-icon {
+          color: #ccc; /* Light grey for the dots */
+          font-size: 1.2vw; /* Larger size */
+          margin-left: 10px; /* Space from the button */
+          cursor: pointer;
+          padding: 5px; /* Make it easier to click */
+        }
+      }
+    }
+  }
+}
+
+.manage-subscriptions-card {
+  display: flex;
+  flex-direction: column; // Change to column for better mobile stacking
+  justify-content: space-evenly;
+  padding: 20px; // Add more padding for a better look
+  background: linear-gradient(135deg, #f0f4f8, #e0e7ee); // Subtle gradient background
+  border-radius: 12px; // More rounded corners
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); // More prominent shadow
+
+  h2 {
+    font-size: 1.8rem; // Larger font size for prominence
+    font-weight: 800; // Bolder
+    color: #2c3e50; // Darker, more professional color
+    text-align: center; // Center the title
+    margin-bottom: 25px; // More space below the title
+  }
+
+  .subscription-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; // Increased gap between subscription items
+.icon{
+  display: flex;
+  gap: 5px;
+}
+    li {
+      display: flex;
+      align-items: center; // Align items to center
+      justify-content: space-between; // Space between items
+      background-color: #ffffff; // White background for each item
+      padding: 15px 20px; // Padding inside each item
+      border-radius: 10px; // Rounded corners for list items
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); // Subtle shadow for each item
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; // Smooth transitions
+
+      &:hover {
+        transform: translateY(-5px); // Lift effect on hover
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); // Enhanced shadow on hover
+      }
+
+      .sub-content {
+        display: flex;
+        align-items: center;
+        gap: 15px; // Gap between icon and text
+      }
+
+      .sub-icon {
+        height: 50px; // Larger icon size
+        width: 50px; // Ensure square icons
+        object-fit: contain;
+        // Add specific styles for icons if they are SVG or font icons
+        &.platinum {
+          color: #e5e4e2; // Platinum color
+        }
+        &.gold {
+          color: #ffd700; // Gold color
+        }
+        &.add-to-cart {
+          color: #4CAF50; // Green for 'add to cart'
+        }
+      }
+
+      .sub-details {
+        display: flex;
+        flex-direction: column;
+      }
+
+      span {
+        font-weight: 700; // Bolder subscription name
+        color: #333;
+        font-size: 15px;
+        width: 80px;
+      }
+
+      i {
+        color: #95a5a6; // Softer grey for edit icon
+        font-size: 15px; // Larger edit icon
+        cursor: pointer;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: #3498db; // Blue on hover
+        }
+      }
+      .status {
+        font-size: 0.9rem; // Slightly larger status font
+        font-weight: 700;
+        padding: 8px 15px; // More padding for status
+        border-radius: 20px; // Pill shape for status
+        width: auto !important; // Allow width to adapt to content
+        text-align: center;
+        text-transform: uppercase; // Uppercase for status
+
+        &.active-status {
+          background-color: #e8f5e9; // Light green for active
+          color: #28a745; // Darker green text
+          border: 1px solid #a8e6cf; // Subtle border
+        }
+
+        &.pending-status { // Example for a potential pending status
+          background-color: #fffde7;
+          color: #ffc107;
+          border: 1px solid #ffe082;
+        }
+
+        &.expired-status { // Example for an expired status
+          background-color: #ffebee;
+          color: #dc3545;
+          border: 1px solid #ffcdb2;
+        }
+      }
+    }
+  }
+}
+
+.revenue-metrics-card {
+  h2 {
+    font-size: 1.5vw;
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1vw;
+    color: grey;
+  }
+
+  .metrics-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    p {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      font-size: 1rem;
+
+      span {
+        font-weight: 600;
+        color: #333;
+      }
+    }
+  }
+
+  .revenue-boxes {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    .revenue-box {
+      flex: 1;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #8cc08b;
+      background-color: #e8e8fe;
+
+      &.total-revenue {
+        color: #8d66f0;
+
+        img {
+          width: 30%;
+          height: auto;
+        }
+      }
+
+      &.payouts {
+        background-color: #ecfef3;
+
+        img {
+          width: 30%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .card3 {
+    display: flex;
+    justify-content: space-between;
+    margin-inline-end: 20px;
+    align-items: center;
+    border: 1px solid grey;
+    padding-block: 10px;
+    padding-inline: 20px;
+    border-radius: 10px;
+
+    .contant2 {
+      background-color: #e4efeb;
+      padding: 5px;
+      padding-inline: 10px;
+      border-radius: 5px;
+
+      i {
+        color: #9fd0c0;
+      }
+    }
+  }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    padding: 10px; // Slightly reduce padding for smaller screens
+  }
+
+  .content-area {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 10px;
+    margin-top: 0;
+    margin-left: 0;
+    gap: 0.8rem; // Slightly reduce gap between cards
+  }
+
+  .card {
+    padding: 10px; // Reduced padding for cards
+    .header {
+      flex-direction: column; // Stack header items
+      align-items: flex-start; // Align to start
+      margin-bottom: 10px; // Add some space
+
+      h2 {
+        font-size: clamp(1rem, 4vw, 1.2rem); // Fluid font size
+        margin-bottom: 5px; // Space between title and calendar
+      }
+
+      .calendar-header {
+        height: 30px; // Slightly taller for touch
+        padding-inline: 8px;
+        span {
+          font-size: 0.8rem; // Slightly larger for readability
+        }
+      }
+    }
+
+    h2 {
+      font-size: clamp(1rem, 4.5vw, 1.2rem); // Fluid font size
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      font-size: clamp(0.85rem, 3.5vw, 0.95rem); // Fluid font size
+    }
+
+    ul {
+      li {
+        padding: 0.6rem 0; // Adjusted padding for list items
+        font-size: clamp(0.8rem, 3.2vw, 0.9rem);
+
+        button {
+          font-size: clamp(0.75rem, 3vw, 0.85rem);
+          padding: 0.4rem 0.8rem; // Adjusted padding for buttons
+        }
+      }
+    }
+  }
+
+  .chart-section {
+    padding: 15px; // Adjusted padding
+    .chart-header {
+      flex-direction: column; // Stack header elements
+      align-items: flex-start; // Align to start
+      gap: 10px; // Space between elements
+
+      h1 {
+        font-size: clamp(1rem, 4.5vw, 1.2rem);
+      }
+      .sss {
+        width: 100%; // Full width for better touch target
+        justify-content: space-between; // Space between span and select
+        padding: 8px 10px; // More padding
+      }
+      .select-wrapper {
+        width: auto; // Allow wrapper to shrink to content
+        .time-period-select {
+          width: 120px; // Fixed width for select on mobile
+          padding: 0.5rem 2rem 0.5rem 0.75rem; // More padding for touch
+          font-size: clamp(0.8rem, 3.5vw, 0.85rem);
+        }
+        .select-arrow {
+          font-size: 0.9rem; // Larger arrow
+        }
+      }
+    }
+
+    .chart-content {
+      padding: 10px 5px 10px; // Adjusted padding
+     .chart-summary-overlay {
+       left: 39%;
+       top: -9px;
+     }
+  .chart-summary-overlay .chart-value {
+      font-size: 16px;
+   }
+
+  .chart-summary-overlay .chart-label {
+      font-size: 10px;  
+    }
+  }
+
+    .chart-summary {
+      .chart-value {
+        font-size: clamp(2rem, 8vw, 2.5rem); // Fluid font size
+      }
+      .chart-label {
+        font-size: clamp(0.9rem, 3.8vw, 1rem);
+      }
+    }
+
+    .bar-container {
+      width: 100%; // Full width
+      height: 200px; // Slightly reduce height
+      padding-bottom: 0;
+    }
+
+    .y-axis-labels {
+      left: 0px; // Bring labels closer to the chart
+      top: 0px;
+      width: 30px; // Adjust width
+      font-size: 0.7rem; // Smaller font size for labels
+    }
+
+    .bars-and-lines {
+      height: 200px; // Match bar-container height
+      padding: 5px 5px 0; // Adjusted padding
+      gap: 0.5rem; // Reduce gap between bars
+    }
+
+    .month-labels {
+      width: 100%; // Match bar-container width
+      padding: 0 5px; // Adjusted padding
+      font-size: 0.75rem; // Smaller font for month labels
+    }
+  }
+
+  .grid-section {
+    &.three-columns,
+    &.two-columns {
+      grid-template-columns: 1fr; // Single column for all grids
+    }
+  }
+
+  .live-sessions-card {
+    .header {
+      h2 {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+      }
+    }
+    .calendar-component {
+      .calendar-days {
+        .day-header {
+          font-size: clamp(0.7rem, 2.8vw, 0.8vw);
+          width: 30px; // Slightly smaller day width
+        }
+        .day {
+          font-size: clamp(0.8rem, 3.2vw, 0.9rem);
+          width: 30px; // Slightly smaller day width
+          height: 22px; // Slightly shorter day height
+        }
+      }
+      .search-client-wrapper {
+        flex-direction: column; // Stack search and filter
+        gap: 0.8rem;
+      
+        .filter-button {
+          font-size: clamp(0.9rem, 3.5vw, 1vw);
+          height: 35px; // Taller for touch
+          padding-block: 5px;
+        }
+      }
+      .session-list {
+        li {
+          flex-wrap: wrap; // Allow items to wrap
+          justify-content: center; // Center items when wrapped
+          text-align: center; // Center text
+          .avatar {
+            margin-right: 0; // Remove right margin
+            margin-bottom: 5px; // Add bottom margin
+          }
+          .session-details {
+            align-items: center; // Center text
+            .session-title {
+              font-size: clamp(0.8rem, 3.2vw, 0.8vw);
+              width: 100% !important; // Full width
+            }
+            .session-time {
+              font-size: clamp(0.75rem, 3vw, 0.8vw);
+            }
+            .schedule-button {
+              font-size: clamp(0.65rem, 2.8vw, 1.75vw);
+              font-size: 3vw !important;
+              margin-left: 0 !important; // Reset margin
+              margin-top: 5px !important; // Add margin
+              width: 60% !important; // Adjust width for mobile
+            }
+          }
+          .cancel-button {
+            font-size: clamp(0.65rem, 2.8vw, 0.7vw);
+            margin-left: 0 !important; // Reset margin
+            margin-top: 5px !important; // Add margin
+            width: 60% !important; // Adjust width for mobile
+          }
+        }
+      }
+    }
+  }
+
+  .student-feedback-card {
+    h2 {
+      font-size: clamp(1.1rem, 4.5vw, 1.2vw);
+    }
+   .feedback-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 0.75rem;
+    }
+
+    .feedback-info {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+
+      span:first-child {
+        font-weight: 700;
+        color: #333;
+        font-size: 0.9vw;
+      }
+
+      span:nth-child(2) {
+        font-size: 0.8vw;
+        color: #888;
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .stars {
+        color: #ffc107;
+        font-size: 1.3vw;
+      }
+
+      .review-button {
+        background: none;
+        border: none;
+        color: #007bff;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #e0f7fa;
+        }
+      }
+    }
+  }
+}
+
+  }
+
+  .manage-subscriptions-card {
+    padding: 15px; // Adjusted padding for mobile
+    h2 {
+      font-size: clamp(1.5rem, 6vw, 1.8rem); // Fluid font size for mobile
+      margin-bottom: 20px;
+    }
+    .subscription-list {
+      gap: 15px; // Slightly reduced gap for mobile
+      li {
+        flex-direction: column; // Stack subscription details on mobile
+        align-items: center; // Center content
+        text-align: center;
+        gap: 10px;
+        padding: 12px 15px; // Adjusted padding for list items
+        .bussiness{
+          font-size: 2.5vw !important;
+        }
+        .icon{
+          flex-direction: row;
+        }
+        .sub-content {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 10px; // Space between content and status/edit
+        }
+
+        .sub-icon {
+          height: 45px; // Slightly smaller icons on mobile
+          width: 45px;
+        }
+        span {
+          font-size: clamp(1rem, 4vw, 1.2rem); // Fluid font size for name
+          margin-bottom: 0; // Remove bottom margin
+        }
+        i {
+          font-size: 1rem; // Adjusted icon size
+        }
+        .status {
+          font-size: clamp(0.8rem, 3.5vw, 0.9rem); // Fluid font size for status
+          padding: 6px 12px; // Adjusted padding
+          width: 100px !important; // Fixed width for status on mobile
+        }
+      }
+    }
+  }
+
+  .revenue-metrics-card {
+    h2 {
+      font-size: clamp(1.2rem, 5vw, 1.5vw);
+    }
+    p {
+      font-size: clamp(0.9rem, 3.8vw, 1vw);
+    }
+    .metrics-list {
+      p {
+        font-size: clamp(0.9rem, 3.8vw, 1rem);
+      }
+    }
+    .revenue-boxes {
+      flex-direction: column; // Stack revenue boxes
+      gap: 0.8rem;
+      .revenue-box {
+        padding: 0.8rem;
+        font-size: clamp(1rem, 4vw, 1.1rem);
+        align-items: center; // Center content
+        text-align: center;
+      }
+    }
+    .card3 {
+      flex-direction: column; // Stack content
+      text-align: center;
+      margin-inline-end: 0;
+      padding-inline: 15px;
+      gap: 10px;
+      .contant2 {
+        padding: 8px 15px;
+      }
+    }
+  }
+
+  .congratulate-student-card,
+  .instructors-details-card,
+  .new-users-card {
+    .header {
+      flex-direction: column; // Stack header items
+      align-items: flex-start;
+      margin-bottom: 10px;
+      h2 {
+        font-size: clamp(1.1rem, 4.5vw, 1.4vw);
+        margin-bottom: 5px;
+      }
+      p {
+        font-size: clamp(0.85rem, 3.5vw, 1rem);
+      }
+    }
+
+    ul {
+      li {
+        flex-wrap: wrap; // Allow items to wrap
+        justify-content: center; // Center items
+        text-align: center;
+        .avatar {
+          margin-right: 0;
+          margin-bottom: 5px;
+        }
+        span {
+          font-size: clamp(0.9rem, 3.8vw, 1vw);
+          width: 100%; // Full width
+          p {
+            font-size: clamp(0.75rem, 3vw, 0.8vw);
+            margin-left: 0; // Reset margin
+          }
+        }
+        button {
+          font-size: clamp(0.75rem, 3vw, 0.8vw);
+          padding-inline: 15px;
+          margin-top: 10px; // Add space
+          width: 80%; // Adjust width
+        }
+      }
+    }
+  }
+
+ .instructors-details-card {
+    ul {
+      li {
+        flex-direction: column; // Stack elements vertically on mobile
+        align-items: center; // Center items
+        text-align: center;
+        padding: 0.8rem 0; // Adjust padding
+
+        .avatar {
+          margin-right: 0;
+          margin-bottom: 10px; // Add space below avatar
+        }
+
+        .instructor-details {
+          margin-right: 0; // Reset margin
+          margin-bottom: 15px; // Space before the button
+          align-items: center; // Center text content
+
+          span {
+            font-size: clamp(0.9rem, 3.8vw, 1rem); // Fluid font size for name
+            margin-bottom: 5px; // Space below name
+          }
+
+          p { // Email
+            font-size: clamp(0.75rem, 3vw, 0.8vw); // Fluid font size for email
+            margin-top: 5px; // Adjust margin
+            margin-bottom: 8px; // Space before stars
+          }
+
+          .stars-and-reviews {
+            flex-direction: row; // Keep stars and reviews in a row
+            justify-content: center; // Center them
+            gap: 5px;
+            margin-top: 0; // Reset margin
+            
+            .stars {
+              font-size: clamp(1rem, 4vw, 1.1vw); // Fluid font size for stars
+            }
+            .review-count {
+              font-size: clamp(0.75rem, 3vw, 0.85vw); // Fluid font size for review text
+            }
+          }
+        }
+
+        .more-info-button {
+          font-size: clamp(0.8rem, 3.2vw, 0.85vw); // Fluid font size for button
+          padding: 10px 20px; // Larger padding for touch
+          width: 80%; // Make button wider
+        }
+      }
+    }
+  }
+}
+
+// Media queries for larger screens (your original desktop breakpoints)
+@media (min-width: 769px) and (max-width: 1024px) {
+  // This range will share styles with the general desktop or have minor adjustments
+  .grid-section {
+    &.three-columns {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &.two-columns {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .card {
+    .header {
+      h2 {
+        font-size: 1.1vw;
+      }
+      .calendar-header {
+        span {
+          font-size: 0.65vw;
+        }
+      }
+    }
+  }
+  .chart-section {
+    .chart-header {
+      h1 {
+        font-size: 1.1rem;
+      }
+    }
+
+    .chart-content{
+      .chart-summary-overlay {
+          left: 39%;
+          top: 0px;
+
+        .chart-value {
+              font-size: 17px;
+        }
+        .chart-label {
+               font-size: 10px;
+        }
+      }
+    }
+  }
+  .manage-subscriptions-card {
+    h2 {
+      font-size: 1.6rem; // Slightly smaller than desktop, but larger than mobile
+    }
+    .subscription-list {
+      li {
+        padding: 15px; // Consistent padding
+        .sub-icon {
+          height: 45px;
+          width: 45px;
+        }
+        span {
+          font-size: 1.1rem;
+        }
+        i {
+          font-size: 1rem;
+        }
+        .status {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .instructors-details-card {
+    ul {
+      li {
+        .instructor-details {
+          span {
+            font-size: 1vw; // Slightly larger for mid-screens
+          }
+          p {
+            font-size: 0.75vw;
+          }
+          .stars-and-reviews {
+            .stars {
+              font-size: 1vw;
+            }
+            .review-count {
+              font-size: 0.8vw;
+            }
+          }
+        }
+        .more-info-button {
+          font-size: 0.8vw;
+        }
+      }
+    }
+  }
+    .schedule-button{
+    font-size:3vw !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .grid-section {
+    &.three-columns {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &.two-columns {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+   .instructors-details-card {
+    ul {
+      li {
+        .instructor-details {
+          span {
+            font-size: 1vw;
+          }
+          p {
+            font-size: 0.8vw;
+          }
+          .stars-and-reviews {
+            .stars {
+              font-size: 1.1vw;
+            }
+            .review-count {
+              font-size: 0.85vw;
+            }
+          }
+        }
+        .more-info-button {
+          font-size: 0.85vw;
+        }
+      }
+    }
+  }
+
+  .chart-section{
+    .chart-content{
+       .chart-summary-overlay {
+              left: 39%;
+            top: 0px;
+
+        .chart-value {
+            font-size: 18px;
+        }
+        .chart-label {
+           font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1441px) {
+  .chart-section{
+    .chart-content{
+       .chart-summary-overlay {
+                left: 39%;
+                top: -5px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 480px) {
+ .chart-summary-overlay {
+    left: 38%;
+    top: -9px;
+  }
+  .chart-summary-overlay .chart-value {
+    font-size: 15px;
+  }
+
+  .chart-summary-overlay .chart-label {
+    font-size: 8px;
+  }
+  .schedule-button{
+    font-size: 2vw !important;
+  }
+  i{
+    size: 40px !important;
+  }
+  .dashboard-wrapper{
+    padding-inline: 0px;
+  }
+  .main-content{
+    padding: 0px;
+    padding-inline-start: 5px;
+  }
+
+}

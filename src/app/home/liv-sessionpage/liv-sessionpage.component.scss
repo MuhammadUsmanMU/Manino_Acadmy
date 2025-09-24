@@ -1,0 +1,957 @@
+@import '../../../styles.scss';
+
+.main {
+    background: linear-gradient(to right, #05267c, #0466bd);
+    font-family: $font;
+    color: white;
+    width: 100%;
+
+    .contant {
+        align-items: center;
+        justify-content: space-between;
+        letter-spacing: 2px;
+        font-weight: 500;
+
+        button {
+            border: none;
+            font-weight: 600;
+            background: white;
+        }
+
+        .ebook-button {
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
+
+
+.join-live-session {
+    background-image: url(../../../assets/liveSessionPage/img1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 245px; // Adjust based on your image's aspect ratio
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: -3px;
+
+    // Blue overlay
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 43, 135, 0.6); // Blue tint with 60% opacity (adjust RGB and opacity as needed)
+        z-index: 1; // Below content but above background
+    }
+
+    .contant {
+        position: relative; // Ensure content is above the overlay
+        z-index: 2; // Above the overlay
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        h1 {
+            font-size: 31px;
+            font-weight: 600;
+            color: white;
+            margin: auto;
+            width: 65%;
+            // line-height: 44px;
+        }
+
+        button {
+            @include gradiantbutton();
+            padding: 16px 32px;
+            font-size: 17px;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+}
+
+.gain-container {
+    padding: 55px;
+
+    h2 {
+        margin-block-end: 50px;
+        font-size: 3vw;
+        font-weight: 700;
+    }
+
+    .contant {
+        width: 100%;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+
+        .left {
+            width: 50%;
+
+            // This original p rule is now for desktop/tablet only,
+            // as mobile view uses .list-item divs
+            .list-item {
+                    margin: 15px 0;
+                    line-height: 1.5;
+                    color: #555;
+                    font-size: 14px; // Base font size for the list item
+                    display: block; // Ensures the whole div behaves as a block element
+                    position: relative; // For potential future absolute positioning if needed, though not strictly required with flex
+
+                    .list-item-header {
+                        display: flex; // Use flex for the header to align icon and text
+                        align-items: flex-start; // Align items to the top
+                        margin-bottom: 5px; // Space between header and description
+                    }
+
+                    i {
+                            margin-right: 8px;
+    font-size: 22px;
+    flex-shrink: 0;
+    position: relative;
+    top: 9px;
+                    }
+
+                    span {
+                        font-weight: 700;
+                        font-size: 16px; // Font size for the bold title
+                        display: inline; // Keep span inline within the flex container
+                        flex-grow: 1; // Allow span to take up available space
+                    }
+
+                    label {
+                        display: block; // Ensures description always starts on a new line
+                        margin-left: 24px; // Indent the label to align with the text after the icon
+                        // Adjust this value (e.g., 24px, 28px, etc.) based on your icon size + desired gap
+                        font-size: 15px; // Font size for the descriptive label
+                        line-height: 20px;
+                    }
+                }
+                
+                // Targeting the new .final-paragraph for mobile
+                .final-paragraph {
+                    display: block;
+                    margin-left: 0;
+                    font-weight: normal;
+                    color: initial;
+                    padding-left: 0; // Ensure no padding-left is inherited if not needed
+                    font-size: 14px; // Set explicit font size if it needs to be different from .list-item
+                    line-height: 1.5; // Ensure line-height is consistent
+
+                    // Reset any children styles that might interfere if they existed
+                    i, span, label {
+                        position: static;
+                        display: inline;
+                        margin: 0;
+                        padding: 0;
+                        font-size: inherit;
+                        font-weight: normal;
+                    }
+                }
+        }
+
+        .right {
+            width: 50%;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+.spots {
+    background: linear-gradient(to right, #05267c, #0466bd);
+    color: white;
+    padding-block: 50px;
+    padding-inline: 0px;
+    letter-spacing: 3px;
+
+    h1 {
+        width: 81%;
+        margin: auto;
+        font-size: 3vw;
+    }
+}
+
+.live-session-cards {
+    display: flex;
+    gap: 28px;
+    // padding: 20px;
+    margin-block: 50px;
+
+    .card {
+        width: 23%;
+        margin: auto;
+        background-color: rgb(244, 243, 243);
+        padding: 10px;
+        border: none;
+        gap: 1px;
+
+        img {
+            // height: 200px;
+            width: 100%;
+            height: auto;
+        }
+
+        h5 {
+            margin-top: 10px;
+        }
+
+        button {
+            @include gradiantbutton();
+            font-size: 1vw;
+            padding: 18px;
+        }
+
+    }
+}
+
+hr {
+    height: 2px;
+    color: #141313;
+}
+
+.common-FAQs-container {
+    text-align: center;
+    margin: 0 5% 63px;
+
+    .common-faqs {
+        font-size: 38px;
+        margin: 35px 0 70px;
+        font-weight: 700;
+        font-family: 'Atlassian Sans Ext';
+    }
+}
+
+.accordion {
+    margin-bottom: 50px;
+
+    .accordion-item {
+        margin-block: 10px;
+        background-color: #f5f5f5;
+        width: 80%;
+        margin: auto;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+    .accordion-header {
+        button {
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+
+    .accordion-collapse {
+        .accordion-body {
+            text-align: start;
+            color: #7a7474;
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    /* --- Main Section (Top Bar) --- */
+    .main .contant {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 20px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .main .contant p {
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    .main .contant button {
+        padding: 10px 20px;
+        font-size: 16px;
+        width: auto;
+        max-width: 80%;
+        position: static;
+        top: auto;
+        transform: none;
+    }
+
+
+    .join-live-session {
+        height: 222px;
+        /* Adjust height for mobile */
+        padding: 20px 15px;
+        position: relative;
+        top: 0;
+
+
+        .contant {
+            h1 {
+                font-size: 18px;
+                /* Smaller font size for heading */
+                line-height: 1.3;
+                width: 90%;
+                /* Adjust width to fit screen */
+                margin: 12px auto 20px;
+                /* Center and add bottom margin */
+                padding: 0;
+                /* Remove horizontal padding */
+            }
+
+            button {
+                padding: 12px 25px;
+                /* Adjust button padding */
+                font-size: 16px;
+                /* Adjust button font size */
+            }
+        }
+    }
+
+    /* --- What You'll Gain Section --- */
+    .gain-container {
+        padding: 25px 30px;
+        text-align: center;
+
+        h2 {
+            margin-block-end: 16px;
+            /* Adjusted margin */
+            font-size: 28px;
+            /* Smaller font size for heading */
+        }
+
+        .contant {
+            flex-direction: column;
+            /* Stack left and right vertically */
+            gap: 20px;
+            /* Reduced gap */
+
+            .left {
+                width: 100%;
+                /* Full width for text content */
+                text-align: left;
+                /* Keep text left-aligned for readability */
+
+                // Targeting the new .list-item div for mobile
+                .list-item {
+                    margin: 15px 0;
+                    line-height: 1.5;
+                    color: #555;
+                    font-size: 14px; // Base font size for the list item
+                    display: block; // Ensures the whole div behaves as a block element
+                    position: relative; // For potential future absolute positioning if needed, though not strictly required with flex
+
+                    .list-item-header {
+                        display: flex; // Use flex for the header to align icon and text
+                        align-items: flex-start; // Align items to the top
+                        margin-bottom: 5px; // Space between header and description
+                    }
+
+                    i {
+                        margin-right: 8px; // Space between icon and text
+                        font-size: 16px; // Adjust icon size if needed
+                        flex-shrink: 0;
+                        position: relative;
+                        top: 5px;
+                    }
+
+                    span {
+                        font-weight: 700;
+                        font-size: 16px; // Font size for the bold title
+                        display: inline; // Keep span inline within the flex container
+                        flex-grow: 1; // Allow span to take up available space
+                    }
+
+                    label {
+                        display: block; // Ensures description always starts on a new line
+                        margin-left: 24px; // Indent the label to align with the text after the icon
+                        // Adjust this value (e.g., 24px, 28px, etc.) based on your icon size + desired gap
+                        font-size: 15px; // Font size for the descriptive label
+                        line-height: 20px;
+                    }
+                }
+                
+                // Targeting the new .final-paragraph for mobile
+                .final-paragraph {
+                    display: block;
+                    margin-left: 0;
+                    font-weight: normal;
+                    color: initial;
+                    padding-left: 0; // Ensure no padding-left is inherited if not needed
+                    font-size: 14px; // Set explicit font size if it needs to be different from .list-item
+                    line-height: 1.5; // Ensure line-height is consistent
+
+                    // Reset any children styles that might interfere if they existed
+                    i, span, label {
+                        position: static;
+                        display: inline;
+                        margin: 0;
+                        padding: 0;
+                        font-size: inherit;
+                        font-weight: normal;
+                    }
+                }
+            }
+
+            .right {
+                width: 100%;
+                /* Full width for the image */
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    /* --- Spots Are Limited Section --- */
+    .spots {
+        padding-block: 40px;
+        /* Adjusted vertical padding */
+        padding-inline: 15px;
+        /* Add horizontal padding */
+        text-align: center;
+        /* Center align text */
+
+        h1 {
+            width: 95%;
+            /* Adjust width for mobile */
+            font-size: 19px;
+            /* Smaller font size for heading */
+            line-height: 1.3;
+            margin: auto;
+            /* Center the heading */
+            letter-spacing: 1px;
+            /* Reduced letter spacing */
+        }
+    }
+
+    /* --- Live Session Cards Section --- */
+    .live-session-cards {
+        flex-direction: column;
+        /* Stack cards vertically */
+        gap: 20px;
+        /* Reduced gap between cards */
+        margin-block: 30px;
+        /* Reduced vertical margin */
+        padding: 0 20px;
+        /* Add horizontal padding */
+
+        .card {
+            width: 100%;
+            /* Full width for each card */
+            margin: 0 auto;
+            /* Center the card */
+            padding: 15px;
+            /* Adjusted padding inside card */
+            text-align: center;
+            /* Center card content */
+
+            img {
+                width: 100%;
+                height: auto;
+                /* Ensure aspect ratio is maintained */
+                margin-bottom: 10px;
+                /* Space below image */
+            }
+
+            h5 {
+                font-size: 18px;
+                /* Smaller heading inside card */
+                margin-top: 10px;
+                margin-bottom: 8px;
+            }
+
+            p {
+                font-size: 14px;
+                /* Smaller paragraph inside card */
+                line-height: 1.4;
+                margin-bottom: 15px;
+            }
+
+            button {
+                font-size: 16px;
+                /* Adjust button font size */
+                padding: 12px 20px;
+                /* Adjust button padding */
+                width: 90%;
+                /* Make button wider */
+                display: block;
+                /* Make button a block element */
+                margin: 0 auto;
+                /* Center the button */
+            }
+        }
+    }
+
+    /* --- Horizontal Rule --- */
+    hr {
+        margin: 30px 20px;
+        /* Add margin around the HR */
+    }
+
+    /* --- Common FAQs Section --- */
+    .common-FAQs-container {
+        margin: 0 15px 40px;
+        /* Adjusted margins */
+
+        .common-faqs {
+            font-size: 28px;
+            /* Smaller FAQ heading */
+            margin: 25px 0 40px;
+            /* Adjusted margins */
+        }
+    }
+
+    .accordion {
+        margin-bottom: 30px;
+        /* Reduced margin */
+
+        .accordion-item {
+            width: 95%;
+            /* Adjust width for mobile */
+            margin: 10px auto;
+            /* Center items and add vertical space */
+        }
+
+        .accordion-header {
+            button {
+                font-size: 16px;
+                /* Smaller button font size */
+                padding: 15px 20px;
+                /* Adjust padding for better touch area */
+            }
+        }
+
+        .accordion-collapse {
+            .accordion-body {
+                font-size: 14px;
+                /* Smaller body text */
+                padding: 15px 20px;
+                /* Adjust padding */
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Main section (top bar) - existing styles */
+    .main .contant {
+        display: flex;
+        font-size: 19px;
+        padding: 12px 26px;
+
+        p {
+            position: relative;
+            top: 6px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            position: relative;
+            top: 0px;
+            width: 190px;
+        }
+    }
+
+    /* --- Join Live Session Section (Tablet) --- */
+    .join-live-session {
+        height: 300px;
+        /* Increased height for better visual impact on tablets */
+        padding: 30px 20px;
+        position: relative;
+        top: -2px;
+
+        .contant {
+            h1 {
+                font-size: 28px;
+               width: 80%;
+              margin: 20px auto;
+            }
+
+            button {
+                padding: 15px 28px;
+                font-size: 17px;
+            }
+        }
+    }
+
+    /* --- What You'll Gain Section (Tablet) --- */
+    .gain-container {
+        padding: 60px 40px;
+        /* Increased padding */
+
+        h2 {
+            margin-block-end: 60px;
+            /* More space below heading */
+            font-size: 40px;
+            /* Larger heading */
+        }
+
+        .contant {
+            flex-direction: row;
+            /* Keep side-by-side layout for tablets */
+            gap: 40px;
+            /* Slightly increased gap */
+            align-items: flex-start;
+            /* Align items to the start for better text flow */
+
+            .left {
+                width: 60%;
+                /* Give more space to text content */
+
+                // Existing p rule for tablet/desktop
+                .list-item {
+                    margin: 15px 0;
+                    line-height: 1.5;
+                    color: #555;
+                    font-size: 14px; // Base font size for the list item
+                    display: block; // Ensures the whole div behaves as a block element
+                    position: relative; // For potential future absolute positioning if needed, though not strictly required with flex
+
+                    .list-item-header {
+                        display: flex; // Use flex for the header to align icon and text
+                        align-items: flex-start; // Align items to the top
+                        margin-bottom: 5px; // Space between header and description
+                    }
+
+                    i {
+                        margin-right: 8px; // Space between icon and text
+                        font-size: 16px; // Adjust icon size if needed
+                        flex-shrink: 0;
+                        position: relative;
+                        top: 5px;
+                    }
+
+                    span {
+                        font-weight: 700;
+                        font-size: 16px; // Font size for the bold title
+                        display: inline; // Keep span inline within the flex container
+                        flex-grow: 1; // Allow span to take up available space
+                    }
+
+                    label {
+                        display: block; // Ensures description always starts on a new line
+                        margin-left: 24px; // Indent the label to align with the text after the icon
+                        // Adjust this value (e.g., 24px, 28px, etc.) based on your icon size + desired gap
+                        font-size: 15px; // Font size for the descriptive label
+                        line-height: 20px;
+                    }
+                }
+                
+                // Targeting the new .final-paragraph for mobile
+                .final-paragraph {
+                    display: block;
+                    margin-left: 0;
+                    font-weight: normal;
+                    color: initial;
+                    padding-left: 0; // Ensure no padding-left is inherited if not needed
+                    font-size: 14px; // Set explicit font size if it needs to be different from .list-item
+                    line-height: 1.5; // Ensure line-height is consistent
+
+                    // Reset any children styles that might interfere if they existed
+                    i, span, label {
+                        position: static;
+                        display: inline;
+                        margin: 0;
+                        padding: 0;
+                        font-size: inherit;
+                        font-weight: normal;
+                    }
+                }
+            }
+
+            .right {
+                width: 40%;
+                /* Reduced width for image to balance content */
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    /* --- Spots Are Limited Section (Tablet) --- */
+    .spots {
+        padding-block: 60px;
+        /* More vertical padding */
+        padding-inline: 40px;
+        /* Horizontal padding */
+
+        h1 {
+            width: 75%;
+            /* Adjust width for better line length */
+            font-size: 38px;
+            /* Larger heading */
+            line-height: 1.4;
+            letter-spacing: 2px;
+            /* Slightly reduced letter spacing */
+        }
+    }
+
+    /* --- Live Session Cards Section (Tablet) --- */
+    .live-session-cards {
+        flex-direction: row;
+        /* Display cards in a row */
+        flex-wrap: wrap;
+        /* Allow cards to wrap to the next line */
+        justify-content: center;
+        /* Center cards horizontally */
+        gap: 30px;
+        /* Consistent gap between cards */
+        margin-block: 60px;
+        /* More vertical margin */
+        padding: 0 40px;
+        /* Horizontal padding */
+
+        .card {
+            width: 45%;
+            /* Two cards per row for tablets */
+            margin: 0;
+            /* Remove auto margin to allow flexbox to handle spacing */
+            padding: 20px;
+            /* More padding inside cards */
+
+            img {
+                margin-bottom: 15px;
+                /* More space below image */
+            }
+
+            h5 {
+                font-size: 20px;
+                /* Larger heading inside card */
+                margin-top: 15px;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 16px;
+                /* Larger paragraph inside card */
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+
+            button {
+                font-size: 17px;
+                /* Larger button font */
+                padding: 15px 25px;
+                /* Larger button padding */
+                width: auto;
+                /* Allow button to size based on content */
+                display: inline-block;
+                /* Make button inline-block */
+            }
+        }
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1307px) {
+    .main .contant {
+        display: flex;
+        font-size: 22px;
+        padding: 14px 28px 14px 48px;
+
+        p {
+            position: relative;
+            top: 6px;
+        }
+
+        button {
+            padding: 9px 14px;
+            font-size: 18px;
+            font-weight: 600;
+            position: relative;
+            top: -1px;
+        }
+    }
+
+    // Since .list-item is now used universally for these points,
+    // ensure styles for larger screens are also applied to .list-item
+    .gain-container .contant .left {
+        .list-item { // Target .list-item for larger screens as well
+            font-size: 18px;
+            /* Adjust font size for larger screens if needed */
+            span {
+                font-size: 24px;
+                /* Adjust span font size for larger screens if needed */
+            }
+            label {
+                font-size: 18px;
+                margin-left: 30px; /* Adjust indentation for larger screens */
+            }
+        }
+        // Ensure the original p:last-child (now .final-paragraph) is also targeted
+        .final-paragraph { // Target .final-paragraph for larger screens
+            font-size: 18px;
+        }
+    }
+
+    .live-session-cards {
+        padding: 60px 8% 6px;
+    }
+
+    /* --- Join Live Session Section (Tablet) --- */
+    .join-live-session {
+        height: 300px;
+        /* Increased height for better visual impact on tablets */
+        padding: 30px 20px;
+        position: relative;
+        top: -2px;
+
+        .contant {
+            h1 {
+                font-size: 28px;
+               width: 80%;
+              margin: 20px auto;
+            }
+
+            button {
+                padding: 15px 28px;
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1308px) and (max-width: 1440px) {
+    .main .contant {
+        display: flex;
+        font-size: 29px;
+        padding: 14px 30px 7px 93px;
+
+        button {
+            padding: 11px 20px;
+            font-size: 19px;
+            font-weight: 600;
+            position: relative;
+            top: -4px;
+        }
+    }
+
+    .gain-container .contant .left {
+        .list-item { // Target .list-item for larger screens as well
+            font-size: 19px;
+            /* Adjust font size for larger screens if needed */
+            span {
+                font-size: 25px;
+                /* Adjust span font size for larger screens if needed */
+            }
+            label {
+                font-size: 19px;
+                margin-left: 32px; /* Adjust indentation for larger screens */
+            }
+        }
+        .final-paragraph { // Target .final-paragraph for larger screens
+            font-size: 19px;
+        }
+    }
+
+    .live-session-cards {
+        padding: 60px 8% 6px;
+    }
+
+    /* --- Join Live Session Section (Tablet) --- */
+    .join-live-session {
+        height: 300px;
+        /* Increased height for better visual impact on tablets */
+        padding: 30px 20px;
+        position: relative;
+        top: -2px;
+
+        .contant {
+            h1 {
+                font-size: 28px;
+               width: 80%;
+              margin: 20px auto;
+            }
+
+            button {
+                padding: 15px 28px;
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1441px) {
+    .main .contant {
+        display: flex;
+        font-size: 30px;
+        padding: 14px 30px 7px 93px;
+
+        button {
+            padding: 12px 20px;
+            font-size: 21px;
+            font-weight: 600;
+            position: relative;
+            top: -4px;
+        }
+    }
+
+    .gain-container .contant .left {
+        .list-item { // Target .list-item for largest screens as well
+            font-size: 20px;
+            /* Adjust font size for largest screens if needed */
+            span {
+                font-size: 26px;
+                /* Adjust span font size for largest screens if needed */
+            }
+            label {
+                font-size: 20px;
+                margin-left: 34px; /* Adjust indentation for largest screens */
+            }
+        }
+        .final-paragraph { // Target .final-paragraph for largest screens
+            font-size: 20px;
+        }
+    }
+
+    .live-session-cards {
+        padding: 60px 8% 6px;
+    }
+
+    /* --- Join Live Session Section (Tablet) --- */
+    .join-live-session {
+        height: 300px;
+        /* Increased height for better visual impact on tablets */
+        padding: 30px 20px;
+        position: relative;
+        top: -2px;
+
+        .contant {
+            h1 {
+                font-size: 28px;
+               width: 80%;
+              margin: 20px auto;
+            }
+
+            button {
+                padding: 15px 28px;
+                font-size: 17px;
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+@import "node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+html, body {
+  overflow-x: hidden;
+}
+
+$blue : #0310c1;
+$font : 'calibri';
+
+$peach: #F9F7F4;
+$primary-blue: #0056b3; // A strong, professional blue
+$secondary-text: #343a40; // Dark grey for body text
+$light-grey: #f8f9fa; // Very light grey for backgrounds
+$medium-grey: #6c757d; // For less emphasized text
+$accent-peach: #ffe0b2; 
+
+$sidebar-width: 260px;
+$header-bg: #2c3e50;
+$header-text-color: #ffffff;
+$nav-item-active-gradient: linear-gradient(to left, rgb(58 66 151), rgb(71 120 235 / 76%));
+$nav-item-active-text: #ffffff;
+$text-color: #333;
+$icon-color: #666;
+$hover-bg-color: #e6e6e6; // Light gray hover
+$border-radius: 0.5rem;
+$logo-base-height: 70px;
+$header-height: 35px;
+$bg-color: #f3f3f3;
+$text-color: #555;
+
+@mixin button() {
+    color: rgb(0, 42, 255);
+    border-radius: 30px;
+    border: 5px solid rgb(0, 191, 255);
+    padding-block: 5px;
+    padding-inline: 30px;
+    margin-inline-start: 30px;
+}
+@mixin gradiantbutton(){
+    background-image: linear-gradient(to right, black , $blue);
+    color: white;
+    border: none;
+    padding-inline:20px ;
+    padding-block: 7px;
+}
+
+.dark-btn{
+    background-color: #003087;
+    background-image: linear-gradient(to right, black, rgb(1, 23, 168));
+    border: none;
+}
+
+.outline-btn {
+   background: none;
+                border: 1px solid white;
+              padding: 8px 20px;
+}

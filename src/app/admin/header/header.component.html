@@ -1,0 +1,16 @@
+<header class="main-header" [class.sidebar-open-mobile]="isSidebarOpen" #mainHeader>
+  <div class="left">
+    <img src="../../../assets/transparent-logo.png" alt="Logo" class="header-logo" />
+
+    <div class="insights">
+      <span class="icon-wrapper" (click)="onToggleSidebar()">
+        <i class="bi bi-window-sidebar"></i>
+      </span>
+      <span class="section-title">Insights / {{ currentPage }}</span>
+    </div>
+  </div>
+
+  <div class="right">
+    <img src="../../../assets/admin/person-profile.jpeg" alt="User" class="profile-image" />
+  </div>
+</header>

@@ -1,0 +1,274 @@
+@import '../../../styles.scss';
+
+.main {
+  background: linear-gradient(to right, #05267c, #0466bd);
+  font-family: $font;
+  color: white;
+  width: 100%;
+
+  .contant {
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 2px;
+    font-weight: 500;
+
+    button {
+      border: none;
+      font-weight: 600;
+      background: white;
+    }
+
+    .ebook-button {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+.billing-page {
+    font-family: "Inter", sans-serif;
+    background-color: #f1efef;
+    padding: 11px 45px;
+    width: 100%;
+    margin: auto;
+}
+
+.billing-header {
+  text-align: center;
+  margin-bottom: 40px;
+
+  .logo {
+     height: 95px;
+  }
+
+  .subtext {
+    color: #666;
+    margin-top: 8px;
+  }
+
+  .steps {
+    margin-top: 16px;
+
+    .step {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background-color: #e0e0e0;
+      color: #333;
+    }
+
+    .active {
+      background-color: #003366;
+      color: white;
+    }
+  }
+}
+
+.billing-form {
+  display: flex;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-left,
+.form-right {
+  flex: 1;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-group {
+  display: flex;
+  gap: 16px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+
+  .payment-icon {
+    height: 20px;
+  }
+}
+
+.note {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 24px;
+}
+
+.wallet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.pay-button {
+  background-color: #003366;
+  color: white;
+  padding: 14px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.pay-button:hover {
+  background-color: #002244;
+}
+
+.summary-item,
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.summary-total {
+  font-weight: bold;
+}
+
+.coupon {
+  display: flex;
+  gap: 8px;
+
+  input {
+    flex: 1;
+  }
+
+  button {
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+// Media Queries
+@media (max-width: 767px) {
+   .main .contant {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .main .contant p {
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+
+  .main .contant button {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: auto;
+    max-width: 80%;
+    position: static;
+    top: auto;
+    transform: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main .contant {
+    display: flex;
+    font-size: 19px;
+    padding: 12px 26px;
+
+    p {
+      position: relative;
+      top: 6px;
+    }
+    button {
+      padding: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      position: relative;
+      top: 0px;
+      width: 190px;
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1307px) {
+    .main .contant {
+    display: flex;
+    font-size: 22px;
+    padding: 14px 28px 14px 48px;
+
+    p {
+      position: relative;
+      top: 6px;
+    }
+    button {
+      padding: 9px 14px;
+      font-size: 18px;
+      font-weight: 600;
+      position: relative;
+      top: -1px;
+    }
+  }
+}
+
+@media (min-width: 1308px) and (max-width: 1440px) {
+     .main .contant {
+    display: flex;
+    font-size: 29px;
+    padding: 14px 30px 7px 93px;
+
+    button {
+      padding: 11px 20px;
+      font-size: 19px;
+      font-weight: 600;
+      position: relative;
+      top: -4px;
+    }
+  }
+}
+
+@media (min-width: 1441px) {
+     .main .contant {
+    display: flex;
+    font-size: 30px;
+    padding: 18px 30px 10px 93px;
+
+    button {
+              padding: 10px 40px;
+        font-size: 25px;
+      font-weight: 600;
+      position: relative;
+      top: -4px;
+    }
+  }
+}

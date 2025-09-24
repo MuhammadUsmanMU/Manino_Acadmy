@@ -1,0 +1,99 @@
+<div class="manage-pages-container">
+  <div class="table-header">
+    <h3>All Courses ({{ courses.length }})</h3>
+    <div class="filters">
+      <div class="custom-dropdown" (click)="toggleSortDropdown()">
+        <span>{{ selectedSort || 'Sort By' }}</span>
+        <i class="fa-solid fa-caret-down"></i>
+        <ul *ngIf="showSortDropdown" class="dropdown-options">
+          <li (click)="selectSort('Asc')">Asc</li>
+          <li (click)="selectSort('Desc')">Desc</li>
+        </ul>
+      </div>
+
+      <div class="custom-dropdown" (click)="toggleLimitDropdown()">
+        <span>{{ selectedLimit || 'Items per page' }}</span>
+        <i class="fa-solid fa-caret-down"></i>
+        <ul *ngIf="showLimitDropdown" class="dropdown-options">
+          <li (click)="selectLimit(10)">10</li>
+          <li (click)="selectLimit(20)">20</li>
+          <li (click)="selectLimit(30)">30</li>
+          <li (click)="selectLimit(40)">40</li>
+        </ul>
+      </div>
+
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+          type="text"
+          placeholder="Search"
+          [(ngModel)]="searchTerm"
+          (ngModelChange)="currentPage = 1"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr class="head">
+          <th>#</th>
+          <th>Title</th>
+          <th>Instructor</th>
+          <th>Category</th>
+          <th>Subcategory</th>
+          <th>Status</th>
+          <th class="actions-heading">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of paginatedTable" class="data">
+          <td>{{ item.id }}</td>
+          <td class="name"><img [src]="item.img" alt="" /> {{ item.title }}</td>
+          <td>{{ item.instructor ? item.instructor : 'N/A' }}</td>
+          <td>{{ item.category }}</td>
+          <td>{{ item.subCategory ? item.subCategory : 'N/A' }}</td>
+          <td>
+            <span class="tag">
+              <span
+                class="dot"
+                [ngStyle]="{
+                  background: item.status === 'Active' ? '#28a745' : '#d9534f'
+                }"
+              ></span>
+              {{ item.status }}
+            </span>
+          </td>
+          <td class="action-icons">
+            <i class="bi bi-pencil"></i>
+            <i class="fa-solid fa-eye"></i>
+            <i class="bi bi-trash"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <i
+      class="bi bi-chevron-left"
+      (click)="prevPage()"
+      [class.disabled]="currentPage === 1"
+    ></i>
+
+    <span
+      *ngFor="let page of [].constructor(totalPages); let i = index"
+      [class.active]="currentPage === i + 1"
+      (click)="changePage(i + 1)"
+    >
+      {{ i + 1 }}
+    </span>
+
+    <i
+      class="bi bi-chevron-right"
+      (click)="nextPage()"
+      [class.disabled]="currentPage === totalPages"
+    ></i>
+  </div>
+</div>

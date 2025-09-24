@@ -1,0 +1,109 @@
+<div class="main">
+    <div class="contant">
+        <p>Download our Free Coaching e-Book and Begin Your Certification Now!</p>
+        <button>    
+            <a href="../../../assets/coaching e-book.pdf" target="_blank" class="ebook-button">
+                Download Free e-Book
+            </a>
+        </button>
+
+    </div>
+</div>
+
+<app-navbar></app-navbar>
+
+<div class="signup-container">
+  <div class="left-section">
+    <div class="mannino-logo">
+      <img src="../../../assets/transparent-logo.png" alt="The Mannino Logo" routerLink="/home">
+    </div>
+
+    <div class="progress-message">
+      <h1>Yes! we're making progress!</h1>
+      <p>every minute & every second</p>
+    </div>
+
+    <div class="main-content-block">
+      <img src="../../../assets/vedio.png" alt="Video" class="video-placeholder">
+    </div>
+
+    <div class="bottom-message">
+      <p>Begin your learning journey today and experience the transformative power of personalized education.</p>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="login-content">
+      <h1 class="welcome-back-text">Welcome back!</h1>
+      <p class="glad-text">We're glad to have you back.</p>
+
+      <form (ngSubmit)="onLogin()">
+        <div class="form-group">
+          <label for="email">Email address <span class="required">*</span></label>
+          <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Email address" required #emailInput="ngModel" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+          <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched || submitted)" class="error-message">
+            <span *ngIf="emailInput.errors?.['required']">Email address is required.</span>
+            <span *ngIf="emailInput.errors?.['pattern']">Please enter a valid email address.</span>
+          </div>
+        </div>
+
+        <div class="form-group password-group">
+          <label for="password">Password <span class="required">*</span></label>
+          <input [type]="showPassword ? 'text' : 'password'" id="password" name="password" [(ngModel)]="password" placeholder="Password" required #passwordInput="ngModel">
+          <span class="password-toggle" (click)="togglePasswordVisibility('password')">
+            <i [class]="showPassword ? 'far fa-eye-slash' : 'far fa-eye'"></i>
+          </span>
+          <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched || submitted)" class="error-message">
+            Password is required.
+          </div>
+        </div>
+
+        <div class="remember-forgot">
+          <div class="terms-checkbox">
+            <input type="checkbox" id="rememberMe" name="rememberMe" [(ngModel)]="rememberMe">
+            <label for="rememberMe" class="custom-checkbox"></label>
+            <span>Remember Me</span>
+          </div>
+          <a href="#" class="forgot-password-link">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="login-button">Login</button>
+
+        <div *ngIf="loginFailed" class="error-message login-failed-message">
+          Login failed. Please check your email and password.
+        </div>
+        <div *ngIf="loginSuccess" class="success-message">
+          Login successful! Redirecting...
+        </div>
+      </form>
+
+      <div class="login-as-section">
+        <p class="login-as-text">Login as</p>
+        <div class="role-buttons">
+          <button class="role-button">Instructor</button>
+          <button class="role-button">Student</button>
+          <button class="role-button">Admin</button>
+        </div>
+      </div>
+
+      <p class="dont-have-account">Don't have an Account? <a routerLink="/signup" class="signup-link">Sign up</a></p>
+
+      <div class="separator">
+        <span>OR</span>
+      </div>
+
+      <button class="google-signup-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="google-icon">
+          <path d="M12.24 10.285V11.2h2.235c-.09 1.125-.63 1.83-1.575 2.415-.81.54-1.92.93-3.18.93-2.61 0-4.73-2.07-4.73-4.635s2.12-4.635 4.73-4.635c1.47 0 2.45.615 3.005 1.17l1.795-1.785C15.86 3.99 13.9 3 11.265 3 6.09 3 1.995 7.14 1.995 12.315s4.095 9.315 9.27 9.315c5.385 0 9.07-3.9 9.07-8.91 0-.705-.075-1.29-.195-1.875H12.24z" fill="#4285F4"/>
+          <path d="M11.265 21.63c-2.43 0-4.5-1.005-6.03-2.58L.96 23.36C3.26 25.59 7.02 27 11.265 27c4.245 0 7.905-1.41 10.455-3.84l-2.73-2.07c-1.515 1.05-3.48 1.635-5.46 1.635z" fill="#34A853"/>
+          <path d="M22.095 12.315c0-1.875-.195-3.33-.51-4.71H19.26V7.05H12.24v2.79h6.165c.015.39.06.78.06 1.17 0 1.905-.69 3.48-1.92 4.605l2.73 2.07c1.86-1.725 2.925-4.215 2.925-7.32z" fill="#FBBC05"/>
+          <path d="M1.995 12.315c0-1.485.405-2.91 1.11-4.065L.96 5.46C.33 6.645 0 7.92 0 9.27c0 1.35.345 2.58.96 3.705l2.145 1.635c-.705-1.155-1.11-2.58-1.11-4.065z" fill="#EA4335"/>
+        </svg>
+        <span>Sign in with Google</span>
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

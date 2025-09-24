@@ -1,0 +1,199 @@
+@import '../../../../styles.scss';
+
+.vertual {
+    display: flex;
+    background: linear-gradient(to right, #05267c, #0466bd);
+    // padding: 33px;
+    // padding-inline: 10px;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    .contant {
+        width: 45%;
+
+        h4 {
+            font-size: 23px;
+            font-weight: 700;
+
+        }
+
+        p {
+           font-size: 15px;
+           color: #d7d2d2;
+        }
+    }
+
+    .days {
+        text-align: center;
+         .day-text{
+            font-size: 23px;
+            font-weight: 700;
+         }
+        h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            font-weight: 800;
+
+        }
+
+        .count {
+            display: flex;
+            gap: 20px;
+
+            p {
+                font-size: 0.5vw;
+            }
+
+            .line {
+                border: 1px solid white;
+                height: 43px;
+                margin-top: 5px;
+            }
+
+            .day{
+                text-align: center;
+            }
+        }
+    }
+
+    button {
+            // height: 50px;
+    padding: 10px 9px;
+    border: none;
+    color: #101cc5;
+    font-weight: 800;
+    font-size: 17px;
+    background: #ffffff;
+    }
+}
+
+@media (max-width:767px) {
+    .vertual {
+        flex-direction: column;
+        gap: 35px;
+        padding: 20px 20px;
+
+
+        .contant,
+        .days,
+        button {
+            width: 80%;
+            margin: auto;
+            font-size: 5vw;
+        }
+
+        button,
+        .contant {
+            text-align: center;
+
+            h4 {
+                font-size: 5vw;
+            }
+
+            p {
+                font-size: 3vw;
+            }
+
+            font-size: 3vw;
+        }
+
+        .days {
+            h2 {
+                font-size: 4vw;
+                text-align: center;
+                margin-block-end: 10px;
+            }
+
+            .count {
+                justify-content: space-around;
+
+                h2 {
+                    font-size: 4vw;
+                }
+
+                p {
+                    font-size: 3vw;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .vertual {
+        gap: 5%;
+        padding: 28px 35px;
+
+        .contant{
+            h4{
+                font-size: 20px;
+            }
+
+            p{
+                font-size: 14px;
+            }
+        }
+
+        .days{
+            .day-text{
+                font-size: 22px;
+            }
+
+            h2{
+                font-size: 28px;
+            }
+        }
+
+        button{
+            padding: 14px 10px;
+            font-size: 13px;
+            width: 170px;
+        }
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px)  {
+    .vertual {
+        gap: 9%;
+        padding: 28px 35px;
+
+        button{
+                padding: 14px 10px;
+                font-size: 15px;
+                width: 182px;
+        }
+    }
+}
+
+@media (min-width: 1441px) {
+    .vertual {
+            gap: 11%;
+            padding: 35px 35px;
+
+            .contant{
+                h4{
+                    font-size: 26px;
+                }
+
+                p{
+                    font-size: 18px;
+                }
+            }
+
+            .days{
+                .count{
+                    p{
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            button{
+               padding: 14px 10px;
+               font-size: 17px;
+               width: 190px;
+            }
+    }
+}

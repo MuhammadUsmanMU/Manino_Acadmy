@@ -1,0 +1,36 @@
+
+<div class="main">
+    <div class="contant">
+        <p>Download our Free Coaching e-Book and Begin Your Certification Now!</p>
+        <button>    
+            <a href="../../../assets/coaching e-book.pdf" target="_blank" class="ebook-button">
+                Download Free e-Book
+            </a>
+        </button>
+
+    </div>
+</div>
+
+<app-navbar></app-navbar>
+
+<div class="expert-container">
+  <div class="heading">
+    <h2>Real-World Experts. Transformational Coaches. Global Leaders.</h2>
+    <p>
+       Our instructors are certified executive coaches, leadership consultants, and Fortune 500 professionals who bring decades of real-world business, leadership, and coaching experience into every session.
+    </p>
+  </div>
+  <div class="cards d-flex">
+    <div class="card" *ngFor="let member of teamMembers">
+      <img [src]="member.imageUrl" alt="">
+      <!-- <button><i class="fa-regular fa-heart"></i></button> -->
+      <div class="data">
+        <h5>{{member.name}}</h5>
+        <h6>{{member.title}}</h6>
+        <p>{{member.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

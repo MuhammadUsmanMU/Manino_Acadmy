@@ -1,0 +1,112 @@
+.ai-settings-container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 5px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  font-family: 'Inter', sans-serif;
+
+  .ai-settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+    h2 {
+      font-size: 15px;
+    font-weight: 500;
+    color: #605b5b;
+    font-family: sans-serif;
+    margin-bottom: 0;
+    }
+  }
+
+ .bottom-buttons-container {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    gap: 10px;
+    padding-top: 15px;
+    margin-top: 0;
+
+    button {
+        padding: 10px 8px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        font-weight: 600;
+    }
+
+    .reset-section {
+        color: #074a07;
+    border: 1px solid #074a07;
+    border-radius: 5px;
+    padding: 5px 8px;
+    background: none;
+
+        &:hover {
+            background-color: #e0e0e0;
+        }
+    }
+
+    .save-button {
+        background-image: linear-gradient(to left, rgb(58, 66, 151), rgba(71, 120, 235, 0.76)) !important;
+        color: #ffffff !important;
+       border: none;
+       width: 115px;
+
+        &:hover {
+            background-color: #145cb3;
+        }
+    }
+
+    .reset-all{
+      background: none;
+      border: none;
+      color: gray;
+    }
+}
+
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #f3f3f3;
+    margin-bottom: 24px;
+    gap: 32px;
+
+    button {
+      padding: 10px 0;
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      background: none;
+      color: #6b7280;
+      position: relative;
+      cursor: pointer;
+
+      &.active {
+        font-weight: 600;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          height: 2px;
+          width: 100%;
+          background-color: #fbbf24;
+        }
+      }
+    }
+  }
+
+  .tab-section {
+    // Styling for the container of subsections, added to match the image spacing
+    & > div {
+      padding-top: 16px; // Add some top padding if needed for visual separation
+    }
+
+    // This styling applies to the subsection component's root element
+    app-ai-writer-subsection {
+      display: block; // Ensure it takes full width
+      margin-bottom: 32px; // Space between subsections
+    }
+  }
+}

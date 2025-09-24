@@ -1,0 +1,225 @@
+@import '../../../styles.scss';
+
+:host {
+  display: block; // Ensures the host element respects height
+  --header-height: #{$header-height};
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $bg-color;
+  width: 100%;       // ✅ ensure it spans full width
+  z-index: 2000;
+  height: $header-height;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  padding: 10px 20px;
+  box-sizing: border-box;
+
+  .left,
+  .right {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; // Prevent shrinking when space is tight
+  }
+
+  .left {
+    gap: 100px;
+    min-width: 0; // Allows content to shrink if needed
+
+    .header-logo {
+      height: $logo-base-height;
+      border-radius: 9999px;
+      object-fit: cover;
+      // By default, visible on web, will be hidden by media query + class on mobile
+    }
+
+    .insights {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e7e5e5;
+        border-radius: 6px;
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+        color: #4a5568;
+        cursor: pointer; // Added for better UX
+      }
+
+      .section-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: $text-color;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline;
+      }
+    }
+  }
+
+  .menu-toggle-button {
+    background: none;
+    border: none;
+    color: $text-color; // Match existing text color for consistency
+    font-size: 1.8rem; // Larger for touch targets
+    cursor: pointer;
+    padding: 0.5rem;
+    display: none; // This button is not used as per your request
+    order: -1;
+  }
+
+  .right {
+    .profile-image {
+      width: 30px;
+      height: 30px;
+      border-radius: 28%; // This is an unusual border-radius, usually 50% for circular
+      object-fit: cover;
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+/* --- Responsive Breakpoints --- */
+
+/* Mobile: up to 767px */
+@media (max-width: 767px) {
+  .main-header {
+    height: 55px;
+    padding: 10px 15px;
+
+    .left {
+      gap: 50px; // Smaller gap for mobile
+      // On mobile, the logo and insights text are initially hidden
+      .header-logo,
+      .section-title {
+        display: none;
+      }
+      // Make the icon-wrapper larger for tap target on mobile
+      .insights .icon-wrapper {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+      }
+    }
+
+    .right {
+      .profile-image {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+/* Tablet: 768px–1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-header {
+    height: 60px;
+    padding: 5px 10px;
+
+    .left {
+      // Ensure logo and insights are visible on tablet
+      .header-logo,
+      .insights .section-title {
+        display: block; // Logo is block, section-title is block or flex depending on context
+      }
+
+      .header-logo {
+        height: 65px;
+      }
+
+      .insights {
+        .icon-wrapper {
+          width: 24px;
+          height: 24px;
+        }
+
+        .section-title {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .right {
+      .profile-image {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+}
+
+/* Desktop: 1025px–1440px */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .main-header {
+    height: 65px;
+    padding: 5px 10px;
+
+    .left {
+      // Ensure logo and insights are visible on desktop
+      .header-logo,
+      .insights .section-title {
+        display: block;
+      }
+
+      .header-logo {
+        height: 70px;
+      }
+    }
+
+    .right {
+      .profile-image {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+/* XL Screens: 1441px+ */
+@media (min-width: 1441px) {
+  .main-header {
+    height: 70px;
+    padding: 5px 10px;
+
+    .left {
+      // Ensure logo and insights are visible on XL
+      .header-logo,
+      .insights .section-title {
+        display: block;
+      }
+
+      .header-logo {
+        height: 75px;
+      }
+
+      .insights {
+        .icon-wrapper {
+          width: 30px;
+          height: 30px;
+        }
+
+        .section-title {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .right {
+      .profile-image {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+

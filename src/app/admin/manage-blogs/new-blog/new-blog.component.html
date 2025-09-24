@@ -1,0 +1,68 @@
+<div class="manage-pages-container">
+  <div class="add-page-form">
+    <h3>Add Blog</h3>
+    <form>
+      <!-- Title -->
+      <label for="title">Title <span>*</span></label>
+      <input type="text" placeholder="Add title" id="title" />
+
+      <!-- Categories and Tags -->
+      <label for="categories">Categories <span>*</span></label>
+      <input type="text" placeholder="Select category" id="categories" />
+
+      <label for="tags">Tags</label>
+      <input type="text" placeholder="Add tags" id="tags" />
+
+      <!-- Blog Content -->
+      <label for="blog-content">Blog Content <span>*</span></label>
+      <textarea
+        name="blog-content"
+        id="blog-content"
+        placeholder="Write your blog content here..."
+        rows="8"
+      ></textarea>
+
+      <!-- Blog Image and Status -->
+      <div class="image-status-container">
+        <div class="blog-image">
+          <label for="image">Blog image <span>*</span></label>
+          <div class="imageUpload">
+            <label for="file-upload" class="file-label">
+              <span class="plus">+</span>
+              <input type="file" id="file-upload" />
+            </label>
+            <p>
+              Upload jpg, jpeg, gif, png image only, size should not exceed 5MB.
+              Recommended image size: 1200x630
+            </p>
+          </div>
+        </div>
+
+        <div class="status-toggle">
+          <span>Blog status</span>
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+          <span class="status-label">Published</span>
+        </div>
+      </div>
+
+      <!-- Meta title -->
+      <label for="meta-title">Meta title <span>*</span></label>
+      <input type="text" placeholder="Add meta title" id="meta-title" />
+
+      <!-- Meta description -->
+      <label for="meta-description">Meta description <span>*</span></label>
+      <textarea
+        name="meta-description"
+        id="meta-description"
+        rows="4"
+        placeholder="Add meta description"
+      ></textarea>
+
+      <!-- Submit button -->
+      <button type="submit" class="subscription">Add blog</button>
+    </form>
+  </div>
+</div>

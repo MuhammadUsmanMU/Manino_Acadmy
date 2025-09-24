@@ -1,0 +1,2057 @@
+@import '../../../styles.scss';
+
+.main {
+  background: linear-gradient(to right, #05267c, #0466bd);
+  font-family: $font;
+  color: white;
+  width: 100%;
+
+  .contant {
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 2px;
+    font-weight: 500;
+
+    button {
+      border: none;
+      font-weight: 600;
+      background: white;
+    }
+
+    .ebook-button {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+.our-story-container {
+ display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 5%;
+ background-color: #F9F7F4;
+
+  .left {
+    width: 50%;
+    padding: 0px 10% 0 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // .about {
+    //   display: flex;
+    //   align-items: center;
+    //   gap: 7px;
+
+    //   .line {
+    //     border: 1px solid #0e0e9f;
+    //     width: 15px; // Adjusted to match image
+    //     height: 1px;
+    //   }
+
+    //   h4 {
+    //     color: #003087;
+    //     font-size: 20px; // Adjusted to match image
+    //     font-weight: 700;
+    //   }
+    // }
+    h2 {
+      font-size: 28px; // Adjusted to match image
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 14px; // Adjusted to match image
+      color: #333;
+      line-height: 20px;
+      margin-bottom: 15px; // Adjusted to match image
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        font-size: 14px; // Adjusted to match image
+        color: #333;
+        margin-bottom: 10px;
+
+        i {
+          color: #ff0000;
+          margin-right: 8px;  
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  .right{
+    width: 50%;
+    padding: 10px;
+
+    img{
+      border-radius: 8px;
+    }
+  }
+}
+
+.our-values-container {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 5%;
+
+  .left2 {
+    width: 50%;
+    padding: 10px;
+
+    img {
+              max-width: 100%;
+              width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+  }
+
+  .right2 {
+    width: 50%;
+    padding: 0px 10% 0 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // background-color: #f9f7f4;
+
+    .about {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+      .line {
+        border: 1px solid #003087;
+        width: 15px; // Adjusted to match image
+        height: 1px;
+      }
+
+      h4 {
+        color: #003087;
+        font-size: 18px; // Adjusted to match image
+        font-weight: 700;
+      }
+    }
+
+    h2 {
+      font-size: 24px; // Adjusted to match image
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 14px; // Adjusted to match image
+      color: #333;
+      line-height: 20px;
+      margin-bottom: 15px; // Adjusted to match image
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 10px;
+
+      li {
+        font-size: 14px; // Adjusted to match image
+        color: #333;
+        margin-bottom: 10px;
+
+        i {
+          color: #ff0000;
+          margin-right: 8px;
+          font-size: 11px;
+        }
+      }
+    }
+
+    button {
+      background-color: #ff6200;
+      color: white;
+      border: none;
+      padding: 9px 18px; // Adjusted to match image
+      font-size: 15px; // Adjusted to match image
+      font-weight: 600;
+      border-radius: 5px;
+      width: 140px; // Adjusted to match image
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background-color: #e65c00;
+      }
+    }
+  }
+}
+
+.expert-container {
+  width: 100%;
+  background-color: #f0f4f8;
+  box-sizing: border-box;
+
+  .heading {
+    text-align: center;
+    padding: 20px;
+
+    .about {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+
+      .line {
+        border: 1px solid #003087;
+        width: 20px;
+        height: 1px;
+      }
+
+      p {
+        color: #003087;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0;
+      }
+    }
+
+    h4 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #003087;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.5;
+      margin: 0 auto;
+      max-width: 60%;
+    }
+  }
+
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+
+    .card {
+          width: 23%;
+    background-color: #ffffff;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+
+
+      img {
+           width: 100%;
+           height: 180px;
+           object-fit: cover;
+      }
+
+      button {
+        background: none;
+        border: none;
+        font-size: 20px; // Adjusted to match image icon size
+        color: #ff0000;
+        cursor: pointer;
+        margin: 10px 0;
+        position: absolute; // Position the heart button
+        top: 70%; // Adjusted to match image placement
+        right: 10px; // Adjusted to match image placement
+        padding: 5px; // Added for better click area
+      }
+
+      .data {
+        padding: 15px; // Adjusted to match image padding
+        text-align: left;
+
+        h5 {
+          font-size: 18px; // Matches image
+          color: #003087;
+          margin-bottom: 5px;
+          font-weight: 700; // Added to match image boldness
+        }
+
+        p {
+          font-size: 14px; // Matches image
+          color: #333;
+          margin: 0;
+          font-weight: 500; // Adjusted to match image weight
+        }
+      }
+    }
+  }
+}
+
+.enrollment-container {
+  background: linear-gradient(to right, #05267c, #0466bd);
+  color: white;
+  width: 100%;
+  margin: 0 auto;
+
+  .enrollment-header {
+    text-align: center;
+    // padding-block: 40px;
+
+    h4{
+      font-size: 26px;
+    }
+
+    p {
+          width: 46%;
+    margin: 20px auto;
+    color: rgb(209, 209, 209);
+    font-size: 20px;
+    }
+  }
+
+  .contant {
+    display: flex;
+    gap: 10%;
+    padding-block: 50px;
+
+    .left {
+      width: 100%;
+      padding-inline-start: 50px;
+      
+      h4{
+            font-size: 23px;
+      }
+
+      p {
+        font-size: 19px;
+        color: #e9e4e4;
+
+        strong{
+              font-size: 23px;
+        }
+
+        label{
+              font-size: 20px;
+             margin-left: 10px;
+             color: #e9e4e4;
+        }
+      }
+      .sub-text {
+              padding: 8px 0;
+        }
+
+      button {
+              color: rgb(5, 29, 149);
+    border-radius: 45px;
+    border: 5px solid rgb(67, 98, 251);
+    padding-block: 11px;
+    padding-inline: 30px;
+    font-size: 21px;
+    font-weight: 700;
+         
+          i{
+            position: relative;
+            right: -15px;
+          }
+      }
+    }
+
+    .right {
+      float: right !important;
+    }
+  }
+}
+
+.accadmy-lms-container {
+  text-align: center;
+  margin-top: 40px;
+  width: 100%;
+  padding: 10px 3%;
+
+  h4 {
+    color: #003087;
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  h5 {
+    font-weight: 700;
+    font-size: 29px;
+  }
+
+  .contant {
+    display: flex;
+    // gap: 50px;
+    margin: 40px 0;
+
+    .left {
+      width: 50%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+      }
+    }
+
+    .right {
+      width: 50%;
+      text-align: left;
+      padding: 10px 30px;
+      // margin-top: 40px;
+
+      h5 {
+            font-size: 22px;
+      }
+
+      ul {
+        list-style: none;
+        margin-top: 30px;
+
+        li {
+              display: flex;
+              align-items: flex-start;
+              margin-block: 18px;
+              font-weight: 600;
+              font-size: 16px;
+              color: #504d4d;
+
+              i{
+                  font-size: 18px;
+                  position: relative;
+                  top: 3px;
+                  left: -4px;
+              }
+        }
+      }
+    }
+  }
+}
+
+.our-plateform-container {
+  padding-block: 50px;
+  background: linear-gradient(to right, #05267c, #0466bd);
+  width: 100%;
+  margin: 0 auto;
+
+  .our-plateform-header {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    color: white;
+
+    h4 {
+      font-weight: 700;
+      font-size: 3vw;
+    }
+
+    p {
+      font-size: 1.8vw;
+      color: rgb(250, 248, 248);
+    }
+  }
+
+  .contant {
+    display: flex;
+    justify-content: space-evenly;
+    // gap: 20px;
+
+    .card {
+         margin-top: 30px;
+    background-color: #F9F7F4;
+    width: 28%;
+    padding: 25px 0;
+
+
+      img {
+            height: 130px;
+            width: 85%;
+           margin: auto;
+      }
+
+      .cardContant {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        margin-block-start: 20px;
+        height: 50%;
+
+        h3 {
+          font-size: 2.3vw;
+          font-weight: 700;
+        }
+
+        p {
+          width: 100%;
+          text-align: center;
+          font-size: 1.5vw;
+        }
+      }
+
+      button {
+            margin-inline: 28px;
+            background-image: linear-gradient(to right, black, #0143bb);
+            color: white;
+            border: none;
+            font-size: 1.3vw;
+            padding: 18px;
+            margin-top: 20px;
+      }
+    }
+  }
+}
+
+.form-container {
+  background-image: linear-gradient(to right, black, grey);
+  color: white;
+  padding: 90px;
+  width: 100%;
+  margin: 0 auto;
+
+  .contant {
+    display: flex;
+    gap: 10%;
+    background-color: rgb(113, 112, 112);
+    padding: 50px 10px 10px 50px;
+
+    .left {
+      width: 50%;
+
+      h4 {
+        font-size: 25px;
+      }
+
+      label {
+        color: #d3d3d3;
+        font-size: 16px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        height: 40px;
+        font-size: medium;
+        padding: 21px;
+      }
+
+      textarea {
+        height: 150px;
+        width: 100%;
+      }
+
+      .name {
+        display: flex;
+        gap: 14px;
+        width: 100%;
+
+        .firstname {
+          width: 50%;
+          margin: 10px 0;
+        }
+        .lastname {
+          width: 50%;
+          margin: 10px 0;
+        }
+      }
+
+      .email {
+        margin: 10px 0;
+      }
+      .message {
+        margin: 12px 0;
+      }
+
+      button {
+        background-image: linear-gradient(to right, black, #0746b7);
+        color: white;
+        padding-inline: 45px;
+        border: none;
+        font-weight: 600;
+        padding-block: 9px;
+      }
+    }
+
+    .right {
+      width: 40%;
+      margin-top: 5%;
+
+      h1 {
+        font-size: 45px;
+      }
+
+      p {
+        font-size: 28px;
+        letter-spacing: 2px;
+        padding: 11px 0;
+        color: #d1cacaf5;
+      }
+      .emailData {
+        margin-top: 20%;
+      }
+
+      .phoneData {
+        margin-top: 10%;
+      }
+
+      .emailData,
+      .phoneData {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .data {
+          h3 {
+            font-size: 20px;
+            margin: 0;
+          }
+          label {
+            color: #d1cacaf5;
+          }
+        }
+
+        .icons {
+          border: 1px solid black;
+          background: black;
+          /* Changed height and width to be the same for a square */
+              height: 35px;
+            width: 35px;
+           font-size: 12px;
+          color: gray;
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+// Mobile (max-width: 768px) - No changes needed
+@media (max-width: 767px) {
+  .main .contant {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .main .contant p {
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+
+  .main .contant button {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: auto;
+    max-width: 80%;
+    position: static;
+    top: auto;
+    transform: none;
+  }
+
+  .our-story-container {
+      flex-direction: column; /* This is already set, and good for stacking on mobile */
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 15px 5%;
+    display: flex;
+    
+    .left {
+      justify-content: center;
+        align-items: center;
+        padding: 10px;
+      width: 100%;
+      padding: 10px;
+
+      .about {
+        gap: 10px;
+        margin-bottom: 15px;
+
+        .line {
+          width: 15px;
+        }
+
+        h4 {
+          font-size: 20px;
+        }
+      }
+
+      h2 {
+        color: #000080; /* A slightly darker, richer blue for impact (Navy) */
+  font-family: 'Georgia', serif; /* Changed font for a more classic, professional feel */
+  font-size: 25px; /* Increased font size for better hierarchy */
+  font-style: normal; /* Removed italic for a more modern, strong heading */
+  margin-bottom: 15px; /* Space below the heading */
+  position: relative; /* For potential pseudo-elements if you want a decorative line */
+  padding-bottom: 5px 20px 20px; 
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      ul {
+        list-style: none; /* Remove default bullet points */
+        padding: 0; /* Remove default padding */
+        li {
+          font-size: 14px;
+          margin-bottom: 8px;
+          display: flex; /* Make li a flex container */
+          flex-wrap: wrap; /* Allow content to wrap */
+          align-items: flex-start; /* Align items to the start of the cross-axis */
+
+          i {
+            margin-right: 10px; /* Space between icon and text */
+            flex-shrink: 0;
+            position: relative;
+            top: 7px;
+          }
+
+          strong {
+            flex-grow: 1; /* Allow strong tag to take available space */
+            flex-basis: auto; /* Allow strong tag to determine its own width */
+          }
+
+          .nested-p {
+            flex-basis: 100%; /* Make the nested p take full width */
+            margin-left: 22px; /* Indent the paragraph to align with the bold text */
+            /* Adjust 28px based on the width of your icon + desired gap */
+            margin-top: 5px; /* Add a small space between bold text and paragraph */
+          }
+        }
+      }
+    }
+
+    .right {
+      width: 100%;
+
+      img {
+       max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        width: 100%;
+      }
+    }
+}
+
+  .our-values-container {
+    flex-direction: column; /* This is already set, and good for stacking on mobile */
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 15px 5%;
+    display: flex;
+    flex-direction: column;
+
+    .left2 {
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+      width: 100%;
+      padding: 10px;
+      order: 2; /* This makes the image appear second */
+
+      img{
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        width: 100%;
+      }
+    }
+
+    .right2 {
+      width: 100%;
+      padding: 20px 7%;
+      order: 1; /* This makes the content appear first */
+
+      .about {
+        .line {
+          width: 15px;
+        }
+
+        h4 {
+          font-size: 18px;
+        }
+      }
+
+      h4 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 15px;
+        margin-left: 19px;
+      }
+
+      ul {
+        li {
+          font-size: 14px;
+          margin-bottom: 8px;
+        }
+      }
+
+      button {
+        font-size: 13px;
+        padding: 10px;
+        width: 125px;
+      }
+    }
+}
+
+  .expert-container {
+            width: 100%;
+        padding: 20px;
+
+    .heading {
+      padding: 10px;
+
+      .about {
+        gap: 10px;
+        margin-bottom: 10px;
+
+        .line {
+          width: 15px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      h4 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 14px;
+        max-width: 90%;
+      }
+    }
+
+    .cards {
+      flex-direction: column;
+      padding: 10px;
+      gap: 15px;
+
+      .card {
+        width: 100%;
+
+        img {
+          height: 150px;
+        }
+
+        button {
+          font-size: 16px;
+        }
+
+        .data {
+          padding: 8px;
+
+          h5 {
+            font-size: 16px;
+          }
+
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  .enrollment-container {
+        padding: 30px 0 30px 20px;
+        text-align: left;
+
+        .enrollment-header {
+            padding-block: 30px;
+            // text-align: left;
+
+            h4 {
+                font-size: 24px; /* Slightly smaller for mobile screens */
+                margin-bottom: 10px;
+            }
+
+            p {
+                width: 90%; /* Adjust width to fit mobile screens better */
+                margin: 15px auto;
+                font-size: 16px; /* Smaller font size */
+                line-height: 1.4;
+            }
+        }
+
+        .contant {
+            flex-direction: column; /* Stack content vertically */
+            gap: 30px; /* Space between stacked elements */
+            padding: 0;
+            padding-block: 0;
+
+            .left {
+                    padding: 0 26px;
+                width: 100%; /* Full width for the left section */
+
+                h4 {
+                    font-size: 20px;
+                    margin: 0;
+                }
+
+                p {
+                     font-size: 18px;
+                      padding: 0;
+                     margin: 0;
+                     margin-bottom: 10px;
+                     margin-left: 10px;
+
+                    strong {
+                        font-size: 20px; /* Adjust strong text size */
+                    }
+
+                    label{
+                        font-size: 18px;
+                    }
+                }
+
+                .sub-text {
+                    padding: 10px 0;
+                    margin: 0;
+                    display: grid;
+                }
+
+                button {
+                    margin-top: 20px; /* Add some top margin */
+                    border-radius: 30px;
+                    padding: 12px 10px;
+                    width: 165px;
+                    font-size: 14px;
+                    font-weight: 700;
+
+                    i {
+                        right: 0; /* Adjust icon position */
+                    }
+                }
+            }
+
+            .right {
+                width: 100%; /* Adjust width for the image */
+                float: none; /* Remove float */
+
+                img {
+                    width: 100%; /* Ensure image is responsive */
+                    height: auto; /* Maintain aspect ratio */
+                }
+            }
+        }
+    }
+
+    .accadmy-lms-container {
+        margin-top: 30px; /* Adjusted margin */
+        padding: 0 15px; /* Add some horizontal padding */
+
+        h4 {
+            font-size: 24px; /* Smaller heading */
+        }
+
+        h5 {
+            font-size: 22px; /* Smaller sub-heading */
+            margin-bottom: 20px;
+        }
+
+        .contant {
+            flex-direction: column; /* Stack content vertically */
+            gap: 20px; /* Reduced gap */
+            margin-block: 30px; /* Reduced margin */
+
+            .left {
+                width: 100%; /* Full width for image */
+                padding-inline-start: 0; /* Remove padding */
+                float: none; /* Remove float */
+                margin: 0 auto; /* Center image */
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .right {
+                width: 100%; /* Full width for text content */
+                text-align: center; /* Center align text */
+                margin-top: 20px; /* Reduced margin */
+
+                h5 {
+                    font-size: 16px; /* Smaller font size */
+                    margin-bottom: 20px;
+                }
+
+                ul {
+                    padding: 0;
+                    margin-top: 15px; /* Reduced margin */
+                    text-align: left; /* Keep list items left-aligned for readability */
+                    padding-left: 20px; /* Add padding for list bullets/icons */
+
+                    li {
+                        margin-block: 10px; /* Reduced margin */
+                        font-size: 13px; /* Smaller font size */
+                        line-height: 1.3;
+                        display: flex;
+                        align-items: flex-start;
+
+                        i{
+                          flex-shrink: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .our-plateform-container {
+        padding-block: 30px; /* Reduced padding */
+
+        .our-plateform-header {
+            width: 90%; /* Adjust width for better fit */
+            margin: auto;
+
+            h4 {
+                font-size: 24px; /* Adjust font size */
+            }
+
+            p {
+                font-size: 16px; /* Adjust font size */
+                width: 100%; /* Full width for paragraph */
+            }
+        }
+
+        .contant {
+            flex-direction: column; /* Stack cards vertically */
+            gap: 20px; /* Reduced gap between cards */
+            padding: 0 20px; /* Add horizontal padding */
+
+            .card {
+                width: 100%; /* Full width for each card */
+                padding: 20px 0; /* Adjust padding */
+                margin-block: 20px; /* Adjust margin */
+
+                img {
+                    height: 100px; /* Smaller image height */
+                    width: 80%; /* Adjust image width */
+                    object-fit: contain; /* Ensure image fits well */
+                }
+
+                .cardContant {
+                    width: 90%; /* Adjust content width */
+                    margin-block-start: 15px; /* Reduced margin */
+
+                    h3 {
+                        font-size: 20px; /* Smaller heading */
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        font-size: 14px; /* Smaller paragraph */
+                        line-height: 1.4;
+                    }
+                }
+
+                button {
+                    margin-inline: 0; /* Remove horizontal margin */
+                    font-size: 16px; /* Smaller font size */
+                    padding: 12px; /* Adjusted padding */
+                    width: 70%; /* Make button wider */
+                    display: block; /* Ensure button takes full width */
+                    margin: 20px auto 0; /* Center button and add top margin */
+                }
+            }
+        }
+    }
+
+  .form-container {
+    padding: 30px 15px; /* Reduced overall padding */
+
+    .contant {
+      flex-direction: column; /* Stack sections vertically */
+      gap: 30px; /* Space between stacked sections */
+      padding: 30px 20px; /* Adjusted internal padding */
+
+      .left {
+        width: 100%; /* Full width for form */
+
+        h4 {
+          font-size: 22px; /* Smaller heading */
+          margin-bottom: 15px;
+        }
+
+        label {
+          font-size: 14px; /* Smaller label font size */
+        }
+
+        input,
+        textarea {
+          height: 35px; /* Shorter input fields */
+          padding: 10px; /* Adjusted padding */
+          font-size: 14px; /* Smaller font size */
+        }
+
+        textarea {
+          height: 100px; /* Shorter textarea */
+        }
+
+        .name {
+          flex-direction: column; /* Stack first and last name inputs */
+          gap: 0; /* Remove gap */
+          width: 100%;
+
+          .firstname,
+          .lastname {
+            width: 100%; /* Full width for each input */
+            margin: 10px 0; /* Add margin */
+          }
+        }
+
+        .email,
+        .message {
+          margin: 10px 0; /* Consistent margin */
+        }
+
+        button {
+          padding-inline: 30px; /* Adjusted padding */
+          padding-block: 8px; /* Adjusted padding */
+          font-size: 16px; /* Smaller font size */
+          width: 100%; /* Full width button */
+          margin-top: 20px; /* Add top margin */
+        }
+      }
+
+      .right {
+        width: 100%; /* Full width for contact info */
+        margin-top: 0; /* Remove top margin */
+        text-align: center; /* Center align text */
+
+        h1 {
+          font-size: 32px; /* Smaller heading */
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 20px; /* Smaller paragraph */
+          padding: 5px 0; /* Reduced padding */
+          line-height: 1.3;
+        }
+
+        .emailData,
+        .phoneData {
+          margin-top: 20px; /* Adjusted margin */
+          justify-content: center; /* Center align icons and text */
+          flex-direction: column; /* Stack icon and data */
+          text-align: center; /* Center align text within data */
+
+          .icons {
+            margin-bottom: 5px; /* Add space below icon */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .data {
+            h3 {
+              font-size: 18px; /* Smaller heading */
+            }
+
+            label {
+              font-size: 14px; /* Smaller label */
+            }
+          }
+        }
+
+        .emailData {
+          margin-top: 15%; /* Keep some space */
+        }
+
+        .phoneData {
+          margin-top: 5%; /* Keep some space */
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main .contant {
+    display: flex;
+    font-size: 19px;
+    padding: 12px 26px;
+
+    p {
+      position: relative;
+      top: 6px;
+    }
+    button {
+      padding: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      position: relative;
+      top: 0px;
+      width: 190px;
+    }
+  }
+
+  .enrollment-container{
+        .right{
+          img{
+            height: 285px;
+          }
+        }
+  }
+
+  .our-story-container {
+           width: 100%;
+        padding: 15px 5%;
+
+    .left {
+        width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .about {
+
+        .line {
+          width: 15px; // Matches image
+          height: 1px;
+          border: 1px solid #0e0e9f;
+        }
+
+        h4 {
+          font-size: 20px; // Matches image
+          font-weight: 700;
+          color: #003087;
+        }
+      }
+
+      h2 {
+         color: #000080; /* A slightly darker, richer blue for impact (Navy) */
+  font-family: 'Georgia', serif; /* Changed font for a more classic, professional feel */
+  font-size: 30px; /* Increased font size for better hierarchy */
+  font-style: normal; /* Removed italic for a more modern, strong heading */
+  margin-bottom: 17px; /* Space below the heading */
+  position: relative; /* For potential pseudo-elements if you want a decorative line */
+  padding-bottom: 5px 20px 20px; 
+      }
+
+      p {
+        font-size: 15px;
+        color: #7c7979;
+        line-height: 20px;
+      }
+
+      .nested-p{
+        position: relative;
+        left: 23px;
+      }
+
+      ul {
+        padding: 0;
+
+        li {
+          font-size: 15px; // Matches image
+          color: #333;
+          margin-bottom: 8px; // Matches image
+
+          i {
+            color: #ff0000;
+            margin-right: 8px;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    .right {
+      width: 50%;
+
+      img {
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .our-values-container {
+    width: 100%;
+    padding: 15px 5%;
+
+    .left2 {
+      width: 50%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+
+    .right2 {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .about {
+
+        .line {
+          width: 15px; // Matches image
+          height: 1px;
+          border: 1px solid #003087;
+        }
+
+        h4 {
+          font-size: 18px; // Matches image
+          font-weight: 700;
+          color: #003087;
+        }
+      }
+
+      h2 {
+        font-size: 26px; // Matches image
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 15px;
+        color: #7c7979;
+        line-height: 20px;
+      }
+
+      .nested-p{
+        position: relative;
+        left: 23px;
+      }
+
+      ul {
+        padding: 0;
+
+        li {
+          font-size: 15px; // Matches image
+          color: #333;
+          margin-bottom: 8px; // Matches image
+
+          i {
+            color: #ff0000;
+            margin-right: 8px;
+            font-size: 13px;
+          }
+        }
+      }
+
+      button {
+        background-color: #ff6200;
+        color: white;
+        border: none;
+        padding: 9px 18px; // Matches image
+        font-size: 15px; // Matches image
+        font-weight: 600;
+        border-radius: 5px;
+        width: 140px; // Matches image
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background-color: #e65c00;
+        }
+      }
+    }
+  }
+
+  .expert-container {
+        padding: 35px 15%;
+
+    .heading {
+      padding: 15px;
+
+      h4 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 15px;
+        max-width: 70%;
+        line-height: 20px;
+      }
+    }
+
+    .cards {
+      padding: 15px;
+      gap: 15px;
+
+      .card {
+        width: 24%;
+
+        img {
+          height: 180px;
+        }
+
+        .data {
+          padding: 8px;
+
+          h5 {
+            font-size: 16px;
+          }
+
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  .enrollment-container {
+    padding: 50px 0 10px 30px;
+  }
+
+  .accadmy-lms-container {
+     padding: 10px 58px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1307px) {
+    .main .contant {
+    display: flex;
+    font-size: 22px;
+    padding: 14px 28px 14px 48px;
+
+    p {
+      position: relative;
+      top: 6px;
+    }
+    button {
+      padding: 9px 14px;
+      font-size: 18px;
+      font-weight: 600;
+      position: relative;
+      top: -1px;
+    }
+  }
+
+  .our-story-container {
+    padding: 15px 5%; /* Increased vertical padding for more breathing room */
+  overflow: hidden;
+
+    .left {
+      flex: 1; /* Allows the left column to take available space */
+  padding: 20px 0; 
+
+      .about {
+
+        .line {
+          width: 15px; // Matches image
+          height: 1px;
+          border: 1px solid #0e0e9f;
+        }
+
+        h4 {
+          font-size: 20px; // Matches image
+          font-weight: 700;
+          color: #003087;
+        }
+      }
+
+      h2 {
+        color: #000080; /* A slightly darker, richer blue for impact (Navy) */
+  font-family: 'Georgia', serif; /* Changed font for a more classic, professional feel */
+  font-size: 30px; /* Increased font size for better hierarchy */
+  font-style: normal; /* Removed italic for a more modern, strong heading */
+  margin-bottom: 20px; /* Space below the heading */
+  position: relative; /* For potential pseudo-elements if you want a decorative line */
+  padding-bottom: 5px 20px 20px; 
+      }
+
+      p {
+        font-size: 15px;
+        color: #7c7979;
+        line-height: 20px;
+      }
+
+      .nested-p{
+        position: relative;
+        left: 23px;
+      }
+
+      ul {
+        padding: 0;
+
+        li {
+          font-size: 15px; // Matches image
+          color: #333;
+          margin-bottom: 8px; // Matches image
+
+          i {
+            color: #ff0000;
+            margin-right: 8px;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    .right {
+      flex: 1; /* Allows the right column to take available space */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 10px;
+
+      img {
+         max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .our-values-container {
+    width: 100%;
+  padding: 15px 5%;
+
+    .left2 {
+      width: 50%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .right2 {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .about {
+
+        .line {
+          width: 15px; // Matches image
+          height: 1px;
+          border: 1px solid #003087;
+        }
+
+        h4 {
+          font-size: 18px; // Matches image
+          font-weight: 700;
+          color: #003087;
+        }
+      }
+
+      h4 {
+        font-size: 26px; // Matches image
+        font-weight: 700;
+        margin-bottom: 10px; // Matches image
+      }
+
+      p {
+        font-size: 15px;
+        color: #7c7979;
+        line-height: 20px;
+      }
+
+      .nested-p{
+        position: relative;
+        left: 23px;
+      }
+
+      ul {
+        padding: 0;
+
+        li {
+          font-size: 15px; // Matches image
+          color: #333;
+          margin-bottom: 8px; // Matches image
+
+          i {
+            color: #ff0000;
+            margin-right: 8px; 
+            font-size: 13px;
+          }
+        }
+      }
+
+      button {
+        background-color: #ff6200;
+        color: white;
+        border: none;
+        padding: 9px 18px; // Matches image
+        font-size: 15px; // Matches image
+        font-weight: 600;
+        border-radius: 5px;
+        width: 140px; // Matches image
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background-color: #e65c00;
+        }
+      }
+    }
+  }
+
+  .expert-container {
+        padding: 35px 15%;
+  }
+
+  .enrollment-container {
+    padding: 60px 0 10px 40px
+  }
+}
+
+@media (min-width: 1308px) and (max-width: 1440px) {
+     .main .contant {
+    display: flex;
+    font-size: 29px;
+    padding: 14px 30px 7px 93px;
+
+    button {
+      padding: 11px 20px;
+      font-size: 19px;
+      font-weight: 600;
+      position: relative;
+      top: -4px;
+    }
+  }
+
+  .our-story-container {
+    padding: 15px 5%; /* Increased vertical padding for more breathing room */
+  overflow: hidden;
+
+  .content-wrapper {
+  display: flex;
+  flex-direction: row; /* Default for desktop: image on right */
+  align-items: center; /* Vertically align items in the middle */
+  gap: 40px; /* Adds space between the left and right columns */
+  max-width: 1200px; /* Optional: Constrain maximum width for very large screens */
+  margin: 0 auto;
+}
+
+    .left {
+      flex: 1; /* Allows the left column to take available space */
+  padding: 20px 0; 
+
+      .about {
+
+        .line {
+          width: 15px; // Matches image
+          height: 1px;
+          border: 1px solid #0e0e9f;
+        }
+
+        h4 {
+          font-size: 20px; // Matches image
+          font-weight: 700;
+          color: #003087;
+        }
+      }
+
+      h2 {
+        color: #000080; /* A slightly darker, richer blue for impact (Navy) */
+  font-family: 'Georgia', serif; /* Changed font for a more classic, professional feel */
+  font-size: 32px; /* Increased font size for better hierarchy */
+  font-style: normal; /* Removed italic for a more modern, strong heading */
+  margin-bottom: 20px; /* Space below the heading */
+  position: relative; /* For potential pseudo-elements if you want a decorative line */
+  padding-bottom: 5px 20px 20px; 
+      }
+
+      p {
+        font-size: 15px;
+        color: #7c7979;
+        line-height: 20px;
+      }
+
+      .nested-p{
+        position: relative;
+        left: 23px;
+      }
+
+      ul {
+        padding: 0;
+
+        li {
+          font-size: 15px; // Matches image
+          color: #333;
+          margin-bottom: 8px; // Matches image
+
+          i {
+            color: #ff0000;
+            margin-right: 8px; 
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    .right {
+      flex: 1; /* Allows the right column to take available space */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 10px;
+
+      img {
+         max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .our-values-container {
+    width: 100%;
+  //  height: 430px;
+  padding: 15px 5%;
+
+    .left2 {
+      width: 50%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .right2 {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .about {
+
+        .line {
+          width: 15px; // Matches image
+          height: 1px;
+          border: 1px solid #003087;
+        }
+
+        h4 {
+          font-size: 18px; // Matches image
+          font-weight: 700;
+          color: #003087;
+        }
+      }
+
+      h4 {
+        font-size: 26px; // Matches image
+        font-weight: 700;
+        margin-bottom: 10px; // Matches image
+      }
+
+      p {
+        font-size: 15px;
+        color: #7c7979;
+        line-height: 20px;
+      }
+
+      .nested-p{
+        position: relative;
+        left: 23px;
+      }
+
+      ul {
+        padding: 0;
+
+        li {
+          font-size: 15px; // Matches image
+          color: #333;
+          margin-bottom: 8px; // Matches image
+
+          i {
+            color: #ff0000;
+            margin-right: 8px;
+            font-size: 13px;
+          }
+        }
+      }
+
+      button {
+        background-color: #ff6200;
+        color: white;
+        border: none;
+        padding: 9px 18px; // Matches image
+        font-size: 15px; // Matches image
+        font-weight: 600;
+        border-radius: 5px;
+        width: 140px; // Matches image
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background-color: #e65c00;
+        }
+      }
+    }
+  }
+
+  .expert-container {
+        padding: 35px 15%;
+  }
+
+  .enrollment-container {
+    padding: 60px 0 10px 40px
+  }
+}
+
+@media (min-width: 1441px) {
+     .main .contant {
+    display: flex;
+    font-size: 30px;
+    padding: 18px 30px 10px 93px;
+
+    button {
+              padding: 10px 40px;
+        font-size: 25px;
+      font-weight: 600;
+      position: relative;
+      top: -4px;
+    }
+  }
+
+  .our-story-container {
+    padding: 15px 5%; /* Increased vertical padding for more breathing room */
+  overflow: hidden; 
+
+    .left {
+      flex: 1; /* Allows the left column to take available space */
+  padding: 20px 0;
+
+      .about {
+
+        .line {
+          width: 15px; // Matches image
+          height: 1px;
+          border: 1px solid #0e0e9f;
+        }
+
+        h4 {
+          font-size: 20px; // Matches image
+          font-weight: 700;
+          color: #003087;
+        }
+      }
+
+      h2 {
+        color: #000080; /* A slightly darker, richer blue for impact (Navy) */
+  font-family: 'Georgia', serif; /* Changed font for a more classic, professional feel */
+  font-size: 38px; /* Increased font size for better hierarchy */
+  font-style: normal; /* Removed italic for a more modern, strong heading */
+  margin-bottom: 20px; /* Space below the heading */
+  position: relative; /* For potential pseudo-elements if you want a decorative line */
+  padding-bottom: 5px 20px 20px;
+      }
+
+      p {
+        font-size: 18px;
+        color: #7c7979;
+        line-height: 25px;
+      }
+
+      .nested-p{
+        position: relative;
+        left: 23px;
+      }
+
+      ul {
+        padding: 0;
+
+        li {
+          font-size: 19px; // Matches image
+          color: #333;
+          margin-bottom: 8px; // Matches image
+
+          i {
+            color: #ff0000;
+            margin-right: 8px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .right {
+     flex: 1; /* Allows the right column to take available space */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 10px;
+
+      img {
+        //  max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .our-values-container {
+    width: 100%;
+  //  height: 430px;
+  padding: 15px 5%;
+
+    .left2 {
+      width: 50%;
+      padding: 10px;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    }
+
+    .right2 {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .about {
+
+        .line {
+          width: 15px; // Matches image
+          height: 1px;
+          border: 1px solid #003087;
+        }
+
+        h4 {
+          font-size: 18px; // Matches image
+          font-weight: 700;
+          color: #003087;
+        }
+      }
+
+      h4 {
+        font-size: 26px; // Matches image
+        font-weight: 700;
+        margin-bottom: 10px; // Matches image
+      }
+
+      p {
+        font-size: 18px;
+        color: #7c7979;
+        line-height: 25px;
+      }
+
+      .nested-p{
+        position: relative;
+        left: 23px;
+      }
+
+      ul {
+        padding: 0;
+
+        li {
+          font-size: 19px; // Matches image
+          color: #333;
+          margin-bottom: 8px; // Matches image
+
+          i {
+            color: #ff0000;
+            margin-right: 8px;
+           font-size: 15px;
+          }
+        }
+      }
+
+      button {
+        background-color: #ff6200;
+        color: white;
+        border: none;
+        padding: 9px 18px; // Matches image
+        font-size: 15px; // Matches image
+        font-weight: 600;
+        border-radius: 5px;
+        width: 140px; // Matches image
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background-color: #e65c00;
+        }
+      }
+    }
+  }
+
+  .accadmy-lms-container{
+    h4{
+      font-size: 35px;
+    }
+    h5{
+      font-size: 35px;
+    }
+    .contant{
+          margin-block: 65px;
+
+          .right{
+             h5{
+               font-size: 22px;
+               font-weight: 700;
+             }
+
+             ul{
+              li{
+                font-size: 18px;
+              }
+             }
+          }
+    }
+  }
+
+  .expert-container {
+        padding: 35px 15%;
+  }
+
+  .enrollment-container {
+    padding: 60px 0 10px 40px
+  }
+
+  .form-container {
+    .contant{
+      .left{
+        label{
+              font-size: 18px;
+        }
+
+        h4{
+          font-size: 32px;
+        }
+
+        button{
+          padding: 12px 60px;
+          padding-block: 0;
+        }
+      }
+    }
+  }
+}

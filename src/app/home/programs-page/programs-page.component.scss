@@ -1,0 +1,952 @@
+// Import your global styles if needed
+@import '../../../styles.scss';
+
+.main {
+  background: linear-gradient(to right, #05267c, #0466bd);
+  font-family: $font;
+  color: white;
+  width: 100%;
+
+  .contant {
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 2px;
+    font-weight: 500;
+
+    button {
+      border: none;
+      font-weight: 600;
+      background: white;
+    }
+
+    .ebook-button {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+
+.main-package-container {
+  background-color: #F9F7F4;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 5%;
+
+    .left {
+      width: 50%;
+    padding: 0px 10% 0 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+      h3 {
+        font-size: 2vw;
+        width: 50%;
+      }
+
+      button {
+        background-image: linear-gradient(to right, black, #0310c1);
+        color: white;
+        border: none;
+        padding-inline: 25px;
+        padding-block: 15px;
+        width: 210px;
+      }
+    }
+
+    .right{
+    width: 50%;
+    padding: 10px;
+
+    img{
+      border-radius: 8px;
+    }
+  }
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+
+  .card1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // Helps push button-wrapper to bottom
+    width: 35%;
+    background-color: #F9F7F4;
+    padding: 20px;
+    border-radius: 12px;
+    min-height: 1000px; // Keep this as a base, adjusted in media queries
+
+    .image {
+      border-radius: 50%;
+      height: 35px;
+      width: 35px;
+      padding: 2px;
+      border: 1px solid black;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    h3 {
+      margin-top: 20px;
+      font-size: large;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: small;
+      font-weight: 500;
+    }
+
+    h5 {
+      color: $blue; // Assuming $blue is defined in your _styles.scss
+      font-weight: 700;
+    }
+
+    h4 {
+      color: grey;
+    }
+
+    ul {
+      list-style-type: none; // No default bullets
+      padding: 0; // Remove default padding that might affect alignment
+
+      li {
+        display: flex; // Make li a flex container
+        align-items: flex-start; // Align items to the top if they have different heights
+        margin-block: 10px;
+        font-size: small; // Inherits from parent, can be overridden if needed
+        color: grey; // Ensure text color is consistent
+
+        i {
+          flex-shrink: 0; // Prevent icon from shrinking
+          padding-inline-end: 10px; // Space after the icon
+          color: green;
+        }
+      }
+    }
+
+    .exclusive ul {
+      list-style-type: disc; // Explicitly for exclusive features
+      padding-left: 20px; // Add some padding for the disc bullets
+      li {
+        display: list-item; // Revert to default list-item display for disc type
+        text-align: left; // Ensure it's left-aligned
+        margin-block: 5px; // Slightly less margin for tighter list
+        font-size: small;
+        i {
+            padding-inline-end: 0;
+        }
+      }
+    }
+
+    // Button wrapper for consistency and pushing to the bottom
+    .button-wrapper {
+      margin-top: auto; // Pushes buttons to the bottom
+      display: flex;
+      flex-direction: column;
+      gap: 10px; // Space between buttons
+
+      button {
+        @include gradiantbutton(); // Assuming this mixin is defined in your _styles.scss
+        width: 100%;
+        height: 50px;
+      }
+    }
+
+    // This might be redundant if button-wrapper is used consistently,
+    // but kept if there's a specific need for it in some cards.
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      button {
+        @include gradiantbutton();
+        width: 100%;
+        height: 50px;
+      }
+    }
+  }
+}
+
+.Fast-Track-container {
+  background: linear-gradient(to right, #05267c, #0466bd);
+  color: white;
+  padding: 60px 0;
+      margin-bottom: 2px;
+
+  .Fast-Track-inner-content { 
+           width: 100%;
+    padding: 0 5%;
+
+    .contant {
+      width: 100%; // Takes full width of its parent (.Fast-Track-inner-content)
+      display: flex;
+      justify-content: space-between; // Distribute space between left and right columns
+      align-items: center; // Vertically align content of left and right columns
+      margin-bottom: 25px; // Space between the top section and the bottom paragraph
+
+      .left {
+        width: calc(60% - 20px); // ~60% width minus half the gap
+        margin-top: 0; // Reset margin-top as alignment is handled by parent flexbox
+
+        h3 {
+          margin-bottom: 25px;
+        }
+
+        p {
+              margin-top: 0;
+            color: rgb(241 240 240);
+        }
+      }
+
+      .right {
+        width: calc(40% - 20px); // ~40% width minus half the gap
+
+        img {
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+
+    .bottom-paragraph { // Targeting the specific paragraph with a class
+      width: 100%; // Takes full width of its parent (.Fast-Track-inner-content)
+      margin: 0; // Reset margins
+      padding: 0; // Remove previous arbitrary padding
+      text-align: left; // Ensure left alignment
+      color: rgb(241 240 240);
+    }
+  }
+}
+
+.Flexible-learning-container {
+  .heading {
+        display: flex;
+        color: #0310c1;
+        align-items: center;
+        gap: 12px;
+
+        .line {
+            border: 1px solid #0310c1;
+            width: 20px;
+            height: 1px;
+        }
+    }
+
+    p {
+        font-weight: 700;
+    }
+
+    .cards {
+        display: flex;
+        gap: 20px;
+
+        .card1 {
+            width: 35%;
+            background-color: rgb(245 242 241);
+            padding: 20px;
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: column;
+            min-height: 500px;
+
+            .image {
+                border-radius: 50%;
+                height: 55px;
+                width: 55px;
+                padding: 7px;
+                border: 1px solid #8d8888;
+
+                img {
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+
+            h3 {
+                margin-top: 11px;
+                font-size: 19px;
+                font-weight: 700;
+                color: #666161;
+            }
+
+            p {
+                font-size: 13px;
+                font-weight: 500;
+                color: #a59e9e;
+                margin-bottom: 20px;
+            }
+
+            h5 {
+                color: #0310c1;
+                font-weight: 700;
+                font-size: 25px;
+            }
+
+            .include {
+                flex-grow: 1;
+                
+                h4 {
+                    color: #a59e9e;
+                    font-size: 20px;
+                    margin: 17px 0;
+                }
+
+                // Default list styling for lists that use Font Awesome icons (e.g., "Includes" lists)
+                ul {
+                    list-style-type: none; // Remove default bullets as we use custom icons
+                    padding-inline-start: 0px; // Reset default browser padding for UL
+
+                    li {
+                        display: flex; // Use flexbox for custom icon + text alignment
+                        align-items: flex-start;
+                        font-size: 13px;
+                        margin-block: 10px;
+                        color: #959191;
+                    }
+
+                    li i { // Icon styling
+                        flex-shrink: 0;
+                        width: 20px;
+                        text-align: center;
+                        color: green;
+                        position: relative;
+                        top: 4px;
+                    }
+
+                    li span { // Text content for lists with icons
+                        flex-grow: 1;
+                        padding-left: 10px; // Space between icon and text
+                    }
+                }
+
+                // Styling for H3 elements that contain an icon (like "EXCLUSIVE FEATURES")
+                h3:has(i) { // Targets h3 elements that contain an <i> tag
+                    display: flex;
+                    align-items: flex-start;
+                    font-size: small; // Keep original font size
+                    color: #666161; // Keep original color
+                    margin-top: 11px; // Maintain original margin
+                    
+                    i {
+                        flex-shrink: 0;
+                        width: 20px; // Give icon consistent space
+                        text-align: center;
+                        margin-right: 10px; 
+                        position: relative;
+                        top: 2px;
+                    }
+
+                    span { // New span for the text inside these h3s
+                        flex-grow: 1;
+                        // No padding-left needed here as margin-right on icon provides spacing
+                    }
+                }
+                
+                // Keep the general h3 style for those without icons or special formatting
+                h3 {
+                    // These properties will be overridden by h3:has(i) if an icon is present
+                    // Otherwise, they apply to h3 elements without icons
+                    margin-top: 11px;
+                    font-size: 19px; // This is the original larger size, adjust if needed
+                    font-weight: 700;
+                    color: #666161;
+                }
+
+
+                // Styling for lists that should have standard disc bullets (e.g., "EXCLUSIVE FEATURES" and "ICF CERTIFICATION")
+                // Apply to .exclusive ul and also the ul immediately following an h3
+                .exclusive ul,
+                h3 + ul { // Targets the UL inside .exclusive and the UL directly after an H3
+                    list-style-type: disc; // Use standard disc bullets
+                    padding-inline-start: 20px; // Add padding for the bullets to show and for alignment
+                    
+                    li {
+                        display: list-item; // Revert to default list item display for standard bullets
+                        align-items: unset; // Remove flex alignment from previous rules
+                        font-size: 13px; // Keep consistent font size
+                        margin-block: 10px; // Keep consistent margin
+                        color: #959191; // Keep consistent color
+                    }
+                    li i { // Hide icons in these lists if accidentally present in HTML
+                        display: none;
+                    }
+                    li span { // Remove padding if span is used but not needed for standard bullets
+                        padding-left: 0;
+                    }
+                }
+            }
+
+            
+        }
+    }
+}
+
+@media(max-width:767px) {
+  .main .contant {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .main .contant p {
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+
+  .main .contant button {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: auto;
+    max-width: 80%;
+    position: static;
+    top: auto;
+    transform: none;
+  }
+
+
+   .main-package-container {
+  flex-direction: column; /* This is already set, and good for stacking on mobile */
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 15px 5%;
+    display: flex;
+}
+
+.main-package-container .left {
+   justify-content: center;
+        align-items: center;
+        padding: 10px;
+      width: 100%;
+      padding: 10px;
+
+      h3{
+        font-size: 12px;
+      }
+}
+
+.main-package-container .left button{
+          width: 100%;
+          font-size: 3vw;
+}
+
+.main-package-container .left h2 {
+  color: #000080; /* A slightly darker, richer blue for impact (Navy) */
+  font-family: 'Georgia', serif; /* Changed font for a more classic, professional feel */
+  font-size: 30px; /* Increased font size for better hierarchy */
+  font-style: normal; /* Removed italic for a more modern, strong heading */
+  margin-bottom: 15px; /* Space below the heading */
+  position: relative; /* For potential pseudo-elements if you want a decorative line */
+  padding-bottom: 5px 20px 20px; 
+}
+
+
+.main-package-container .left ul {
+  color: #333; /* Softer black for better readability */
+  list-style: disc outside; /* Standard disc bullets, outside for alignment */
+  padding-left: 25px; /* Indent bullets from the left edge */
+  width: 90%; /* Allow content to take more width, adjust as needed */
+  font-size: 16px; /* Slightly adjusted font size */
+  line-height: 1.6; /* Increased line height for better readability */
+  margin-top: 0; /* Remove default top margin */
+}
+
+.main-package-container .left ul li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+.main-package-container .right {
+  width: 100%;
+}
+
+.main-package-container .right img {
+  max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        width: 100%;
+}
+
+
+  .Fast-Track-container {
+            padding: 40px 3%;
+
+    .Fast-Track-inner-content {
+    .contant {
+      flex-direction: column-reverse; // Stack content on mobile, image below text
+      margin-bottom: 30px; // Adjust spacing
+
+      .left {
+        width: 100%;
+        margin-top: 30px; // Space between image and text on mobile
+        h3 {
+              font-size: 20px;
+           line-height: 30px;
+          //  margin: 20px 0;
+           font-weight: 700;
+        }
+        p {
+            font-size: 18px;
+            line-height: 26px;
+            margin: 0;
+            color: #d9d8d8;
+        }
+      }
+      .right {
+        width: 100%;
+      }
+    }
+    .bottom-paragraph {
+      font-size: 18px;
+      line-height: 26px;
+      color: #d9d8d8;
+    }
+  }
+ }
+
+  .Flexible-learning-container {
+     padding: 20px 6%;
+        
+        p{
+                    font-size: 22px;
+        font-weight: 700;
+        text-align: left;
+        line-height: 25px;
+        margin-bottom: 18px;
+        }
+
+        .heading{
+            justify-content: left;
+            margin: 5px 0;
+        }
+        
+        .cards{
+            width: 100%;
+            flex-direction: column;
+            .card1{
+                width: auto;
+                min-height: auto; 
+                .include{
+                    height: auto;
+                }
+            }
+
+             .button-wrapper {
+          margin-top: 20px;
+        }
+        .button-container {
+          margin-top: 20px;
+        }
+        }
+  }
+}
+
+@media(min-width:768px) and (max-width:1024px) {
+  .main .contant {
+    display: flex;
+    font-size: 19px;
+    padding: 12px 26px;
+
+    p {
+      position: relative;
+      top: 6px;
+    }
+    button {
+      padding: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      position: relative;
+      top: 0px;
+      width: 190px;
+    }
+  }
+
+    .main-package-container {
+   width: 100%;
+        padding: 15px 5%;
+}
+
+.main-package-container .left {
+   width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+}
+
+.main-package-container .left h2 {
+   color: #000080; /* A slightly darker, richer blue for impact (Navy) */
+  font-family: 'Georgia', serif; /* Changed font for a more classic, professional feel */
+  font-size: 31px; /* Increased font size for better hierarchy */
+  font-style: normal; /* Removed italic for a more modern, strong heading */
+  margin-bottom: 17px; /* Space below the heading */
+  position: relative; /* For potential pseudo-elements if you want a decorative line */
+  padding-bottom: 5px 20px 20px; /* Space for a potential underline effect */
+}
+
+
+.main-package-container .left ul {
+  color: #333; /* Softer black for better readability */
+  list-style: disc outside; /* Standard disc bullets, outside for alignment */
+  padding-left: 25px; /* Indent bullets from the left edge */
+  width: 90%; /* Allow content to take more width, adjust as needed */
+  font-size: 17px; /* Slightly adjusted font size */
+  line-height: 1.6; /* Increased line height for better readability */
+  margin-top: 0; /* Remove default top margin */
+}
+
+.main-package-container .left ul li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+.main-package-container .right {
+  width: 50%;
+}
+
+.main-package-container .right img {
+  max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+}
+
+
+  .Flexible-learning-container {
+     padding: 20px 40px;
+        
+        .heading{
+            justify-content: center;
+
+            h5{
+                font-size: 14px;
+            }
+        }
+
+        p{
+            font-size: 20px;
+            text-align: left;
+        }
+    }
+
+    .cards{
+        flex-wrap: wrap;
+        justify-content: center;
+        .card1{
+            width: calc(50% - 10px);
+            min-height: 600px; 
+            .include{
+                height: auto;
+            }
+        }
+  }
+
+    .Fast-Track-container{
+    .Fast-Track-inner-content{
+      
+      .contant{
+        .left{
+          h3{
+              font-size: 28px;
+              line-height: 40px;
+          }
+          p{
+              font-size: 23px;
+              line-height: 35px;
+              margin: 0;;
+          }
+        }
+
+        .right{
+          img{
+            height: 400px;
+          }
+        }
+      }
+
+      .bottom-paragraph{
+              font-size: 23px;
+              line-height: 35px;
+              margin: 0;
+      }
+    }
+  }
+
+}
+
+@media (min-width:1025px) and (max-width:1440px) {
+    .main-package-container {
+  padding: 15px 5%; /* Increased vertical padding for more breathing room */
+  overflow: hidden;
+}
+
+.main-package-container .left {
+  flex: 1; /* Allows the left column to take available space */
+  padding: 20px 0; /* Adjusted padding within the left column */
+}
+
+.main-package-container .left h2 {
+  color: #000080; /* A slightly darker, richer blue for impact (Navy) */
+  font-family: 'Georgia', serif; /* Changed font for a more classic, professional feel */
+  font-size: 44px; /* Increased font size for better hierarchy */
+  font-style: normal; /* Removed italic for a more modern, strong heading */
+  margin-bottom: 20px; /* Space below the heading */
+  position: relative; /* For potential pseudo-elements if you want a decorative line */
+  padding-bottom: 5px 20px 20px; /* Space for a potential underline effect */
+}
+
+
+.main-package-container .left ul {
+  color: #333; /* Softer black for better readability */
+  list-style: disc outside; /* Standard disc bullets, outside for alignment */
+  padding-left: 25px; /* Indent bullets from the left edge */
+  width: 90%; /* Allow content to take more width, adjust as needed */
+  font-size: 20px; /* Slightly adjusted font size */
+  line-height: 1.6; /* Increased line height for better readability */
+  margin-top: 0; /* Remove default top margin */
+}
+
+.main-package-container .left ul li {
+  margin-bottom: 15px; /* Space between list items */
+}
+
+.main-package-container .right {
+  flex: 1; /* Allows the right column to take available space */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 10px;
+}
+
+.main-package-container .right img {
+  max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+}
+
+
+  .Flexible-learning-container {
+     width: 100%;
+        padding: 20px 163px 10px;
+
+        p{
+            font-size: 27px;
+            margin-bottom: 35px;
+        }
+        
+        .heading{
+            margin: 10px 0 0;
+        }
+
+        .cards{
+            .card1{
+                min-height: 700px;
+
+                .include{
+                   height: auto;
+                }
+            }
+        }
+  }
+
+  .Fast-Track-container{
+    .Fast-Track-inner-content{
+      
+      .contant{
+        .left{
+          h3{
+              font-size: 30px;
+              line-height: 41px;
+          }
+          p{
+              font-size: 25px;
+              line-height: 36px;
+              margin: 0;;
+          }
+        }
+
+        .right{
+          img{
+            height: 400px;
+          }
+        }
+      }
+
+      .bottom-paragraph{
+              font-size: 25px;
+              line-height: 36px;
+              margin: 0;
+      }
+    }
+  }
+}
+
+@media (min-width:1441px) {
+    .main .contant {
+    display: flex;
+    font-size: 30px;
+    padding: 18px 30px 10px 93px;
+
+    button {
+              padding: 10px 40px;
+        font-size: 25px;
+      font-weight: 600;
+      position: relative;
+      top: -4px;
+    }
+  }
+
+  
+  .main-package-container {
+ padding: 15px 5%; /* Increased vertical padding for more breathing room */
+  overflow: hidden; 
+}
+
+.main-package-container .left {
+  flex: 1; /* Allows the left column to take available space */
+  padding: 20px 0; /* Adjusted padding within the left column */
+}
+
+.main-package-container .left h2 {
+  color: #000080; /* A slightly darker, richer blue for impact (Navy) */
+  font-family: 'Georgia', serif; /* Changed font for a more classic, professional feel */
+  font-size: 55px; /* Increased font size for better hierarchy */
+  font-style: normal; /* Removed italic for a more modern, strong heading */
+  margin-bottom: 20px; /* Space below the heading */
+  position: relative; /* For potential pseudo-elements if you want a decorative line */
+  padding-bottom: 5px 20px 20px; /* Space for a potential underline effect */
+}
+
+
+.main-package-container .left ul {
+  color: #333; /* Softer black for better readability */
+  list-style: disc outside; /* Standard disc bullets, outside for alignment */
+  padding-left: 25px; /* Indent bullets from the left edge */
+  width: 90%; /* Allow content to take more width, adjust as needed */
+  font-size: 20px; /* Slightly adjusted font size */
+  line-height: 1.6; /* Increased line height for better readability */
+  margin-top: 0; /* Remove default top margin */
+}
+
+.main-package-container .left ul li {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.main-package-container .right {
+  flex: 1; /* Allows the right column to take available space */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 10px;
+}
+
+.main-package-container .right img {
+  width: 100%;
+        height: 100%;
+        object-fit: cover;
+}
+
+
+  .Flexible-learning-container {
+    width: 100%;
+        padding: 20px 163px 10px;
+
+        p{
+            font-size: 27px;
+            margin-bottom: 35px;
+        }
+        
+        .heading{
+            margin: 10px 0 0;
+        }
+        
+        .cards{
+            .card1{
+                min-height: 750px;
+
+                .include{
+                    height: auto;
+                }
+            }
+        }
+  }
+
+    .Fast-Track-container{
+    .Fast-Track-inner-content{
+      
+      .contant{
+        .left{
+          h3{
+              font-size: 32px;
+              line-height: 45px;
+          }
+          p{
+              font-size: 27px;
+              line-height: 40px;
+              margin: 0;;
+          }
+        }
+
+        .right{
+          img{
+            height: 400px;
+          }
+        }
+      }
+
+      .bottom-paragraph{
+              font-size: 27px;
+              line-height: 40px;
+              margin: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1307px) {
+    .main .contant {
+    display: flex;
+    font-size: 22px;
+    padding: 14px 28px 14px 48px;
+
+    p {
+      position: relative;
+      top: 6px;
+    }
+    button {
+      padding: 9px 14px;
+      font-size: 18px;
+      font-weight: 600;
+      position: relative;
+      top: -1px;
+    }
+  }
+}
+
+@media (min-width: 1308px) and (max-width: 1440px) {
+     .main .contant {
+    display: flex;
+    font-size: 29px;
+    padding: 14px 30px 7px 93px;
+
+    button {
+      padding: 11px 20px;
+      font-size: 19px;
+      font-weight: 600;
+      position: relative;
+      top: -4px;
+    }
+  }
+}

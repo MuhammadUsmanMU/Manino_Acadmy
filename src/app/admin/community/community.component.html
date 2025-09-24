@@ -1,0 +1,76 @@
+<div class="main">
+    <div class="banner">
+        <h1>Welcome to the Lernen Community Forum</h1>
+        <p>Welcome to the Lernen Community Forum! This space is designed for learners and educators to connect, share
+            ideas, ask questions, and grow together.</p>
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search Discussions...">
+            <button>Search</button>
+        </div>
+    </div>
+
+    <div class="contant">
+        <div class="left">
+            <div class="forums">
+                <h4>Forums</h4>
+                <div class="data">
+                    <p>Browse different forums, create new topics, or get involved in different topics.</p>
+                    <button><i class="fa-solid fa-layer-group"></i>Creat Forum</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cardcontant" *ngFor="let item of card">
+                    <h4>{{item.cardName}}</h4>
+                    <div class="cardData">
+                        <img [src]="item.img" alt="">
+                        <div class="cardbody">
+                            <h5>{{item.heading}}</h5>
+                            <p>{{item.para}}</p>
+                            <div class="numbers">
+                                <div class="data1">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    <p>{{item.topic}}</p>
+                                    <p>Topics</p>
+                                </div>
+
+                                <div class="data1">
+                                    <i class="fa-regular fa-file" style="color: rgb(255, 67, 67);"></i>
+                                    <p>{{item.post}}</p>
+                                    <p>Posts</p>
+                                </div>
+
+                            </div>
+                            <div class="buttons">
+                                <button>Edit</button>
+                                <button>View thread</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    
+    <div class="right">
+  <div class="rightcontant">
+    <div class="rightcard" 
+         *ngFor="let item of right; let i = index"
+         [ngStyle]="{'border-image': gradients[i % gradients.length], 'border-image-slice': '1'}">
+      <div class="d-flex">
+        <div class="right-card-contant">
+          <h3>{{item.number}}</h3>
+          <p>{{item.type}}</p>
+        </div>
+        <img [src]="item.img" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    
+    </div>
+</div>

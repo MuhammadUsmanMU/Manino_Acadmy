@@ -1,0 +1,124 @@
+<div class="main">
+    <div class="contant">
+        <p>Download our Free Coaching e-Book and Begin Your Certification Now!</p>
+        <button>    
+            <a href="../../../assets/coaching e-book.pdf" target="_blank" class="ebook-button">
+                Download Free e-Book
+            </a>
+        </button>
+
+    </div>
+</div>
+
+<!-- navbar section  -->
+ <app-navbar></app-navbar>
+
+<div class="join-live-session">
+  <div class="contant">
+
+    <app-brochure-button
+         fileName="Three-Day Live Virtual Intensive Seminar.pdf"
+         label="Download Brochure"
+         className="outline-btn">
+      </app-brochure-button>
+    
+    <h1>Take the First Step Toward Becoming a Certified Executive Coach!</h1>
+    <button routerLink="/live-session">Join Our Live Session</button>
+  </div>
+</div>
+
+<!-- What You Will Gain -->
+<div class="gain-container">
+    <h2>What You’ll Gain from This Live Session:</h2>
+    <div class="contant">
+        <div class="left">
+            <div class="list-item">
+                <div class="list-item-header">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Step-by-Step Certification Guide – </span>
+                </div>
+                <label>Understand the complete process of earning your Executive Coaching Certification and meeting ICF requirements.</label>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-header">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Deep Dive into the Coaching Market – </span>
+                </div>
+                <label>Explore industry demand, income potential, and career opportunities in executive and leadership coaching.</label>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-header">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Insider Knowledge from Experts – </span>
+                </div>
+                <label>Discover what makes successful coaches stand out and how to position yourself as a top-tier professional.</label>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-header">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Interactive Q&A with Program Advisors – </span>
+                </div>
+                <label>Ask your questions and receive personalized guidance after the session.</label>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-header">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Behind-the-Scenes Access – </span>
+                </div>
+                <label>Preview our exclusive member platform featuring tools, training, and business resources.</label>
+            </div>
+
+            <p class="final-paragraph">This isn’t just another webinar — it’s your opportunity to gain clarity, direction, and expert insight into becoming a certified and successful coach.</p>
+        </div>
+        <div class="right">
+            <a href="https://youtu.be/Ktw2Ssdi7Co?si=V0vHXPGz9KT8uGKX" target="_blank"> 
+                <img src="../../assets/liveSessionPage/img2.png" alt="Live Coaching Session">
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Spots Are Limited -->
+<div class="spots">
+    <h1>Spots Are Limited – Reserve Yours Today <br> and Take the First Step Toward a High-Impact Coaching Career!</h1>
+</div>
+
+<!-- Live Session Cards -->
+<div class="live-session-cards">
+    <div class="card" *ngFor="let item of liveSessionCards">
+        <img [src]="item.img" alt="">
+        <h5>{{item.head}}</h5>
+        <p>{{item.para}}</p>
+        <button routerLink="/signup">Sign Up for Free Session</button>
+    </div>
+</div>
+
+<hr>
+
+<!-- Common FAQs -->
+<div class="common-FAQs-container" id="common-faqs-section">
+  <h2 class="common-faqs">Common FAQs</h2>
+  <div class="accordion" id="accordionFlushExample">
+    <div class="accordion-item" *ngFor="let faq of faqs; let i = index">
+      <h2 class="accordion-header" [id]="'heading' + i">
+        <button class="accordion-button" type="button"
+          (click)="toggleAccordion(i)"
+          [ngClass]="{ 'collapsed': !isOpen[i] }"
+          [style.background-color]="'#f5f5f5'">
+          {{ faq.question }}
+        </button>
+      </h2>
+      <div class="accordion-collapse" *ngIf="isOpen[i]">
+        <div class="accordion-body">
+          {{ faq.answer }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,68 @@
+<div class="main">
+    <div class="heading">
+        <h5>HOW TO BECOME AN EXECUTIVE COACH</h5>
+        <p>
+            Becoming an executive coach is more than just earning a certification — 
+            it requires the ability to coach top professionals, lead transformational conversations, 
+            and build a thriving practice.
+        </p>
+    </div>
+
+    <div class="contant">
+        <div class="left">
+            <h3>Step 1: Choose the Right Certification Program</h3>
+            <ul>
+                <li>Platinum Package: Advanced ICF Certification with Business Development Training</li>
+                <li>Gold Package: Professional Coaching Certification with Non-ICF-Approved Training</li>
+            </ul>
+            <button (click)="openEnrollmentModal()">Enroll Now</button>
+        </div>
+        <div class="right cards">
+  <div class="card" *ngFor="let item of card">
+    <img [src]="item.img" [alt]="item.heading" />
+    <h4>{{ item.heading }}</h4>
+    <p>{{ item.para }}</p>
+  </div>
+</div>
+    </div>
+
+    <div *ngIf="showEnrollmentModal" class="modal-overlay">
+    <div class="modal-content">
+        <h3>Choose the Right Certification Program</h3>
+        <!-- <p>Please select the package that's right for you:</p> -->
+        <button (click)="selectPackage('platinum')" class="modal-button">Platinum Package</button>
+        <button (click)="selectPackage('gold')" class="modal-button">Gold Package</button>
+        <button (click)="closeEnrollmentModal()" class="modal-close-button">Cancel</button>
+    </div>
+</div>
+
+    <div class="main2">
+        <div class="left">
+            <img src="../../assets/Screenshot 2025-05-20 221341.png" alt="Step 2 - Obtain Certification">
+        </div>
+        <div class="right">
+            <h3>Step 2: Obtain Your ICF or Non-ICF Certification (ACC or PCC)</h3>
+            <ul>
+                <li>Complete required training hours, coaching experience, and mentor coaching</li>
+                <li>Pass the ICF Certification Exam</li>
+                <li>Earn an internationally recognized credential</li>
+            </ul>
+            <button [routerLink]="['/platinum-package']" fragment="ICF-Certification-container">Enroll Now</button>
+        </div>
+    </div>
+
+    <div class="step3">
+        <div class="left">
+            <h3>Step 3: Build and Grow a Coaching Business</h3>
+            <ul>
+                <li>Learn high-value coaching strategies</li>
+                <li>Develop expertise in client acquisition, sales, and branding</li>
+                <li>Access exclusive tools and business frameworks to establish a successful coaching practice</li>
+            </ul>
+            <button routerLink="/business-builder">Enroll Now</button>
+        </div>
+        <div class="right">
+            <img src="../../assets/step3.png" alt="Step 3 - Grow Business">
+        </div>
+    </div>
+</div>

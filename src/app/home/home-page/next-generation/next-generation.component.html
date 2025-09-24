@@ -1,0 +1,39 @@
+<div class="main">
+    <h3>A Step-by-Step Guide</h3>
+    <h2>Empowering the Next Generation of Executive Coaches</h2>
+    <p>
+        Whether you're looking to become a certified Executive Coach, start your own practice, or advance in leadership, 
+        our intensive programs provide the expertise, certification, and confidence to succeed.
+    </p>
+
+    <div class="contant">
+        <div class="cards" *ngFor="let item of cards">
+    <div>
+        <img [src]="item.img" alt="{{ item.heading }}">
+    </div>
+    <h5>{{ item.heading }}</h5>
+    <p>{{ item.para }}</p>
+    
+    <ng-container *ngIf="item.route">
+        <button [routerLink]="item.route">{{ item.button }}</button>
+    </ng-container>
+
+    <ng-container *ngIf="item.videoLink">
+        <a [href]="item.videoLink" target="_blank" style="text-decoration: none; width: 100%;">
+            <button>{{ item.button }}</button>
+        </a>
+    </ng-container>
+</div>
+
+        <div class="cards card2">
+            <div>
+                <img src="../../assets/landing/card4.png" alt="Start Your Journey">
+            </div>
+            <h5>Start Your Journey</h5>
+            <p>Don’t wait — your future in Executive Coaching begins today!</p>
+            <button routerLink="/program-page">Get Started</button>
+        </div> 
+    </div>
+</div>
+
+<app-vertual></app-vertual>

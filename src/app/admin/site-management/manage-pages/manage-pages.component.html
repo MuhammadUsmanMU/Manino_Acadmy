@@ -1,0 +1,113 @@
+<div class="manage-pages-container">
+  <div class="add-page-form">
+    <h3>Add new page</h3>
+    <form>
+      <label for="pageName">Page Name</label>
+      <input type="text" id="pageName" placeholder="Page Name" value="Page Name" />
+
+      <label for="pageTitle">Page Title</label>
+      <input type="text" id="pageTitle" placeholder="Page Title" value="Page Title" />
+
+      <label for="pageDescription">Page Description</label>
+      <textarea id="pageDescription" placeholder="Page Description">Page Description</textarea>
+
+      <label for="pageSlug">Page Slug</label>
+      <input type="text" id="pageSlug" placeholder="Page Slug" value="Page Slug" />
+
+      <button type="submit">Add New Page</button>
+    </form>
+  </div>
+
+  <div class="pages-table">
+    <div class="table-header">
+      <h3>Pages ({{ pages.length }})</h3>
+      <div class="filters">
+        <!-- Sort Dropdown -->
+        <div class="custom-dropdown" (click)="toggleSortDropdown()">
+          <span>{{ selectedSort || 'Sort By' }}</span>
+          <i class="fa-solid fa-caret-down"></i>
+          <ul *ngIf="showSortDropdown" class="dropdown-options">
+              <li (click)="selectSort('Asc')">Asc</li>
+              <li (click)="selectSort('Desc')">Desc</li>
+          </ul>
+        </div>
+
+        <!-- Limit Dropdown -->
+        <div class="custom-dropdown" (click)="toggleLimitDropdown()">
+          <span>{{ selectedLimit || 'Items per page' }}</span>
+          <i class="fa-solid fa-caret-down"></i>
+          <ul *ngIf="showLimitDropdown" class="dropdown-options">
+            <li (click)="selectLimit(10)">10</li>
+            <li (click)="selectLimit(20)">20</li>
+            <li (click)="selectLimit(30)">30</li>
+            <li (click)="selectLimit(40)">40</li>
+          </ul>
+        </div>
+
+        <!-- Search -->
+        <div class="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input 
+             type="text" 
+             placeholder="Search"
+             [(ngModel)]="searchTerm"
+             (ngModelChange)="currentPage = 1"
+            />
+        </div>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>URL</th>
+            <th>Status</th>
+            <th class="actions-heading">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let page of paginatedTable">
+            <td data-label="#">{{ page.id }}</td>
+            <td data-label="Name">{{ page.name }}</td>
+            <td data-label="URL">{{ page.url }}</td>
+            <td data-label="Status">
+  <span
+    class="tag"
+    [ngClass]="{
+      'published': page.status === 'PUBLISHED',
+      'draft': page.status === 'DRAFT',
+      'pending': page.status === 'PENDING'
+    }"
+  >
+    <span class="dot"></span>
+    {{ page.status }}
+  </span>
+</td>
+            <td data-label="Actions" class="action-icons">
+              <i class="bi bi-pencil"></i>
+              <i class="bi bi-gear"></i>
+              <i class="bi bi-eye"></i>
+              <i class="bi bi-trash"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagination">
+     <i class="bi bi-chevron-left" (click)="prevPage()" [class.disabled]="currentPage === 1"></i>
+  
+     <span 
+      *ngFor="let page of [].constructor(totalPages); let i = index"
+       [class.active]="currentPage === i + 1"
+       (click)="changePage(i + 1)">
+       {{ i + 1 }}
+     </span>
+
+     <i class="bi bi-chevron-right" (click)="nextPage()" [class.disabled]="currentPage === totalPages"></i>
+    </div>
+  </div>
+</div>

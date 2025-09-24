@@ -1,0 +1,148 @@
+<div class="main">
+    <div class="contant">
+        <p>Download our Free Coaching e-Book and Begin Your Certification Now!</p>
+        <button>    
+            <a href="../../../assets/coaching e-book.pdf" target="_blank" class="ebook-button">
+                Download Free e-Book
+            </a>
+        </button>
+
+    </div>
+</div>
+
+<app-navbar></app-navbar>
+
+<div class="signup-container">
+  <div class="left-section">
+    <div class="mannino-logo">
+      <img src="../../../assets/transparent-logo.png" alt="Mannino Logo" routerLink="/home">
+    </div>
+
+    <div class="progress-message">
+      <h1>Yes! we're making progress!</h1>
+      <p>every minute & every second</p>
+    </div>
+
+    <div class="main-content-block">
+      <img src="../../../assets/vedio.png" alt="Video" class="video-placeholder">
+    </div>
+
+    <div class="bottom-message">
+      <p>Begin your learning journey today and experience the transformative power of personalized education.</p>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="signup-content">
+      <h1 class="create-account-text">Join now to Create Account</h1>
+      <p class="community-text">Join our learning community</p>
+
+      <form (ngSubmit)="onRegister()">
+        <div class="form-row">
+          <div class="form-group half-width">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" placeholder="First Name" required #firstNameInput="ngModel">
+            <div *ngIf="firstNameInput.invalid && (firstNameInput.dirty || firstNameInput.touched || submitted)" class="error-message">
+              First Name is required.
+            </div>
+          </div>
+          <div class="form-group half-width">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" placeholder="Last Name" required #lastNameInput="ngModel">
+            <div *ngIf="lastNameInput.invalid && (lastNameInput.dirty || lastNameInput.touched || submitted)" class="error-message">
+              Last Name is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Email address" required #emailInput="ngModel" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+          <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched || submitted)" class="error-message">
+            <span *ngIf="emailInput.errors?.['required']">Email address is required.</span>
+            <span *ngIf="emailInput.errors?.['pattern']">Please enter a valid email address.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumber">Phone number <span class="required">*</span></label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" placeholder="Enter phone number" required #phoneNumberInput="ngModel">
+          <div *ngIf="phoneNumberInput.invalid && (phoneNumberInput.dirty || phoneNumberInput.touched || submitted)" class="error-message">
+            Phone number is required.
+          </div>
+        </div>
+
+         <div class="form-group">
+            <label for="role">Role</label>
+            <input type="text" id="role" name="role" [(ngModel)]="role" placeholder="Role" required #roleInput="ngModel">
+            <div *ngIf="roleInput.invalid && (roleInput.dirty || roleInput.touched || submitted)" class="error-message">
+              Role is required.
+            </div>
+          </div>
+
+        <div class="form-group password-group">
+          <label for="password">Password</label>
+          <input [type]="showPassword ? 'text' : 'password'" id="password" name="password" [(ngModel)]="password" placeholder="Password" required #passwordInput="ngModel" minlength="6">
+          <span class="password-toggle" (click)="togglePasswordVisibility('password')">
+            <i [class]="showPassword ? 'far fa-eye-slash' : 'far fa-eye'"></i>
+          </span>
+          <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched || submitted)" class="error-message">
+            <span *ngIf="passwordInput.errors?.['required']">Password is required.</span>
+            <span *ngIf="passwordInput.errors?.['minlength']">Password must be at least 6 characters long.</span>
+          </div>
+        </div>
+
+        <div class="form-group password-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input [type]="showConfirmPassword ? 'text' : 'password'" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm Password" required #confirmPasswordInput="ngModel">
+          <span class="password-toggle" (click)="togglePasswordVisibility('confirmPassword')">
+            <i [class]="showConfirmPassword ? 'far fa-eye-slash' : 'far fa-eye'"></i>
+          </span>
+          <div *ngIf="confirmPasswordInput.invalid && (confirmPasswordInput.dirty || confirmPasswordInput.touched || submitted)" class="error-message">
+            Confirm Password is required.
+          </div>
+          <div *ngIf="passwordMismatchError" class="error-message">
+            Passwords do not match.
+          </div>
+        </div>
+
+        <div class="terms-checkbox">
+          <input type="checkbox" id="termsAccepted" name="termsAccepted" [(ngModel)]="termsAccepted" required #termsAcceptedInput="ngModel">
+          <label for="termsAccepted" class="custom-checkbox"></label>
+          <span>I accept <a routerLink="/terms-and-conditions" class="terms-link">Terms & Service</a> </span>
+        </div>
+        <div *ngIf="!termsAccepted && submitted" class="error-message">
+          You must accept the Terms & Service.
+        </div>
+
+        <button type="submit" class="register-button">Register</button>
+
+        <div *ngIf="signupFailed" class="error-message signup-failed-message">
+          Registration failed. Please check your details and try again.
+        </div>
+        <div *ngIf="signupSuccess" class="success-message">
+          Registration successful! You can now sign in.
+        </div>
+
+        <p class="already-have-account">Already have an Account? <a routerLink="/login" class="signin-link">Sign In</a></p>
+      </form>
+
+      <div class="separator">
+        <span>OR</span>
+      </div>
+
+      <button class="google-signup-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="google-icon">
+          <path d="M12.24 10.285V11.2h2.235c-.09 1.125-.63 1.83-1.575 2.415-.81.54-1.92.93-3.18.93-2.61 0-4.73-2.07-4.73-4.635s2.12-4.635 4.73-4.635c1.47 0 2.45.615 3.005 1.17l1.795-1.785C15.86 3.99 13.9 3 11.265 3 6.09 3 1.995 7.14 1.995 12.315s4.095 9.315 9.27 9.315c5.385 0 9.07-3.9 9.07-8.91 0-.705-.075-1.29-.195-1.875H12.24z" fill="#4285F4"/>
+          <path d="M11.265 21.63c-2.43 0-4.5-1.005-6.03-2.58L.96 23.36C3.26 25.59 7.02 27 11.265 27c4.245 0 7.905-1.41 10.455-3.84l-2.73-2.07c-1.515 1.05-3.48 1.635-5.46 1.635z" fill="#34A853"/>
+          <path d="M22.095 12.315c0-1.875-.195-3.33-.51-4.71H19.26V7.05H12.24v2.79h6.165c.015.39.06.78.06 1.17 0 1.905-.69 3.48-1.92 4.605l2.73 2.07c1.86-1.725 2.925-4.215 2.925-7.32z" fill="#FBBC05"/>
+          <path d="M1.995 12.315c0-1.485.405-2.91 1.11-4.065L.96 5.46C.33 6.645 0 7.92 0 9.27c0 1.35.345 2.58.96 3.705l2.145 1.635c-.705-1.155-1.11-2.58-1.11-4.065z" fill="#EA4335"/>
+        </svg>
+        <span>Sign in with Google</span>
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

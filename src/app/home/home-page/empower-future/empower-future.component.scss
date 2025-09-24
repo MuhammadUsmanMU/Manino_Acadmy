@@ -1,0 +1,945 @@
+@import '../../../../styles.scss';
+
+.main {
+  background: linear-gradient(to right, #05267c, #0466bd);
+  font-family: $font;
+  color: white;
+  width: 100%;
+
+  .contant {
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 2px;
+    font-weight: 500;
+
+    button {
+      border: none;
+      font-weight: 600;
+      background: white;
+    }
+
+    .ebook-button {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  background: linear-gradient(45deg, #ebebeb 4%, white 52%);
+  margin: 0;
+
+  .left {
+    width: 50%;
+    /* No flex or align-items here to allow content to align based on padding/text-align */
+
+    .contant {
+      text-align: left; /* Ensure all text and inline content aligns left */
+
+      h2 {
+        color: #060d64;
+        margin-bottom: 7px;
+        line-height: 1.1;
+      }
+
+      p {
+        font-size: 1.2vw;
+        color: #000;
+        font-weight: 400;
+        // margin: 15px 0; /* Changed for pixel perfect */
+        line-height: 1.4;
+      }
+
+      button {
+        border: none;
+        border-radius: 50px;
+        background: linear-gradient(147deg, #060606 40%, #afa9a9 72%);
+        color: white;
+        cursor: pointer;
+        position: static; /* Ensure no relative/absolute positioning */
+        display: inline-block; /* Allows button to respect text-align and margin */
+        vertical-align: top; 
+        font-size: 15px;
+        padding: 5px 5px;
+        margin: 5px;
+        width: 140px;
+   }
+
+      /* --- EMPOWER LINE STYLES --- */
+      .empower-line-wrapper {
+        position: relative;
+        display: inline-block; /* Makes the wrapper only as wide as its H2 content */
+        margin-bottom: 0px; /* Remove space between "Empower" and "Your Future" */
+        vertical-align: top; /* Align to the top if other inline elements are present */
+      }
+
+      .empower-line-wrapper h2 {
+        margin: 0; /* Remove default margin */
+        line-height: 1; /* Tighter line height for positioning the line */
+      }
+
+      .empower-line {
+        position: absolute;
+        bottom: -5px; /* Adjust this value if you need it higher or lower relative to "Empower" */
+        left: 0; /* Position exactly at the start of "Empower" */
+        transform: none; /* Remove horizontal centering transform */
+        width: 100%; /* Make the image take 100% width of the H2 */
+        max-width: 80px; /* Base for line length. Will be refined per breakpoint. */
+        height: auto;
+        z-index: 1;
+        object-fit: contain;
+      }
+      /* --- END EMPOWER LINE STYLES --- */
+
+      .your-line-wrapper {
+        position: relative;
+        display: block; /* Ensure "Your Future" is on its own line */
+        margin-top: 0; /* No space between Empower and Your Future */
+      }
+
+      .your-line-wrapper h2 {
+        color: #060d64;
+        margin: 0;
+        display: flex;
+        gap: 8px;
+        justify-content: flex-start; /* Align "Your Future" to the left */
+        white-space: nowrap; /* Prevent "Your Future" from wrapping */
+      }
+    }
+  }
+
+  .right {
+    width: 50%;
+
+    img {
+      border-radius: 20px;
+      width: 100%;
+      height: auto;
+      max-height: 433px;
+      object-fit: cover;
+    }
+  }
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 26px 28px 15px; /* Base padding for cards section */
+  width: 100%;
+  background-image: linear-gradient(to right, #f1eeee, #FFFFFF, #FFFFFF);
+
+  .card-content { /* Added this common class for card styling */
+    border-radius: 9px; /* Unified border-radius */
+    padding: 30px 25px; /* Base padding for card content */
+    box-sizing: border-box; /* Include padding in width calculation */
+    display: flex; /* Make card content a flex container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Distribute space, pushing content to top and button to bottom */
+  }
+
+  .card1 {
+    background-color: white;
+
+    p {
+      font-size: 14px; /* Adjusted font size for desktop */
+      font-weight: 500; /* Consistent font weight */
+      color: black; /* Ensure text color is black as in desired image */
+      /* margin-bottom: 20px; This margin can be removed/adjusted, as auto margin on button will handle spacing */
+    }
+
+    button {
+      width: 70%;
+    background-color: #c9c9c9;
+    color: black;
+    padding: 3px 5px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+      margin-top: auto; /* Pushes the button to the bottom of the flex container */
+    }
+
+    .play-button{
+        height: 35px;
+    width: 38px;
+    }
+
+    label{
+      color: #666363;
+    }
+  
+  }
+
+  .card2 {
+    background-image: linear-gradient(to left, rgba(70, 119, 235, 0.76), rgb(37, 43, 108));
+    color: white; /* Ensure text color is white */
+
+    p {
+      font-size: 14px; /* Adjusted font size for desktop */
+      font-weight: 500; /* Consistent font weight */
+      /* margin-bottom: 20px; */
+    }
+
+    button {
+      width: 70%;
+      background-color: white;
+      color: black; /* Button text is black */
+      padding: 10px 20px; /* Adjusted button padding */
+      font-size: 14px; /* Adjusted button font size */
+      font-weight: 600;
+      position: static; /* Ensure no relative/absolute positioning */
+      border: none;
+      margin-top: auto; /* Pushes the button to the bottom of the flex container */
+    }
+  }
+
+  .card3 {
+    background-color: white; /* Added background color to match image */
+    margin: 0 0; /* Reset margins */
+    padding: 30px 25px; /* Consistent padding with other cards */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Align content to the start (left) */
+    justify-content: flex-end; /* Align content to the bottom as this card only has text at bottom. If it had more content it would need space-between */
+    box-sizing: border-box; /* Include padding in width calculation */
+    border-radius: 9px;
+
+
+    img {
+      // height: 60px; /* Adjusted image height based on desired output */
+      width: auto;
+      // margin-bottom: 15px; /* Space between image and text */
+      object-fit: contain;
+    }
+
+    p {
+      font-weight: 500;
+      color: #666363; /* Light gray for "Reviewed worldwide" */
+      font-family: inherit;
+      text-align: left; /* Ensure text is left-aligned */
+      margin: 0; /* Remove default margin */
+
+      span {
+        font-weight: 700;
+        color: black; /* Black for "2K+" */
+        display: inline; /* Keep on the same line if possible */
+      }
+
+      label {
+        color: black;
+        display: inline;
+        margin-left: 7px;
+      }
+    }
+  }
+}
+
+// ===================== MEDIA QUERIES =====================
+
+// Mobile (max-width: 767px) - NO CHANGES TO THIS SECTION AS REQUESTED
+@media (max-width: 767px) {
+  /* --- Main Section (Top Bar) --- */
+  .main .contant {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .main .contant p {
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+
+  .main .contant button {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: auto;
+    max-width: 80%;
+    position: static;
+    top: auto;
+    transform: none;
+  }
+
+  /* --- Hero Section --- */
+  .hero {
+    flex-direction: column;
+    padding: 30px 20px;
+    align-items: center;
+  }
+
+  .hero .left {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .hero .left .contant {
+    padding: 0; /* Reset padding for mobile */
+    text-align: center;
+  }
+
+  /* --- EMPOWER LINE (MOBILE) --- */
+  .hero .left .contant .empower-line-wrapper {
+    position: relative;
+    display: block;
+    width: 100%; /* It can take full width because its content is centered */
+    margin-bottom: 5px;
+    text-align: center; /* Centering for mobile */
+  }
+
+  .hero .left .contant .empower-line-wrapper h2 {
+    font-size: 50px;
+    margin: 0;
+    text-align: center;
+  }
+
+  .hero .left .contant .empower-line {
+            bottom: -30px;
+        left: 53%;
+        transform: translateX(-50%);
+        width: 60%;
+        max-width: 135px;
+        height: auto;
+  }
+  /* --- END EMPOWER LINE (MOBILE) --- */
+
+  .hero .left .contant .your-line-wrapper {
+    position: relative;
+    display: block;
+    margin: 0 auto; /* Center wrapper on mobile */
+    width: fit-content;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .hero .left .contant .your-line-wrapper h2 {
+        font-size: 50px;
+        justify-content: center;
+        margin: 0;
+        white-space: nowrap;
+        margin-top: 22px;
+  }
+
+  .hero .left .contant p {
+                 font-size: 22px;
+        font-weight: 500;
+        color: #585656;
+        margin: -10px 0;
+  }
+
+  .hero .left .contant button {
+            border-radius: 30px;
+        padding: 12px 10px;
+        width: 165px;
+        font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+    display: block;
+  }
+
+  .hero .right {
+    width: 100%;
+    margin-top: 30px;
+    padding-inline-start: 0;
+  }
+
+  .hero .right img {
+    border-radius: 10px;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* --- Cards Section --- */
+  .cards {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .cards .card-content {
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center; /* This centers the text within the card */
+  }
+
+  .cards .card1 p,
+  .cards .card2 p {
+    font-size: 12px;
+        margin-bottom: 25px;
+  }
+
+  .cards .card1 button,
+  .cards .card2 button {
+    margin-top: auto; /* Crucial for pushing the button to the bottom */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 200px;
+    font-size: 13px;
+    font-weight: 500;
+    position: static;
+    bottom: auto;
+    border: none;
+  }
+
+  .cards .card1 button{
+    label{
+      color: #666363;
+    position: relative;
+    top: 1px;
+    }
+  }
+
+  .cards .card2 button{
+    padding: 12px 20px;
+  }
+
+  .cards .card3 {
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    margin: 0;
+  }
+
+  .cards .card3 img {
+    height: 60px;
+      width: auto;
+      // margin-bottom: 15px; 
+  }
+
+  .cards .card3 p {
+            font-size: 22px;
+        padding-left: 0;
+  }
+
+  .cards .card3 p span {
+    font-size: 28px;
+  }
+}
+
+// Tablet (768px - 1024px)
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main .contant {
+    display: flex;
+    font-size: 19px;
+    padding: 12px 26px;
+
+    p {
+      position: relative;
+      top: 6px;
+    }
+    button {
+      padding: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      position: relative;
+      top: 0px;
+      width: 190px;
+    }
+  }
+
+  .hero .left {
+    width: 50%;
+    padding: 0;
+    text-align: left;
+
+    .contant {
+       padding: 30px 0 5px 35px;
+
+      h2,
+      .your-line-wrapper h2 {
+        line-height: 1.1;
+        margin-top: 18px;
+        font-size: 50px;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 29px;
+        line-height: 33px;
+        margin: 5px 0;
+      }
+
+      /* --- EMPOWER LINE (TABLET) --- */
+      .empower-line-wrapper {
+        margin-bottom: 0px;
+        text-align: left;
+      }
+      .empower-line-wrapper h2 {
+        display: inline-block;
+      }
+      .empower-line {
+        bottom: -29px;
+        left: 72px;
+        transform: none;
+        width: 100%;
+        max-width: 135px; /* **ADJUSTED: Fine-tuned for tablet for pixel perfection** */
+      }
+      /* --- END EMPOWER LINE (TABLET) --- */
+
+      .your-line-wrapper {
+        margin-top: 0;
+        text-align: left;
+      }
+      .your-line-wrapper h2 {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .hero .right {
+    width: 50%;
+    padding: 5px 28px 5px 5px;
+  }
+
+  .cards {
+    display: flex; /* Ensure flex is applied here */
+    justify-content: space-between; /* Distribute space between cards */
+    padding: 28px 28px 15px; /* Adjusted overall padding for the cards section */
+    gap: 20px; /* Space between cards */
+
+    .card-content {
+        border-radius: 6px;
+        padding: 28px 22px 10px;
+    }
+
+    .card1,
+    .card2 {
+      width: calc((100% - 40px) / 3); /* Distribute width for 3 cards with 20px gap */
+
+      p {
+        font-size: 12px;
+        /* margin-bottom: 42px; Remove this, margin-top:auto will handle spacing */
+      }
+
+      button {
+          // padding: 8px;
+        font-size: 12px;
+        margin-top: auto; /* Crucial for pushing the button to the bottom */
+      }
+    }
+
+    .cards .card2 button{
+    padding: 8px;
+    }
+
+    .card3 {
+      width: calc((100% - 40px) / 3); /* Distribute width for 3 cards with 20px gap */
+      padding: 5px 12px 25px;
+      align-items: flex-start; /* Align content to start */
+      justify-content: flex-end;
+
+      img{
+        height: 70px;
+        width: auto;
+        margin-bottom: 12px;
+      }
+
+      p{
+         font-size: 20px;
+        padding-left: 0;
+        margin-left: 12px;
+
+        span{
+            font-size: 28px;
+        }
+      }
+    }
+
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1307px) {
+  .main .contant {
+    display: flex;
+    font-size: 22px;
+    padding: 14px 28px 14px 48px;
+
+    p {
+      position: relative;
+      top: 6px;
+    }
+    button {
+      padding: 9px 14px;
+      font-size: 18px;
+      font-weight: 600;
+      position: relative;
+      top: -1px;
+    }
+  }
+
+ .hero .left {
+    width: 50%;
+    padding: 0;
+    text-align: left;
+
+    .contant {
+       padding: 38px 0 5px 35px;
+
+      h2,
+      .your-line-wrapper h2 {
+        line-height: 1.1;
+        margin-top: 18px;
+        font-size: 65px;
+        font-weight: 700;
+      }
+
+      p {
+                font-size: 35px;
+        line-height: 39px;
+        margin: 5px 0;
+        font-weight: 400;
+      }
+
+      /* --- EMPOWER LINE (TABLET) --- */
+      .empower-line-wrapper {
+        margin-bottom: 0px;
+        text-align: left;
+      }
+      .empower-line-wrapper h2 {
+        display: inline-block;
+      }
+      .empower-line {
+        bottom: -43px;
+        left: 98px;
+        transform: none;
+        width: 100%;
+        max-width: 186px;
+      }
+      /* --- END EMPOWER LINE (TABLET) --- */
+
+      .your-line-wrapper {
+        margin-top: 30px;
+        text-align: left;
+      }
+      .your-line-wrapper h2 {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .hero .right {
+    width: 50%;
+    padding: 5px 28px 5px 5px;
+  }
+
+ .cards {
+    display: flex; /* Ensure flex is applied here */
+    justify-content: space-between; /* Distribute space between cards */
+    padding: 28px 28px 15px; /* Adjusted overall padding for the cards section */
+    gap: 20px; /* Space between cards */
+
+    .card-content {
+        border-radius: 6px;
+        padding: 28px 22px 10px;
+    }
+
+    .card1,
+    .card2 {
+      width: calc((100% - 40px) / 3); /* Distribute width for 3 cards with 20px gap */
+
+      p {
+        font-size: 12px;
+      }
+
+      button {
+          // padding: 8px;
+        font-size: 12px;
+        margin-top: auto; /* Crucial for pushing the button to the bottom */
+      }
+    }
+
+    .cards .card2 button{
+    padding: 8px;
+    }
+
+    .card3 {
+      width: calc((100% - 40px) / 3); /* Distribute width for 3 cards with 20px gap */
+      padding: 5px 12px 25px;
+      align-items: flex-start; /* Align content to start */
+      justify-content: flex-end;
+
+      img{
+        height: 70px;
+        width: auto;
+        margin-bottom: 12px;
+      }
+
+      p{
+         font-size: 20px;
+        padding-left: 0;
+        margin-left: 12px;
+
+        span{
+            font-size: 28px;
+        }
+      }
+    }
+  }
+}
+
+// Desktop (1308px - 1440px)
+@media (min-width: 1308px) and (max-width: 1440px) {
+  .main .contant {
+    display: flex;
+    font-size: 29px;
+    padding: 14px 30px 7px 93px;
+
+    button {
+      padding: 11px 20px;
+      font-size: 19px;
+      font-weight: 600;
+      position: relative;
+      top: -4px;
+    }
+  }
+
+  .hero .left {
+    width: 50%;
+    padding: 0;
+    text-align: left;
+
+    .contant {
+        padding: 50px 0 5px 40px;
+
+      h2,
+      .your-line-wrapper h2 {
+        line-height: 1.1;
+        margin-top: 18px;
+        font-size: 65px;
+        font-weight: 700;
+      }
+
+      p {
+                font-size: 35px;
+        line-height: 39px;
+        margin: 5px 0;
+        font-weight: 400;
+      }
+
+
+      /* --- EMPOWER LINE (TABLET) --- */
+      .empower-line-wrapper {
+        margin-bottom: 0px;
+        text-align: left;
+      }
+      .empower-line-wrapper h2 {
+        display: inline-block;
+      }
+      .empower-line {
+       bottom: -43px;
+        left: 98px;
+        transform: none;
+        width: 100%;
+        max-width: 188px;
+      }
+      /* --- END EMPOWER LINE (TABLET) --- */
+
+      .your-line-wrapper {
+        margin-top: 28px;
+        text-align: left;
+      }
+      .your-line-wrapper h2 {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .hero .right {
+    width: 50%;
+    padding: 5px 28px 5px 5px;
+  }
+
+  .cards {
+    display: flex; /* Ensure flex is applied here */
+    justify-content: space-between; /* Distribute space between cards */
+    padding: 28px 28px 15px; /* Adjusted overall padding for the cards section */
+    gap: 20px; /* Space between cards */
+
+    .card-content {
+        border-radius: 6px;
+        padding: 28px 22px 10px;
+    }
+
+    .card1,
+    .card2 {
+      width: calc((100% - 40px) / 3); /* Distribute width for 3 cards with 20px gap */
+
+      p {
+        font-size: 13px;
+      }
+
+      button {
+        font-size: 12px;
+        margin-top: auto; /* Crucial for pushing the button to the bottom */
+      }
+    }
+
+    .cards .card2 button{
+    padding: 8px;
+    }
+
+     .card3 {
+      width: calc((100% - 40px) / 3); /* Distribute width for 3 cards with 20px gap */
+      padding: 5px 12px 25px;
+      align-items: flex-start; /* Align content to start */
+      justify-content: flex-end;
+
+      img{
+        height: 70px;
+        width: auto;
+        margin-bottom: 12px;
+      }
+
+      p{
+         font-size: 20px;
+        padding-left: 0;
+        margin-left: 12px;
+
+        span{
+            font-size: 28px;
+        }
+      }
+    }
+  }
+}
+
+// Extra-large screens (min-width: 1441px)
+@media (min-width: 1441px) {
+  .main .contant {
+    display: flex;
+    font-size: 30px;
+    padding: 14px 30px 7px 93px;
+
+    button {
+      padding: 12px 20px;
+      font-size: 21px;
+      font-weight: 600;
+      position: relative;
+      top: -4px;
+    }
+  }
+
+  .hero .left {
+    width: 50%;
+    padding: 0;
+    text-align: left;
+
+    .contant {
+         padding: 55px 0 5px 40px;
+
+      h2,
+      .your-line-wrapper h2 {
+        line-height: 1.1;
+        margin-top: 18px;
+        font-size: 70px;
+        font-weight: 700;
+      }
+
+      p {
+                font-size: 37px;
+        line-height: 44px;
+        margin: 5px 0;
+        font-weight: 400;
+      }
+
+      /* --- EMPOWER LINE (TABLET) --- */
+      .empower-line-wrapper {
+        margin-bottom: 0px;
+        text-align: left;
+      }
+      .empower-line-wrapper h2 {
+        display: inline-block;
+      }
+      .empower-line {
+         bottom: -49px;
+        left: 105px;
+        transform: none;
+        width: 100%;
+        max-width: 208px;
+      }
+      /* --- END EMPOWER LINE (TABLET) --- */
+
+      .your-line-wrapper {
+        margin-top: 35px;
+        text-align: left;
+      }
+      .your-line-wrapper h2 {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .hero .right {
+    width: 50%;
+    padding: 5px 28px 5px 5px;
+  }
+
+  .cards {
+    display: flex; /* Ensure flex is applied here */
+    justify-content: space-between; /* Distribute space between cards */
+    padding: 28px 28px 15px; /* Adjusted overall padding for the cards section */
+    gap: 20px; /* Space between cards */
+
+    .card-content {
+        border-radius: 6px;
+        padding: 28px 22px 10px;
+    }
+
+    .card1,
+    .card2 {
+      width: calc((100% - 40px) / 3); /* Distribute width for 3 cards with 20px gap */
+
+      p {
+        font-size: 16px;
+      }
+
+      button {
+          // padding: 10px 5px;
+        font-size: 16px;
+        margin-top: auto; /* Crucial for pushing the button to the bottom */
+      }
+    }
+
+    .cards .card2 button{
+    padding: 10px 5px;
+    }
+
+     .card3 {
+      width: calc((100% - 40px) / 3); /* Distribute width for 3 cards with 20px gap */
+      padding: 5px 12px 25px;
+      align-items: flex-start; /* Align content to start */
+      justify-content: flex-end;
+
+      img{
+        height: 70px;
+        width: auto;
+        margin-bottom: 12px;
+      }
+
+      p{
+         font-size: 20px;
+        padding-left: 0;
+        margin-left: 12px;
+
+        span{
+            font-size: 28px;
+        }
+      }
+    }
+  }
+}

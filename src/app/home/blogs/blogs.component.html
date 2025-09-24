@@ -1,0 +1,29 @@
+<div class="main">
+    <div class="contant">
+        <p>Download our Free Coaching e-Book and Begin Your Certification Now!</p>
+        <button>    
+            <a href="../../../assets/coaching e-book.pdf" target="_blank" class="ebook-button">
+                Download Free e-Book
+            </a>
+        </button>
+
+    </div>
+</div>
+
+<app-navbar></app-navbar>
+
+<div class="expert-container">
+  <div class="cards d-flex">
+    <div class="card" *ngFor="let blog of blogs">
+      <img [src]="blog.image" alt="">
+      <!-- <button><i class="fa-regular fa-heart"></i></button> -->
+      <div class="data">
+        <h5>{{blog.heading}}</h5>
+        <!-- <h6>{{blog.heading}}</h6> -->
+        <p>{{blog.para}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

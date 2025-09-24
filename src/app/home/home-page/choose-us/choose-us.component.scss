@@ -1,0 +1,168 @@
+.main {
+    background-image: linear-gradient(to right, rgb(0, 0, 0), grey);
+    color: white;
+    width: 100%;
+    padding-left: 30px; /* This padding might be too much for small screens */
+
+    .contant{
+        gap: 50px;
+        padding-block: 25px;
+
+        .left{
+            padding: 45px; /* This padding might be too much for small screens */
+            h3{
+                font-size: 28px;
+                padding-bottom: 14px;
+            }
+            p{
+                font-size: 23px;
+                color: #d1cbcb;
+                padding-bottom: 5px;
+            }
+            ul{
+                list-style-type: none;
+                padding: 15px 15px;
+
+                li{
+                    padding: 5px 0;
+                    font-size: 21px;
+                    color: #d1cbcb;
+                    i{
+                        margin-right: 10px;
+                    }
+                }
+            }
+            button{
+                background-image: linear-gradient(to right, rgb(124, 185, 250), rgb(14, 75, 241));
+                color: white;
+                border: 3px solid black;
+            }
+        }
+        .right{
+            margin-left: 0%;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+
+@media(max-width:767px){
+    .main{
+        
+        padding-left: 0; /* Remove left padding for small screens */
+
+        .contant{
+            flex-direction: column;
+            gap: 20px; /* Reduce gap for mobile */
+            padding-block: 15px; /* Adjust vertical padding */
+            align-items: center; /* Center align items in the column */
+            text-align: center; /* Center text within the content area */
+
+
+            .left{
+                width: 90%; /* Give it a percentage width to allow some margin */
+                padding: 15px 35px; /* Reduce padding for mobile */
+                box-sizing: border-box; /* Include padding in the width calculation */
+                text-align: left; /* Keep text left-aligned within its container */
+
+
+                p , ul li{
+                    font-size: 4vw; /* Use vw for more responsive font sizing */
+                    line-height: 1.5; /* Improve readability */
+                }
+                h3{
+                    font-size: 6vw; /* Use vw for more responsive font sizing */
+                    font-weight: 700;
+                    padding-bottom: 10px; /* Adjust padding */
+                }
+                ul{
+                    padding: 0;
+                    padding-left: 10px;
+
+                    li{
+                        display: flex; /* Use flexbox for list items to align icon and text */
+                        align-items: center; /* Vertically align items */
+                        margin-bottom: 5px; /* Add some space between list items */
+                        font-size: 4vw; /* Ensure consistency with paragraph font size */
+                        i{
+                            margin-right: 8px; /* Adjust icon spacing */
+                            font-size: 12px; /* Adjust icon size */
+                        }
+                    }
+                }
+                button{
+                    border-radius: 30px;
+                    padding: 12px 20px; /* Adjust padding for better touch target */
+                    width: auto; /* Allow button to size based on content */
+                    min-width: 165px; /* Ensure a minimum width */
+                    font-size: 16px; /* Slightly larger font for readability */
+                    font-weight: 700;
+                    margin-top: 15px; /* Add space above the button */
+                    display: block; /* Make button a block element to center it */
+                }
+            }
+            .right{
+                width: 100%; /* Adjust image width for mobile */
+                padding: 15px 0 15px 15px; /* Add some padding around the image */
+                box-sizing: border-box;
+                img{
+                    width: 100%; /* Ensure image scales within its container */
+                    height: auto;
+                    display: block; /* Remove any extra space below image */
+                    margin: 0 auto; /* Center the image if its container is wider */
+                }
+            }
+        }
+    }
+}
+
+@media(min-width:768px){
+    .main{
+        .contant{
+            display: flex;
+            gap: 50px; /* Keep gap for larger screens */
+            padding-left: 30px; /* Restore left padding for larger screens */
+            align-items: flex-start; /* Align items to the start for web view */
+            text-align: left; /* Restore text alignment for web view */
+
+
+            .left{
+                width: 50%;
+                padding: 45px; /* Restore padding for web view */
+
+
+                p , ul li{
+                    font-size: 23px; /* Restore font sizes for web view */
+                }
+                h3{
+                    font-size: 28px; /* Restore font sizes for web view */
+                }
+                ul{
+                    padding: 15px 15px; /* Restore padding for web view */
+                    li{
+                        display: block; /* Revert list item display */
+                    }
+                }
+                button{
+                    border-radius: 30px;
+                    padding: 10px;
+                    width: 200px;
+                    display: inline-block; /* Revert button display */
+                    margin-left: 0; /* Revert button margin */
+                    margin-right: 0; /* Revert button margin */
+                }
+            }
+            .right{
+                width: 50%;
+                float: right;
+                padding: 0; /* Remove any specific padding for the image div in web view */
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

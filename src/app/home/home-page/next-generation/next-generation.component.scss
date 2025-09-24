@@ -1,0 +1,343 @@
+@import '../../../../styles.scss'; /* Assuming this path is correct in your Angular project */
+
+.main {
+    text-align: center;
+    font-family: 'Inter', sans-serif; /* Ensure font is applied */
+
+    h3 {
+        font-weight: 700;
+        color: #729bf9;
+        /* margin: 50px 0 19px; */ /* Commented out as per original snippet */
+    }
+
+    h2 {
+        font-weight: 700;
+    }
+
+    p {
+        color: #a9a2a2;
+        margin: auto;
+        padding: 0px 20px;
+    }
+
+    .contant {
+        display: flex;
+        gap: 18px;
+        width: 100%;
+        padding-inline: 10px;
+        margin: auto;
+        margin-top: 30px;
+        text-align: center;
+        justify-content: center; /* Center cards horizontally */
+        flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+
+
+        .cards, .card1, .card2 {
+            width: 23%; /* Base width for desktop, adjusted by media queries */
+            background-color: #FAF5F5;
+            border-radius: 10px;
+            padding: 40px 15px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content within the card */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Added subtle shadow for depth */
+            transition: transform 0.3s ease; /* Smooth hover effect */
+
+            &:hover {
+                transform: translateY(-5px); /* Lift card on hover */
+            }
+
+            h5 {
+                color: #0a16bb;
+                font-size: 15px;
+                font-weight: 500;
+            }
+            p {
+                font-size: 1vw; /* Responsive font size */
+                text-align: center; /* Center paragraph text */
+                width: 100%;
+                margin: 0;
+            }
+            img {
+                width: 60%;
+                height: 130px; /* Fixed height as in original CSS */
+                object-fit: contain; /* Ensures image content is fully visible */
+            }
+            button {
+                width: 85px;
+                margin: auto;
+                margin-block-start: 8%; /* Margin from the top of the card content */
+                border: 1px solid rgb(234, 191, 173);
+                border-radius: 8px;
+                padding: 11px;
+                background: none;
+                color: #a19b9b;
+                font-size: 10px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: background-color 0.3s ease, color 0.3s ease;
+
+                &:hover {
+                    background-color: #0a16bb;
+                    color: white;
+                }
+            }
+        }
+        .card2 {
+            color: white;
+            background: linear-gradient(to right, #05267c, #0466bd);
+            border: none; /* No border for the gradient card */
+
+            h5 {
+                color: white;
+            }
+            p {
+                color: white;
+            }
+
+            img{
+                height: 122px;
+            }
+            
+            button {
+                background-color: #163480;
+                border: 1px solid white;
+                color: white;
+
+                &:hover {
+                    background-color: white;
+                    color: #163480;
+                }
+            }
+        }
+        .card1 {
+            button{
+                margin-block-start: 22%; /* Specific adjustment for the third card's button */
+            }
+        }
+    }
+}
+
+/* Media Queries for Responsiveness */
+
+@media(max-width:767px){
+    .main{
+        padding: 20px;
+        width: 100%;
+
+        h3{
+            padding: 20px 0 3px;
+            font-size: 15px;
+        }
+
+        h2{
+            font-size: 25px;
+        }
+
+        p{
+            width: 85%;
+            font-size: 2.5vw;
+        }
+        .contant{
+            flex-direction: column;
+            gap: 15px; /* Reduce gap in column layout */
+
+            .cards , .card1 , .card2{
+                width: 100%;
+                padding: 30px 20px 10px; /* Adjust padding as needed */
+                justify-content: space-between; /* Distribute space between items */
+
+
+                img {
+                    width: 70%; /* Adjust image width for better fit on mobile */
+                    height: auto; /* Allow image height to adjust naturally */
+                    margin-bottom: 10px; /* Add some space below the image */
+                }
+
+                h5{
+                    font-size: 4vw;
+                    margin: 8px 0; /* Use consistent margin for proper spacing */
+                    position: static; /* Remove relative positioning and negative top */
+                    text-align: center; /* Ensure text is centered */
+                }
+                p{
+                    font-size: 3vw;
+                    position: static; /* Remove relative positioning and negative top */
+                    margin-bottom: 15px; /* Add space below paragraph */
+                    text-align: center; /* Ensure text is centered */
+                    width: auto; /* Let content dictate width within padding */
+                }
+                button{
+                    margin-top: 10px; /* Maintain positive margin-top */
+                    font-size: 2.5vw; /* Adjust button font size for mobile */
+                    width: 60%; /* Make buttons wider on mobile */
+                    max-width: 150px; /* Optional: Set a max-width for buttons */
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:768px) and (max-width: 1024px) {
+   .main {
+        padding: 33px 5% 28px; /* Maintain existing padding */
+
+        h3 {
+            font-size: 15px; /* Maintain existing font size */
+        }
+
+        h2 {
+            font-size: 25px; /* Maintain existing font size */
+        }
+
+        p {
+            width: 80%; /* Slightly adjust width for main description */
+            font-size: 13px; /* Slightly increase font size for better readability */
+            line-height: 20px; /* Adjust line height for better readability */
+            margin: auto; /* Ensure it's centered */
+        }
+    }
+
+    .contant {
+        gap: 15px; /* Adjust gap for tablet layout */
+        padding-inline: 20px; /* Add horizontal padding to the container */
+
+        .cards, .card1, .card2 {
+            width: calc(50% - 10px); /* Two cards per row for tablets */
+            padding: 40px 15px 15px; /* Adjust padding for cards: top, horizontal, bottom */
+            display: flex; /* Ensure flex properties are maintained */
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center items horizontally within the card */
+            justify-content: space-between; /* Distribute space vertically */
+
+
+            img {
+                width: 70%; /* Adjust image width for better fit on tablets */
+                height: 120px; /* Set a more controlled height for images on tablets */
+                object-fit: contain; /* Ensure image content is fully visible */
+                margin-bottom: 15px; /* Add space below the image */
+            }
+
+            h5 {
+                font-size: 1.8vw; /* Adjust font size for tablets to be slightly larger */
+                margin-bottom: 8px; /* Space below heading */
+                text-align: center;
+                line-height: 1.3; /* Improve readability */
+            }
+            p {
+                font-size: 1.1vw; /* Adjust font size for tablets, make it slightly smaller than h5 */
+                text-align: center; /* Center paragraph text */
+                width: 100%; /* Ensure paragraph takes full width within card padding */
+                margin-bottom: 20px; /* Add more space below paragraph */
+            }
+            button {
+                font-size: 1.0vw;
+                width: 50%; /* Adjust button width for tablets */
+                max-width: 130px; /* Set a max-width for consistency */
+                margin-top: auto; /* Pushes button to the bottom if card content varies */
+                margin-bottom: 0; /* Remove any unnecessary bottom margin */
+            }
+        }
+        .card1 {
+            button{
+                /* This specific adjustment might still be needed if content length varies a lot,
+                   but `margin-top: auto` on the button tries to handle this generally.
+                   You might want to remove or adjust this based on actual content length. */
+                margin-block-start: 8%; /* Reduced from original 12% as general button margin is handled */
+            }
+        }
+    }
+
+    .contant {
+        gap: 15px; /* Adjust gap for tablet layout */
+        .cards, .card1, .card2 {
+            width: calc(50% - 10px); /* Two cards per row for tablets */
+            padding: 60px 25px 20px; /* Adjust padding */
+
+            h5 {
+                font-size: 2.0vw; /* Adjust font size for tablets */
+            }
+            p {
+                font-size: 1.2vw; /* Adjust font size for tablets */
+            }
+            button {
+                font-size: 1.0vw;
+                width: 50%; /* Adjust button width for tablets */
+                margin-block-start: 5%; /* Adjust margin-top for tablets */
+            }
+        }
+        .card1 {
+            button{
+                margin-block-start: 12%; /* Specific adjustment for card1 button on tablets */
+            }
+        }
+    }
+}
+
+@media (min-width:1025px) and (max-width: 1440px) {
+    .main {
+        padding: 33px 5% 28px;
+
+        h3 {
+            font-size: 30px;
+        }
+
+        h2 {
+            font-size: 37px;
+        }
+
+        p {
+            width: 72%;
+            font-size: 20px;
+        }
+    }
+    .contant {
+        .cards, .card1, .card2 {
+            width: 30%; /* Three cards per row for larger screens */
+            h5 {
+                font-size: 1.4vw; /* Maintain original size or adjust for specific screens */
+            }
+            p {
+                font-size: 1vw;
+            }
+            button {
+                font-size: 0.9vw; /* Adjust button text size slightly */
+            }
+        }
+    }
+}
+
+@media (min-width: 1441px) {
+    .main {
+        padding: 33px 5% 28px;
+
+        h3 {
+            font-size: 30px;
+        }
+
+        h2 {
+            font-size: 37px;
+        }
+
+        p {
+            width: 72%;
+            font-size: 20px;
+        }
+
+        .contant {
+        .cards, .card1, .card2 {
+            /* Adjusted width for 4 cards in a row, considering 20px gap */
+            width: calc(25% - 15px);
+        }
+
+        .cards{
+            button{
+                   width: 150px;
+                   padding: 12px;
+                   font-size: 14px;
+            }
+        }
+    }
+    }
+    
+}

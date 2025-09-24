@@ -1,0 +1,321 @@
+.global-settings-page {
+    border-radius: 17px;
+    border: 3px solid rgb(221 221 221);
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    font-family: Arial, sans-serif; // A common, clean font
+}
+
+.heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    background: #f7f7f7;
+    margin: 0;
+    height: 75px;
+    border: none;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.main-header {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    color: #605b5b;
+}
+
+.top-right-buttons {
+    display: flex;
+    gap: 10px; // Space between buttons
+
+    button {
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .reset-button {
+        background-color: #f0f0f0;
+        color: #555;
+        border: 1px solid #ddd;
+
+        &:hover {
+            background-color: #e0e0e0;
+        }
+    }
+
+    .save-button {
+        background-color: #1a73e8; // Blue from the image
+        color: white;
+        border: 1px solid #1a73e8;
+
+        &:hover {
+            background-color: #145cb3;
+        }
+    }
+}
+
+
+.global-settings-wrapper {
+    display: flex;
+    gap: 0px; // No gap between sidebar and content area directly within this wrapper
+    border: 1px solid #e0e0e0;
+    /* Softer border, adjusted from 3px */
+    overflow: hidden;
+    /* Ensures border-radius applies to children */
+    background-color: #ffffff;
+    /* Explicitly set background */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.global-settings-container {
+    display: flex;
+    flex: 1;
+    /* Allows the container to take available space */
+    background-color: #ffffff;
+    border-radius: 0;
+    /* Remove internal border-radius if wrapper has it */
+    box-shadow: none;
+    /* Remove internal shadow if wrapper has it */
+    overflow: hidden;
+    border: none;
+}
+
+.sidebar {
+    border-right: 1px solid #e5e7eb;
+    background: #f7f7f7;
+    padding: 10px 0 10px 10px;
+    width: 200px;
+
+    h2 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 24px;
+        padding: 0 24px;
+        /* Align with list item padding */
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: 4px;
+            /* Smaller gap between list items */
+
+            button {
+                width: 100%;
+                text-align: left;
+                padding: 12px 24px;
+                /* Increased padding for better click area and spacing */
+                background-color: transparent;
+                border: none;
+                transition: all 0.2s ease-in-out;
+                cursor: pointer;
+                font-size: 12px;
+                font-weight: 600;
+                color: #605b5b;
+                border-top-left-radius: 25px;
+                border-bottom-left-radius: 25px;
+
+                &:hover {
+                    background-color: #f3f4f6;
+                    /* Lighter hover state */
+                }
+
+                &.active {
+                    background-color: white;
+                    position: relative;
+                    /* For the subtle left border */
+                }
+            }
+        }
+    }
+}
+
+.content-area {
+    flex: 1;
+    padding: 15px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Pushes content and bottom buttons apart */
+}
+
+.bottom-buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    /* Align to the right */
+    gap: 10px;
+    padding-top: 15px;
+    margin-top: 0;
+
+    button {
+        padding: 10px 8px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        font-weight: 600;
+    }
+
+    .reset-section {
+        color: #074a07;
+        border: 1px solid #074a07;
+        border-radius: 5px;
+        padding: 5px 8px;
+        background: none;
+
+        &:hover {
+            background-color: #e0e0e0;
+        }
+    }
+
+    .save-button {
+        background-image: linear-gradient(to left, rgb(58, 66, 151), rgba(71, 120, 235, 0.76)) !important;
+        color: #ffffff !important;
+        border: none;
+        width: 115px;
+
+        &:hover {
+            background-color: #145cb3;
+        }
+    }
+
+    .reset-all {
+        background: none;
+        border: none;
+        color: gray;
+    }
+}
+
+/* Responsive considerations (simple example) */
+@media (max-width: 768px) {
+
+    .global-settings-page {
+        flex-direction: column !important;
+    }
+
+    .global-settings-wrapper {
+        flex-direction: column !important;
+        margin: 10px;
+        width: 100%;
+    }
+
+    .global-settings-container {
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        border: 10px solid #EAEAEA;
+        border-radius: 20px;
+        padding: 20px;
+
+        ul {
+            margin: 10px !important;
+        }
+    }
+
+    .content-area {
+        padding: 20px;
+    }
+
+    .top-right-buttons {
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+        align-items: flex-end;
+    }
+
+    .top-right-buttons button {
+        width: auto;
+        /* Allow buttons to size naturally */
+    }
+
+    .bottom-buttons-container {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5px;
+    }
+
+    .bottom-buttons-container button {
+        width: auto;
+    }
+
+    button {
+        width: 100%;
+        text-align: left;
+        padding: 12px 24px;
+        /* Increased padding for better click area and spacing */
+        background-color: transparent;
+        border: none;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 600;
+        color: #605b5b;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+
+        &:hover {
+            background-color: #f3f4f6;
+            /* Lighter hover state */
+        }
+
+        &.active {
+            background-color: white;
+            border-radius: 10px !important;
+            position: relative;
+            /* For the subtle left border */
+        }
+
+    }
+}
+
+
+
+
+
+@media(max-width : 430px){
+                button {
+                width: 100%;
+                text-align: left;
+                padding: 12px 24px; /* Increased padding for better click area and spacing */
+                background-color: transparent;
+                border: none;
+                transition: all 0.2s ease-in-out;
+                cursor: pointer;
+                font-size: 12px;
+                font-weight: 600;
+                color: #605b5b;
+                border-top-left-radius: 25px;
+                border-bottom-left-radius: 25px;
+
+                &:hover {
+                    background-color: #f3f4f6; /* Lighter hover state */
+                }
+
+                &.active {
+                    background-color: white; 
+                    border-radius: 10px !important;
+                    position: relative; /* For the subtle left border */
+                }
+            }
+}

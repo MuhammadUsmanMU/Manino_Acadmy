@@ -1,0 +1,156 @@
+<div class="main">
+  <div class="table-header">
+    <h3>All Instructors ({{ Instructors.length }})</h3>
+    <div class="filters">
+      <button (click)="openModal()">Add New Instructor +</button>
+
+      <!-- Sort Dropdown -->
+      <div class="custom-dropdown" (click)="toggleSortDropdown()">
+        <span>{{ selectedSort || 'Sort By' }}</span>
+        <i class="fa-solid fa-caret-down"></i>
+        <ul *ngIf="showSortDropdown" class="dropdown-options">
+          <li (click)="selectSort('Asc')">Asc</li>
+          <li (click)="selectSort('Desc')">Desc</li>
+        </ul>
+      </div>
+
+      <!-- Limit Dropdown -->
+      <div class="custom-dropdown" (click)="toggleLimitDropdown()">
+        <span>{{ selectedLimit || 'Items per page' }}</span>
+        <i class="fa-solid fa-caret-down"></i>
+        <ul *ngIf="showLimitDropdown" class="dropdown-options">
+          <li (click)="selectLimit(10)">10</li>
+          <li (click)="selectLimit(20)">20</li>
+          <li (click)="selectLimit(30)">30</li>
+          <li (click)="selectLimit(40)">40</li>
+        </ul>
+      </div>
+
+      <!-- Search -->
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (ngModelChange)="currentPage = 1" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr class="head">
+          <th>#</th>
+          <th>Name</th>
+          <th>Email / Phone</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Email Verification</th>
+          <th>Identity Verification</th>
+          <th>Created Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of paginatedTable" class="data">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.email }}<br>{{ item.phone }}</td>
+          <td>{{ item.role }}</td>
+          <td>
+            <span class="tag">
+              <span class="dot" [ngStyle]="{'background': item.Status === 'Active' ? '#28a745' : '#d87e47'}"></span>
+              {{ item.Status }}
+            </span>
+          </td>
+          <td>
+            <span class="tag" [ngStyle]="{'color': item.emailVarification === 'Verified' ? 'black' : '#aaa'}">
+              <i class="fa-solid fa-envelope-circle-check"></i>
+              {{ item.emailVarification }}
+            </span>
+          </td>
+          <td>
+            <span class="tag">
+              <span class="dot" [ngStyle]="{'background': item.identity === 'Verified' ? '#28a745' : '#d87e47'}"></span>
+              {{ item.identity }}
+            </span>
+          </td>
+          <td>{{ item.created }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <i class="bi bi-chevron-left" (click)="prevPage()" [class.disabled]="currentPage === 1"></i>
+    <span *ngFor="let page of [].constructor(totalPages); let i = index" [class.active]="currentPage === i + 1"
+      (click)="changePage(i + 1)">
+      {{ i + 1 }}
+    </span>
+    <i class="bi bi-chevron-right" (click)="nextPage()" [class.disabled]="currentPage === totalPages"></i>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <div class="header">
+      <a href="javascript:void(0);" class="close" (click)="closeModal()">&times;</a>
+      <h5>Add Instructor</h5>
+    </div>
+
+    <div class="modal-body">
+      <form class="tb-themeform" (ngSubmit)="saveUser()" #addUserForm="ngForm">
+        <fieldset>
+          <div class="form-group-wrap">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control" name="name" [(ngModel)]="form.name"
+                placeholder="Full Name" required />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" name="email" [(ngModel)]="form.email"
+                placeholder="Enter Email Address" required />
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="text" class="form-control" name="phone" [(ngModel)]="form.phone"
+                placeholder="Enter Phone" required />
+            </div>
+            <div class="form-group">
+              <label>Role</label>
+              <select class="form-control" name="role" [(ngModel)]="form.role" required>
+                <option value="Instructor">Instructor</option>
+                <option value="Student">Student</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Status</label>
+              <select class="form-control" name="status" [(ngModel)]="form.Status" required>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Email Verification</label>
+              <select class="form-control" name="emailVarification" [(ngModel)]="form.emailVarification" required>
+                <option value="Verified">Verified</option>
+                <option value="Non-verified">Non-verified</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Identity Verification</label>
+              <select class="form-control" name="identity" [(ngModel)]="form.identity" required>
+                <option value="Verified">Verified</option>
+                <option value="Non-verified">Non-verified</option>
+              </select>
+            </div>
+            <div class="form-group tb-formbtn">
+              <button type="submit" class="save-button">Save Instructor</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

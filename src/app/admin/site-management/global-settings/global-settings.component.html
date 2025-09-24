@@ -1,0 +1,37 @@
+<div class="global-settings-page">
+    <div class="heading-container">
+        <h1 class="main-header">Global Settings</h1>
+    </div>
+    <div class="global-settings-wrapper">
+        <div class="global-settings-container">
+            <aside class="sidebar">
+                <nav>
+                    <ul>
+                        <li *ngFor="let item of sidebarItems">
+                            <button (click)="setActiveSidebarItem(item.id)"
+                                [ngClass]="{ active: activeSidebarItem === item.id }">
+                                {{ item.label }}
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="content-area">
+                <ng-container [ngSwitch]="activeSidebarItem">
+                    <app-ai-writer-settings *ngSwitchCase="'ai-writer-settings'"></app-ai-writer-settings>
+                    <app-api-settings *ngSwitchCase="'api-settings'"></app-api-settings>
+                    <app-mobile-app-settings *ngSwitchCase="'mobile-app-settings'"></app-mobile-app-settings>
+                    <app-assignment-settings *ngSwitchCase="'assignments-settings'"></app-assignment-settings>
+                    <app-email-setting *ngSwitchCase="'email-settings'"></app-email-setting>
+                </ng-container>
+
+                <div class="bottom-buttons-container">
+                    <button class="reset-all">Reset all</button>
+                    <button class="reset-section">Reset section</button>
+                    <button class="save-button">Save Changes</button>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>

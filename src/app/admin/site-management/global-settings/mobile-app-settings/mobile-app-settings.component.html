@@ -1,0 +1,115 @@
+<div class="ai-settings-container">
+  <!-- Header -->
+  <div class="ai-settings-header">
+    <h2>Mobile app Settings</h2>
+    <div class="bottom-buttons-container">
+           <button class="reset-all">Reset all</button>
+           <button class="reset-section">Reset section</button>
+           <button class="save-button">Save Changes</button>
+      </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button
+      *ngFor="let tab of tabs"
+      [ngClass]="{ active: activeTab === tab.id }"
+      (click)="setActiveTab(tab.id)"
+    >
+      {{ tab.label }}
+    </button>
+  </div>
+
+  <!-- Tab Sections -->
+  <div class="tab-section">
+    <!-- Google Map Settings -->
+    <div *ngIf="activeTab === 'googleMap'">
+      <app-api-subsection
+        [title]="'Google Map Settings'"
+        [enableLabel]="'Enable AI writer on profile fields'"
+        [promptLabel]="'Prompt for profile summary'"
+        [idPrefix]="'profile-summary'"
+        [(isEnabled)]="googleMapSetting.enableProfile"
+        [(promptText)]="googleMapSetting.profilePrompt"
+      ></app-api-subsection>
+
+      <app-api-subsection
+        [title]="'Headline Settings'"
+        [enableLabel]="'Enable AI writer on headline'"
+        [promptLabel]="'Prompt for headline'"
+        [idPrefix]="'profile-headline'"
+        [(isEnabled)]="googleMapSetting.enableHeadline"
+        [(promptText)]="googleMapSetting.headlinePrompt"
+      ></app-api-subsection>
+    </div>
+
+    <!-- Google Calendar Settings -->
+    <div *ngIf="activeTab === 'googleCalender'">
+      <app-api-subsection
+        *ngFor="let field of googleCalenderSetting"
+        [title]="field.title"
+        [enableLabel]="field.toggleLabel"
+        [promptLabel]="field.promptLabel"
+        [idPrefix]="field.idPrefix"
+        [(isEnabled)]="field.enabled"
+        [(promptText)]="field.promptText"
+      ></app-api-subsection>
+    </div>
+
+    <!-- OpenAI Settings -->
+    <div *ngIf="activeTab === 'OpenAi'">
+      <app-api-subsection
+        [title]="'OpenAI Session Notes'"
+        [enableLabel]="'Enable AI writer for session notes'"
+        [promptLabel]="'Prompt for session notes'"
+        [idPrefix]="'openai-session-notes'"
+        [(isEnabled)]="OpenAiSetting.enableSessionNotes"
+        [(promptText)]="OpenAiSetting.sessionNotesPrompt"
+      ></app-api-subsection>
+    </div>
+
+    <!-- Social Login Settings -->
+    <div *ngIf="activeTab === 'socialLogin'">
+      <app-api-subsection
+        [title]="'Assignment Description'"
+        [enableLabel]="'Enable AI writer for assignment descriptions'"
+        [promptLabel]="'Prompt for assignment descriptions'"
+        [idPrefix]="'social-assignment-description'"
+        [(isEnabled)]="socialLoginSetting.enableAssignmentDescription"
+        [(promptText)]="socialLoginSetting.assignmentDescriptionPrompt"
+      ></app-api-subsection>
+
+      <app-api-subsection
+        [title]="'Assignment Feedback'"
+        [enableLabel]="'Enable AI writer for assignment feedback'"
+        [promptLabel]="'Prompt for assignment feedback'"
+        [idPrefix]="'social-assignment-feedback'"
+        [(isEnabled)]="socialLoginSetting.enableAssignmentFeedback"
+        [(promptText)]="socialLoginSetting.assignmentFeedbackPrompt"
+      ></app-api-subsection>
+    </div>
+
+    <!-- Meeting Settings -->
+    <div *ngIf="activeTab === 'meetingSettings'">
+      <app-api-subsection
+        [title]="'Meeting Assignment Description'"
+        [enableLabel]="'Enable AI writer for assignment descriptions'"
+        [promptLabel]="'Prompt for assignment descriptions'"
+        [idPrefix]="'meeting-assignment-description'"
+        [(isEnabled)]="meetingSettingsSetting.enableAssignmentDescription"
+        [(promptText)]="meetingSettingsSetting.assignmentDescriptionPrompt"
+      ></app-api-subsection>
+
+      <app-api-subsection
+        [title]="'Meeting Assignment Feedback'"
+        [enableLabel]="'Enable AI writer for assignment feedback'"
+        [promptLabel]="'Prompt for assignment feedback'"
+        [idPrefix]="'meeting-assignment-feedback'"
+        [(isEnabled)]="meetingSettingsSetting.enableAssignmentFeedback"
+        [(promptText)]="meetingSettingsSetting.assignmentFeedbackPrompt"
+      ></app-api-subsection>
+    </div>
+  </div>
+</div>
+
+

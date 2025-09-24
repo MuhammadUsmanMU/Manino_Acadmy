@@ -1,0 +1,237 @@
+<div class="main-wrapper ">
+<div class="main">
+    <div class="contant">
+        <p>Download our Free Coaching e-Book and Begin Your Certification Now!</p>
+        <button>    
+            <a href="../../../assets/coaching e-book.pdf" target="_blank" class="ebook-button">
+                Download Free e-Book
+            </a>
+        </button>
+
+    </div>
+</div>
+
+<app-navbar></app-navbar>
+
+<div class="our-story-container">
+  <!-- <div class="content-wrapper"> -->
+    <div class="left">
+      <app-brochure-button
+         fileName="About us.pdf"
+         label="Download Brochure"
+         className="dark-btn">
+      </app-brochure-button>
+
+    <h2>The Journey Behind The M.E.C Academy</h2>
+    <p>At The M.E.C Academy, our mission is to empower individuals through innovative coaching programs, foster personal growth, and provide top-tier education. Our dedicated team of instructors and staff are committed to helping students achieve their highest potential through tailored learning experiences.</p>
+    <ul>
+      <li>
+        <i class="fa-solid fa-star"></i>
+        <strong>Proven Success Strategies:</strong>
+        <p class="nested-p">Strategies for professionals seeking career advancement.</p>
+      </li>
+      <li>
+        <i class="fa-solid fa-star"></i>
+        <strong>Customized Coaching Plans:</strong>
+        <p class="nested-p">Designed with individual goals in mind.</p>
+      </li>
+      <li>
+        <i class="fa-solid fa-star"></i>
+        <strong>Access to a Network:</strong>
+        <p class="nested-p">Connect with industry leaders and lifelong learning resources.</p>
+      </li>
+    </ul>
+  </div>
+  <div class="right">
+    <img src="../../../assets/about/about-us.jpg" alt="The M.E.C Academy Team" />
+  </div>
+  <!-- </div> -->
+</div>
+
+<div class="our-values-container">
+  <div class="left2">
+    <a href="https://youtu.be/Ktw2Ssdi7Co?si=V0vHXPGz9KT8uGKX" target="_blank">
+       <img src="../../assets/about/about12025-05-22 124115.png" alt="Coach at Work" />
+    </a>
+  </div>
+  <div class="right2">
+    <div class="about">
+      <div class="line"></div>
+      <h4>Our Values</h4>
+      <div class="line"></div>
+    </div>
+    <h2>Our Core Values</h2>
+    <p>At The M.E.C Academy, our core values shape everything we do. We prioritize integrity and foster a culture of trust and accountability that empowers both instructors and students.</p>
+    <ul>
+      <li>
+        <i class="fa-solid fa-star"></i>
+        <strong>Integrity:</strong>
+        <p class="nested-p">Upholding honesty and ethics in all coaching practices.</p>
+      </li>
+      <li>
+        <i class="fa-solid fa-star"></i>
+        <strong>Excellence:</strong>
+        <p class="nested-p">Delivering the highest quality in education and personal development.</p>
+      </li>
+      <li>
+        <i class="fa-solid fa-star"></i>
+        <strong>Community:</strong>
+        <p class="nested-p">Building a supportive network for lifelong learning and growth.</p>
+      </li>
+    </ul>
+    <button routerLink="/platinum-package">Discover More</button>
+  </div>
+</div>
+
+<div class="expert-container">
+  <div class="heading">
+    <div class="about">
+      <div class="line"></div>
+      <h4>Experienced Instructors</h4>
+      <div class="line"></div>
+    </div>
+    <h2>Experts in Executive Coaching & Leadership</h2>
+    <p>Our team includes 100+ executive coaches with decades of experience in leadership development and working with Fortune 500 companies.</p>
+  </div>
+  <div class="cards d-flex">
+    <div class="card" *ngFor="let item of cards">
+      <img [src]="item.img" alt="">
+      <button><i class="fa-regular fa-heart"></i></button>
+      <div class="data">
+        <h5>{{item.name}}</h5>
+        <p>{{item.text}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="enrollment-container">
+  <div class="enrollment-header">
+    <h4>Enrollment Process: Simple & Straightforward</h4>
+    <p>We’ve made the enrollment process seamless so you can focus on what truly matters.</p>
+  </div>
+  <div class="contant">
+    <div class="left">
+      <h4>Choose Your Certification Program</h4>
+      <p>Platinum, Gold, or À La Carte Add-Ons</p>
+      <p class="sub-text"><strong>Register Online</strong>  <label> Secure Your Spot in the Program</label></p>
+      <p class="sub-text"><strong>Access Training</strong>  <label> Materials & Start Learning</label></p>
+      <p class="sub-text"><strong>Attend Live Webinars</strong>  <label> & Practice Coaching Sessions</label></p>
+      <p class="sub-text"><strong>Complete Certification</strong>  <label> & Begin Your Coaching Career.</label></p>
+      <button routerLink="/platinum-package">Enroll Now <i class="fa-solid fa-greater-than"></i></button>
+    </div>
+    <div class="right">
+      <img src="../../assets/chooseus.png" alt="">
+    </div>
+  </div>
+</div>
+
+<div class="accadmy-lms-container">
+  <h4>The M.E.C. LMS Platform:</h4>
+  <h5>A Cutting-Edge Learning Experience</h5>
+  <div class="contant">
+    <div class="left">
+      <a href="https://youtu.be/Ktw2Ssdi7Co?si=V0vHXPGz9KT8uGKX" target="_blank">
+        <img src="../../assets/vedio.png" alt="">
+      </a>
+    </div>
+    <div class="right">
+      <h5>Our state-of-the-art LMS platform provides everything you need to succeed in executive coaching:</h5>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> 24/7 access to training modules, recorded webinars & coaching materials</li>
+        <li><i class="fa-solid fa-check"></i> AI-powered coaching assistant for simulated practice</li>
+        <li><i class="fa-solid fa-check"></i> Interactive learning tools & on-demand coaching support</li>
+        <li><i class="fa-solid fa-check"></i> Live Zoom webinars (Monday–Friday evenings & Saturday afternoons)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="our-plateform-container">
+  <div class="our-plateform-header">
+    <h4>Why Our Platform Stands Out</h4>
+    <p>We believe that continuous learning and professional development are key to success in executive coaching.</p>
+  </div>
+  <div class="contant">
+    <div class="card" *ngFor="let item of plateformCards">
+  <img [src]="item.img" alt="">
+  <div class="cardContant">
+    <h3>{{item.head}}</h3>
+    <p>{{item.para}}</p>
+  </div>
+
+  <ng-container *ngIf="item.isExternalLink; else internalRouterLink">
+    <button>
+      <a [href]="item.route" target="_blank" style="text-decoration: none;color: white;">
+         {{item.button}}
+      </a>
+    </button>
+  </ng-container>
+
+  <ng-template #internalRouterLink>
+    <button [routerLink]="item.route">{{item.button}}</button>
+  </ng-template>
+</div>
+  </div>
+</div>
+
+<div class="form-container">
+  <div class="contant">
+    <div class="left">
+      <h4>Please Fill Out the Form</h4>
+      <div class="form">
+        <form [formGroup]="userForm" (ngSubmit)="submitForm2()">
+          <div class="name">
+            <div class="firstname">
+              <label for="fname">First Name</label><br>
+              <input type="text" id="fname" name="fname" formControlName="fname">
+            </div>
+            <div class="lastname">
+              <label for="lname">Last Name</label><br>
+              <input type="text" id="lname" name="lname" formControlName="lname">
+            </div>
+          </div>
+
+          <div class="email">
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" formControlName="email">
+          </div>
+
+          <div class="message">
+            <label for="message">Message</label><br>
+            <textarea name="message" id="message" cols="100" rows="5"></textarea>
+          </div>
+
+          <button type="submit" [disabled]="!userForm.valid">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="right">
+      <h1>Have Questions?</h1>
+      <p>We’re here to help!</p>
+      <div class="emailData">
+        <div class="icons">
+          <i class="fa-solid fa-envelope fa-2x"></i>
+        </div>
+        <div class="data">
+          <h3>Email</h3>
+          <label>hello&#64;reallygreatsite.com</label>
+        </div>
+      </div>
+      <div class="phoneData">
+        <div class="icons">
+          <i class="fa-solid fa-phone fa-2x"></i>
+        </div>
+        <div class="data">
+          <h3>Phone</h3>
+          <label>+123-456-7890</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+</div>

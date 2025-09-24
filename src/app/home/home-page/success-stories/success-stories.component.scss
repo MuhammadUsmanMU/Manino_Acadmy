@@ -1,0 +1,176 @@
+  .main {
+    padding: 30px 10px;
+
+    .header {
+      text-align: center;
+      width: 55%;
+      margin: auto;
+      // margin-block: 30px;
+
+      p {
+        color: #1a1919;
+        font-size: 15px;
+      }
+
+      h3 {
+        font-weight: 700;
+        font-size: 28px;
+        margin: 12px 0;
+      }
+
+      .heading {
+        display: flex;
+        color: #9f9c9c;
+        align-items: center;
+        gap: 10px;
+            justify-content: center;
+
+        .line {
+            border: 1px solid #9f9c9c;
+            width: 18px;
+            height: 1px;
+        }
+
+        h5{
+              font-size: 16px;
+                  font-weight: 400;
+                  margin-bottom: 0;
+        }
+    }
+    }
+
+    .contant {
+      display: flex;
+      // flex-wrap: wrap;
+      width: 100%;
+      // gap: 10px;
+      justify-content: center;
+
+      .cards {
+        
+        .row {
+          .card {
+            width: 33%;
+            border: none;
+            gap: 0px;
+          }
+        }
+      }
+
+    }
+  }
+
+
+  @media(max-width:767px) {
+    .main {
+               padding: 30px 25px;
+
+      .header {
+        width: 80%;
+
+        p {
+          font-size: 3vw;
+        }
+      }
+
+      .contant {
+        // flex-direction: column;
+        .cards{
+          .row{
+            flex-direction: column;
+            .card{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media(min-width:768px) and (max-width:1065px) {
+    .main {
+
+      .contant {
+        padding: 20px 40px;
+      }
+    }
+  }
+
+  @media(min-width:1065px) {
+    .main {
+      .contant {
+        padding: 0 15% 20px;
+      }
+    }
+  }
+
+
+  .testimonial-card {
+    background: #f3f3f3;
+    padding: 16px;
+    border-radius: 8px;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    margin: 10px 0;
+
+    .quote {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 15px;
+      padding: 12px;
+    }
+
+    .stars {
+      color: #f4b400;
+      margin-bottom: 20px;
+
+      i {
+        margin-right: 3px;
+        font-size: 12px;
+      }
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .user-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .user-details {
+        margin-left: 10px;
+        flex-grow: 1;
+
+        h4 {
+          margin: 0;
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        p {
+          margin: 0;
+          font-size: 14px;
+          color: gray;
+        }
+      }
+
+      .badge {
+        background: #d0ebff;
+        color: #007bff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
+  }

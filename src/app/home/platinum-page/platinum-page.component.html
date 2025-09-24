@@ -1,0 +1,192 @@
+<div class="main">
+    <div class="contant">
+        <p>Download our Free Coaching e-Book and Begin Your Certification Now!</p>
+        <button>    
+            <a href="../../../assets/coaching e-book.pdf" target="_blank" class="ebook-button">
+                Download Free e-Book
+            </a>
+        </button>
+
+    </div>
+</div>
+
+<app-navbar></app-navbar>
+
+<div class="main-package-container">
+    <div class="left">
+      <app-brochure-button
+         fileName="Platinum package.pdf"
+         label="Download Brochure"
+         className="dark-btn">
+      </app-brochure-button>
+
+      <h2>Platinum Package</h2>
+      <ul>
+        <li>Fast-Track Your Executive Coaching Certification</li>
+        <li>Unparalleled Flexibility</li>
+        <li>Cutting-Edge Training</li>
+      </ul>
+    </div>
+    <div class="right">
+      <img src="../../../assets/platinumPage/1.png" alt="Group of diverse professionals celebrating success">
+    </div>
+</div>
+
+<div class="Executive-Coaching-container">
+  <div class="left">
+    <h5>Join Anytime</h5>
+    <h3>
+      Fast-Track Your Executive Coaching Certification with Unparalleled Flexibility and Cutting-Edge Training
+    </h3>
+    <p>
+      The M.E.C. Platinum Package is designed for professionals who want to earn
+      their ICF-accredited Executive Coach Certification without disrupting their careers.
+    </p>
+    <p>
+      Unlike traditional programs, The M.E.C. offers <span>flexibility</span> with <span>join-anytime enrollment</span> and
+      evening/weekend live training sessions. You’ll gain access to elite coaching strategies, AI-powered
+      learning, and a network of ICF-Certified Executive Coaches with Fortune 500 work experience — designed to help
+      you become a world-class Executive Coach in months, not years.
+    </p>
+  </div>
+  <div class="right">
+    <img src="../../../assets/platinumPage/2.png" alt="">
+  </div>
+</div>
+
+<div class="AI-Powered-container">
+  <div class="left">
+    <img src="../../../assets/platinumPage/3.png" alt="">
+  </div>
+  <div class="right">
+    <div class="icon">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <h5>AI-Powered Learning</h5>
+    <h2>Why Choose The Mannino Executive Coaching Academy?</h2>
+
+    <p><span>Designed for Busy Professionals:</span> Train at your own pace with flexible scheduling, including evening and weekend live sessions.</p>
+    <p><span>Master the Most In-Demand Coaching Skills:</span> Learn AI coaching, neuroscience, cognitive coaching, cultural intelligence, and emotional intelligence (EQ) to give your clients a competitive edge.</p>
+    <p><span>Real-World Executive Coaching Training:</span> Gain direct insights from ICF-certified coaches who are active Fortune 500 business professionals, providing you with actionable strategies that work in today’s modern business environment.</p>
+    <p><span>Launch and Grow Your Coaching Business:</span> A dedicated Business Builder Workshop provides the essential tools to establish, market, and scale your coaching practice.</p>
+    <p><span>Elite Networking & ICF Membership:</span> Join a global network of 60,000+ ICF professionals and connect with peers through our Real-Time Barter Coaching Platform, accelerating your ICF-paid coaching hours.</p>
+    <p><span>Immersive, AI-Powered Learning:</span> The M.E.C.’s cutting-edge Learning Management System (LMS) offers interactive modules, real-time coaching simulations, and AI-enhanced training for a deeper learning experience.</p>
+  </div>
+</div>
+
+<div class="platinum-include-container">
+  <div class="left">
+    <a href="https://youtu.be/Ktw2Ssdi7Co?si=V0vHXPGz9KT8uGKX" target="_blank"> 
+          <img src="../../../assets/platinumPage/4.png" alt="">
+    </a>
+  </div>
+  <div class="right">
+    <h2>What’s Included in the Platinum Package?</h2>
+    <ul>
+      <li>
+        <h5><i class="fa-solid fa-star"></i> Live Virtual 3-Day Intensive Seminar</h5>
+        <p>A deep dive into core coaching frameworks with expert-led training.</p>
+      </li>
+      <li>
+        <h5><i class="fa-solid fa-star"></i> The M.E.C. Certificate</h5>
+        <p>(Executive Coach Certificate received after completing Live Virtual Intensive 3-Day Seminar)</p>
+      </li>
+      <li>
+        <h5><i class="fa-solid fa-star"></i> Business Builder Workshop</h5>
+        <p>Live interactive one-day virtual workshop to help you build and launch your Executive Coaching business.</p>
+      </li>
+      <li>
+        <h5><i class="fa-solid fa-star"></i> Individual EQ2.0i Assessment</h5>
+        <p>Includes readout and sub-scale scoring on five EQ domains (Self-Perception, Self-Expression, Interpersonal, Decision Making, and Stress Management) to help you become a stronger and more impactful modern coach.</p>
+      </li>
+      <li>
+        <h5><i class="fa-solid fa-star"></i> 10 Hours of ICF Mentor Coaching</h5>
+        <p>Personalized coaching and feedback from ICF-certified mentors.</p>
+      </li>
+      <li>
+        <h5><i class="fa-solid fa-star"></i> Comprehensive ICF Curriculum</h5>
+        <p>Covers all required domains and core competencies for certification.</p>
+      </li>
+      <li>
+        <h5><i class="fa-solid fa-star"></i> ICF Education Hours:</h5>
+        <p>
+          60 Hours for ACC (Level I)<br>
+          125 Hours for PCC (Level II)<br>
+          Delivered through both live and self-paced formats to fit your schedule.
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="Exclusive-Features-container">
+  <div class="content-wrapper"> <div class="heading">
+      <h3>Exclusive Features – Elevate Your Coaching Career</h3>
+      <p>Explore a wealth of articles, guides, tutorials, and more, curated by our experts to enhance your learning experience.</p>
+    </div>
+    <div class="cards">
+      <div class="contant" *ngFor="let item of platinumCards">
+        <div class="img">
+          <img [src]="item.img" alt="">
+        </div>
+        <h4>{{item.head}}</h4>
+        <p>{{item.para}}</p>
+        <p>{{item.para2}}</p>
+      </div>
+    </div>
+  </div> 
+</div>
+
+<div class="ICF-Certification-container" id="ICF-Certification-container">
+  <h3>ICF Certification Requirements – Your Roadmap to Success</h3>
+  <div class="contant">
+    <div class="left">
+      <img src="../../../assets/platinumPage/5.png" alt="">
+    </div>
+    <div class="right">
+      <h5>ACC Certification (Level I) – Complete in just 5–6 months</h5>
+      <p><i class="fa-solid fa-star"></i> 60 education hours</p>
+      <p><i class="fa-solid fa-star"></i> 10 hours of ICF mentor coaching</p>
+      <p><i class="fa-solid fa-star"></i> 100 hours of paid coaching</p>
+      <p><i class="fa-solid fa-star"></i> ICF Certificate Ready to Test, allowing you to schedule the ACC exam through ICF</p>
+    </div>
+  </div>
+</div>
+
+<div class="PCC-Certification-container">
+  <div class="contant">
+    <div class="right">
+      <h5>PCC Certification (Level II) – Advanced Training for Experienced Coaches</h5>
+      <p><i class="fa-solid fa-star"></i> 125 total education hours</p>
+      <p><i class="fa-solid fa-star"></i> 10 hours of mentor coaching</p>
+      <p><i class="fa-solid fa-star"></i> 500 hours of paid coaching</p>
+      <p><i class="fa-solid fa-star"></i> ICF Certificate Ready to Test for PCC, allowing you to schedule the PCC exam through ICF</p>
+    </div>
+    <div class="left">
+      <img src="../../../assets/platinumPage/6.png" alt="">
+    </div>
+  </div>
+</div>
+
+<div class="Exclusive-Business-container">
+  <div class="left">
+    <img src="../../../assets/platinumPage/7.png" alt="">
+  </div>
+  <div class="right">
+    <h4>Exclusive Business Builder Workshop</h4>
+    <p>
+      This sophisticated one-day virtual workshop is meticulously designed to empower aspiring Executive Coaches with the essential skills and knowledge required to establish their own coaching business. The curriculum encompasses a comprehensive range of topics, from business formation to advanced marketing strategies, client acquisition, and ethical considerations.
+    </p>
+  </div>
+</div>
+
+<div class="Join-Now-container">
+  <h4>Your Next Step</h4>
+  <p>
+    The demand for Certified Executive Coaches is rising. This program equips you with the skills, credentials, and confidence to build a thriving coaching career—whether you want to work with Executives or teams, or start your own practice.
+  </p>
+  <h5>Spots are limited. Take the first step toward certification and apply now.</h5>
+  <button routerLink="/live-session">Join Now</button>
+</div>
+
+<app-footer></app-footer>

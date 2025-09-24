@@ -1,0 +1,489 @@
+@import '../../../styles.scss';
+
+.main {
+  background: linear-gradient(to right, #05267c, #0466bd);
+  font-family: $font;
+  color: white;
+  width: 100%;
+
+  .contant {
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 2px;
+    font-weight: 500;
+
+    button {
+      border: none;
+      font-weight: 600;
+      background: white;
+    }
+
+    .ebook-button {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+
+.business-builder {
+    display: flex;
+    padding-block: 20px;
+    font-family: sans-serif;
+    margin: 8px;
+    background-image: linear-gradient(to right, #1B205E, #1673C0, skyblue);
+
+    .left {
+        width: 35%;
+        // padding: 30px;
+        padding-inline-start: 40px;
+        padding-block: 30px;
+
+
+        h1 {
+            color: white;
+            font-size: 2.3vw;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: white;
+            margin-top: 30px;
+            font-size: 2vw;
+            font-weight: 650;
+        }
+
+        h5 {
+            color: white;
+            margin-top: 30px;
+            font-size: 1.1vw;
+            font-weight: 600;
+        }
+
+        p {
+            color: white;
+            width: 50%;
+            font-size: 1vw;
+        }
+    }
+
+    .right {
+        width: 65%;
+        padding-inline-start: 50px;
+        padding-inline-end: 30px;
+
+        .image {
+            height: 60%;
+            width: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+
+            }
+        }
+
+        .contant {
+            display: flex;
+
+            .contant1,
+            .contant2 {
+                width: 50%;
+                margin-top: 80px;
+                gap: 30px;
+                color: white;
+
+                h1 {
+                    font-size: 2vw;
+                    font-weight: 700;
+                }
+
+                p {
+                    width: 80%;
+                    font-size: 0.9vw;
+                }
+
+                h5 {
+                    margin-block-end: 20px !important;
+                    font-size: 0.7vw;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.main2 {
+    margin: 6px;
+    display: flex;
+    background-image: linear-gradient(to right, #1B205E, #1673C0, skyblue);
+    color: white;
+    gap: 30px;
+    padding: 30px;
+
+    .left {
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    .middle {
+        width: 40%;
+        margin-top: 30px;
+
+        h2 {
+            font-size: 1.7vw;
+            font-weight: 700;
+            margin-block: 20px;
+        }
+
+        p {
+            font-size: 1.2vw;
+
+        }
+
+        ul {
+            li {
+                font-size: 1vw;
+            }
+        }
+
+        .elite {
+            font-size: 1vw;
+        }
+
+        .become {
+            font-size: 1vw;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .source {
+            font-size: 0.8vw;
+            color: rgba(255, 255, 255, 0.648);
+        }
+
+        .prerequisits {
+            li {
+                font-size: 0.8vw;
+
+            }
+        }
+
+        .bottom {
+            font-size: 0.9vw;
+            color: rgba(255, 255, 255, 0.621);
+        }
+
+        .copyright {
+            font-size: 0.8vw;
+        }
+
+    }
+
+    .right {
+        // width: 30%;
+        // background-color: white;
+        color: black;
+        .container{
+            display: flex;
+            text-align: right;
+            justify-content: space-between;
+            gap: 0px;
+            padding: 0px;
+            .one , .two{
+                float: right;
+                // width: 20% !important;
+                .hours{
+                    width: 100px;
+                    font-size: 1.3vw;
+                    margin-top: 30px;
+                    h3{
+                        font-size: 0.8vw;
+                    }
+                    p{
+                        font-size: 0.7vw;
+                        font-weight: 600;
+                    }
+                }
+            }
+            .two{
+                text-align: left;
+                margin-top: 60px;
+            }
+
+        }
+        img {
+            height: auto;
+            // width: 50%;
+        }
+    }
+
+}
+
+// Media Queries
+@media (max-width: 767px) {
+   .main .contant {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .main .contant p {
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+
+  .main .contant button {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: auto;
+    max-width: 80%;
+    position: static;
+    top: auto;
+    transform: none;
+  }
+
+
+    .business-builder {
+        flex-direction: column;
+        padding: 25px 25px;
+
+        .right,
+        .left{
+             width: 100%;
+             padding-inline-start: 0;
+             padding-block: 0;
+        }
+        
+        .left h1, .left h2 {
+            font-size: 23px !important;
+        }
+        .left h5 {
+            font-size: 23px !important;
+        }
+        .left p {
+            font-size: 15px;
+        }
+        .right .contant h1 {
+            font-size: 4.5vw;
+        }
+        .right .contant p {
+            font-size: 2.5vw;
+        }
+        .right .contant h5 {
+            font-size: 2vw !important;
+        }
+        .right .contant .contant1{
+           margin-top: 20px;
+           h1{
+              font-size: 14px;
+          }
+          p{
+            font-size: 10px;
+          }
+        }
+
+        .right .contant .contant2{
+           margin-top: 20px;
+           h1{
+              font-size: 14px;
+          }
+           h5{
+              font-size: 13px;
+          }
+          p{
+            font-size: 10px;
+          }
+        }
+    }
+
+    .main2 {
+       flex-direction: column;
+        padding: 25px;
+        gap: 10px;
+
+        .right,
+        .left,
+        .middle{
+             width: 100%;
+        }
+
+        .left h2, .middle h2 {
+            font-size: 28px;
+        }
+        .middle p, .middle ul li, .middle .elite, .middle .become, .middle .source, .middle .prerequisits li, .middle .bottom, .middle .copyright {
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .prerequisits-title{
+            margin-top: 30px;
+        }
+
+        .right{
+            max-width: 100%; 
+            padding-left: 0;
+
+            img{
+                    max-width: 100%;
+                   height: auto;
+                  display: block;
+            }
+        }
+
+        .left{
+              min-width: 100%;
+              padding-right: 0;
+            //   padding: 0 10px;
+        }
+
+        .middle{
+            min-width: 100%;
+            max-width: 100%;
+            ul{
+                padding-left: 16px;
+            }
+
+            .prerequisits {
+                li {
+                    font-size: 2.5vw;
+                }
+            }
+
+            .copyright {
+                font-size: 1.6vw;
+            }
+        }
+
+        .right{
+            .container{
+                .one{
+                    .hours{
+                        h3{
+                            font-size: 10px;
+                        }
+                        p{
+                            font-size: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main .contant {
+    display: flex;
+    font-size: 19px;
+    padding: 12px 26px;
+
+    p {
+      position: relative;
+      top: 6px;
+    }
+    button {
+      padding: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      position: relative;
+      top: 0px;
+      width: 190px;
+    }
+  }
+
+  .business-builder {
+        .left {
+            padding-block: 10px;
+
+            h1 {
+                font-size: 2vw !important;
+            }
+
+            h2 {
+                font-size: 2vw;
+            }
+
+            h5 {
+                font-size: 1.2vw !important;
+            }
+
+            p {
+                font-size: 1.2vw;
+                width: 60%;
+            }
+        }
+
+        .right {
+            margin-top: 10px;
+
+            .cotant {
+
+                .contant1,
+                .contant2 {
+                    p {
+                        font-size: 1.2vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1307px) {
+    .main .contant {
+    display: flex;
+    font-size: 22px;
+    padding: 14px 28px 14px 48px;
+
+    p {
+      position: relative;
+      top: 6px;
+    }
+    button {
+      padding: 9px 14px;
+      font-size: 18px;
+      font-weight: 600;
+      position: relative;
+      top: -1px;
+    }
+  }
+}
+
+@media (min-width: 1308px) and (max-width: 1440px) {
+     .main .contant {
+    display: flex;
+    font-size: 29px;
+    padding: 14px 30px 7px 93px;
+
+    button {
+      padding: 11px 20px;
+      font-size: 19px;
+      font-weight: 600;
+      position: relative;
+      top: -4px;
+    }
+  }
+}
+
+@media (min-width: 1441px) {
+     .main .contant {
+    display: flex;
+    font-size: 30px;
+    padding: 18px 30px 10px 93px;
+
+    button {
+              padding: 10px 40px;
+        font-size: 25px;
+      font-weight: 600;
+      position: relative;
+      top: -4px;
+    }
+  }
+}

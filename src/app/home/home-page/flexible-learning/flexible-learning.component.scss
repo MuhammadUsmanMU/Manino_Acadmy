@@ -1,0 +1,288 @@
+@import '../../../../styles.scss';
+
+.main {
+    .heading {
+        display: flex;
+        color: #0310c1;
+        align-items: center;
+        gap: 12px;
+
+        .line {
+            border: 1px solid #0310c1;
+            width: 20px;
+            height: 1px;
+        }
+    }
+
+    p {
+        font-weight: 700;
+    }
+
+    .cards {
+        display: flex;
+        gap: 20px;
+
+        .card1 {
+            width: 35%;
+            background-color: rgb(245 242 241);
+            padding: 20px;
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: column;
+            min-height: 500px;
+
+            .image {
+                border-radius: 50%;
+                height: 55px;
+                width: 55px;
+                padding: 7px;
+                border: 1px solid #8d8888;
+
+                img {
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+
+            h3 {
+                margin-top: 11px;
+                font-size: 19px;
+                font-weight: 700;
+                color: #666161;
+            }
+
+            p {
+                font-size: 13px;
+                font-weight: 500;
+                color: #a59e9e;
+                margin-bottom: 20px;
+            }
+
+            h5 {
+                color: #0310c1;
+                font-weight: 700;
+                font-size: 25px;
+            }
+
+            .include {
+                flex-grow: 1;
+                
+                h4 {
+                    color: #a59e9e;
+                    font-size: 20px;
+                    margin: 17px 0;
+                }
+
+                // Default list styling for lists that use Font Awesome icons (e.g., "Includes" lists)
+                ul {
+                    list-style-type: none; // Remove default bullets as we use custom icons
+                    padding-inline-start: 0px; // Reset default browser padding for UL
+
+                    li {
+                        display: flex; // Use flexbox for custom icon + text alignment
+                        align-items: flex-start;
+                        font-size: 13px;
+                        margin-block: 10px;
+                        color: #959191;
+                    }
+
+                    li i { // Icon styling
+                        flex-shrink: 0;
+                        width: 20px;
+                        text-align: center;
+                        color: green;
+                        position: relative;
+                        top: 4px;
+                    }
+
+                    li span { // Text content for lists with icons
+                        flex-grow: 1;
+                        padding-left: 10px; // Space between icon and text
+                    }
+                }
+
+                // Styling for H3 elements that contain an icon (like "EXCLUSIVE FEATURES")
+                h3:has(i) { // Targets h3 elements that contain an <i> tag
+                    display: flex;
+                    align-items: flex-start;
+                    font-size: small; // Keep original font size
+                    color: #666161; // Keep original color
+                    margin-top: 11px; // Maintain original margin
+                    
+                    i {
+                        flex-shrink: 0;
+                        width: 20px; // Give icon consistent space
+                        text-align: center;
+                        margin-right: 10px; 
+                        position: relative;
+                        top: 2px;
+                    }
+
+                    span { // New span for the text inside these h3s
+                        flex-grow: 1;
+                        // No padding-left needed here as margin-right on icon provides spacing
+                    }
+                }
+                
+                // Keep the general h3 style for those without icons or special formatting
+                h3 {
+                    // These properties will be overridden by h3:has(i) if an icon is present
+                    // Otherwise, they apply to h3 elements without icons
+                    margin-top: 11px;
+                    font-size: 19px; // This is the original larger size, adjust if needed
+                    font-weight: 700;
+                    color: #666161;
+                }
+
+
+                // Styling for lists that should have standard disc bullets (e.g., "EXCLUSIVE FEATURES" and "ICF CERTIFICATION")
+                // Apply to .exclusive ul and also the ul immediately following an h3
+                .exclusive ul,
+                h3 + ul { // Targets the UL inside .exclusive and the UL directly after an H3
+                    list-style-type: disc; // Use standard disc bullets
+                    padding-inline-start: 20px; // Add padding for the bullets to show and for alignment
+                    
+                    li {
+                        display: list-item; // Revert to default list item display for standard bullets
+                        align-items: unset; // Remove flex alignment from previous rules
+                        font-size: 13px; // Keep consistent font size
+                        margin-block: 10px; // Keep consistent margin
+                        color: #959191; // Keep consistent color
+                    }
+                    li i { // Hide icons in these lists if accidentally present in HTML
+                        display: none;
+                    }
+                    li span { // Remove padding if span is used but not needed for standard bullets
+                        padding-left: 0;
+                    }
+                }
+            }
+
+            button {
+                background: none;
+                width: 100%;
+                border: 1px solid #f9c08d;
+                padding: 12px;
+                border-radius: 10px;
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+
+@media(max-width:767px){
+    .main{
+        padding: 25px 25px 20px;
+        
+        p{
+                    font-size: 22px;
+        font-weight: 700;
+        text-align: left;
+        line-height: 25px;
+        }
+
+        .heading{
+            justify-content: left;
+            margin: 5px 0;
+        }
+        
+        .cards{
+            width: 100%;
+            flex-direction: column;
+            .card1{
+                width: auto;
+                min-height: auto; 
+                .include{
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width:768px) and (max-width:1024px){
+    .main{
+        padding: 20px 40px;
+        
+        .heading{
+            justify-content: center;
+
+            h5{
+                font-size: 14px;
+            }
+        }
+
+        p{
+            font-size: 20px;
+            text-align: left;
+        }
+    }
+
+    .cards{
+        flex-wrap: wrap;
+        justify-content: center;
+        .card1{
+            width: calc(50% - 10px);
+            min-height: 600px; 
+            .include{
+                height: auto;
+            }
+        }
+    }
+}
+
+
+@media (min-width:1025px) and (max-width:1440px){
+    .main{
+        width: 100%;
+        padding: 20px 163px 10px;
+
+        p{
+            font-size: 27px;
+            margin-bottom: 35px;
+        }
+        
+        .heading{
+            margin: 10px 0 0;
+        }
+
+        .cards{
+            .card1{
+                min-height: 700px;
+
+                .include{
+                   height: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:1441px){
+    .main{
+        width: 100%;
+        padding: 20px 163px 10px;
+
+        p{
+            font-size: 27px;
+            margin-bottom: 35px;
+        }
+        
+        .heading{
+            margin: 10px 0 0;
+        }
+        
+        .cards{
+            .card1{
+                min-height: 750px;
+
+                .include{
+                    height: auto;
+                }
+            }
+        }
+    }
+}

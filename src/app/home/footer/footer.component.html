@@ -1,0 +1,51 @@
+<div class="main">
+  <div class="contant">
+    <div class="container1">
+      <img src="../../../assets/logo.png" alt="App Logo" height="100px" class="logo-img">
+
+      <p>
+        Our flexible, high-impact programs—taught by The M.E.C. Certified Instructors—provide the skills, mentorship, and certification needed to launch or elevate your coaching career.
+      </p>
+      <ul>
+        <li>(316) 555-0116</li>
+        <li>hello&#64;gmail.com</li>
+        <li>4517 Washington Ave., Manchester, Kentucky 39495</li>
+      </ul>
+      <button routerLink="/about-us">Join Us &nbsp;&nbsp;&nbsp; <i class="fa-solid fa-greater-than"></i></button>
+    </div>
+
+    <div class="container2">
+      <h5>Our Company</h5>
+      <label>
+        <a routerLink="/about-us">About</a>
+      </label>
+      <label>
+        <a routerLink="/terms-and-conditions" >Terms & Conditions</a>
+      </label>
+      <h5>Instructors</h5>
+      <label>
+        <a [routerLink]="['/live-session']" fragment="common-faqs-section">Common FAQs</a>
+      </label>
+      <label>
+        <a routerLink="/blogs">Blogs</a>
+      </label>
+    </div>
+
+    <div class="container3">
+      <div class="icons">
+        <i class="fa-brands fa-square-facebook fa-2x"></i>
+        <i class="fa-brands fa-instagram fa-2x"></i>
+        <i class="fa-brands fa-linkedin fa-2x"></i>
+        <i class="fa-brands fa-youtube fa-2x"></i>
+      </div>
+      <h3>Get Mobile Apps</h3>
+      <p>Take education on the go! Download our mobile app for FREE on your Apple and Android devices.</p>
+      <img src="../../assets/app.png" alt="Mobile App Download">
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <a href="#" class="scroll-to-top" (click)="scrollToTop()">
+        <i class="fas fa-arrow-up"></i> </a>
+</div>
+</div>

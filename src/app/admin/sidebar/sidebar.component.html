@@ -1,0 +1,208 @@
+<div class="sidebar-container" [class.open]="isOpen">
+
+  <div class="sidebar-toggler" *ngIf="isOpen">
+  <img src="../../../assets/transparent-logo.png" alt="Logo" class="header-logo" />
+
+  <div class="insights">
+    <span class="icon-wrapper" (click)="closeSidebar()">
+      <i class="bi bi-window-sidebar"></i>
+    </span>
+  </div>
+</div>
+
+  <nav class="sidebar-nav">
+    <ul>
+      <li class="nav-item" [class.active]="isActive('dashboard')">
+        <a class="nav-link" [routerLink]="['/admin/dashboard']">
+          <i class="bi bi-columns-gap"></i>
+          <span>Insights</span>
+        </a>
+      </li>
+
+      <li class="nav-item" [class.active]="isActive('site-management')">
+        <div class="nav-link-wrapper" (click)="toggleDropdown('siteManagement', '/admin/site-management')">
+          <a class="nav-link"> <i class="bi bi-grid"></i>
+            <span>Site Management</span>
+            <i class="bi bi-chevron-right arrow-icon" [class.rotated]="isSiteManagementOpen"></i>
+          </a>
+        </div>
+        <ul *ngIf="isSiteManagementOpen" class="submenu">
+          <li class="nav-item" [class.active]="isActive('site-management/global-settings')">
+            <a class="nav-link" [routerLink]="['/admin/site-management/global-settings']">
+              <span>Global settings</span>
+            </a>
+          </li>
+          <li class="nav-item" [class.active]="isActive('site-management/manage-pages')">
+            <a class="nav-link" [routerLink]="['/admin/site-management/manage-pages']">
+              <span>Manage Pages</span>
+            </a>
+          </li>
+          <li class="nav-item" [class.active]="isActive('site-management/email-settings')">
+            <a class="nav-link" [routerLink]="['/admin/site-management/email-settings']">
+              <span>Email settings</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item" [class.active]="isActive('manage-users')">
+        <div class="nav-link-wrapper" (click)="toggleDropdown('manageUsers', '/admin/manage-users')">
+          <a class="nav-link">
+            <i class="bi bi-people"></i>
+            <span>Manage Users</span>
+            <i class="bi bi-chevron-right arrow-icon" [class.rotated]="isManageUsersOpen"></i>
+          </a>
+        </div>
+        <ul *ngIf="isManageUsersOpen" class="submenu">
+          <li class="nav-item" [class.active]="isActive('manage-users/student')">
+            <a class="nav-link" [routerLink]="['/admin/manage-users/student']">
+              <span>Students</span>
+            </a>
+          </li>
+          <li class="nav-item" [class.active]="isActive('manage-users/instructors')">
+            <a class="nav-link" [routerLink]="['/admin/manage-users/instructors']">
+              <span>Instructors</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item" [class.active]="isActive('identity-verification')">
+        <a class="nav-link" [routerLink]="['/admin/identity-verification']">
+          <i class="bi bi-person-check"></i>
+          <span>Identity Verification</span>
+        </a>
+      </li>
+
+      <li class="nav-item" [class.active]="isActive('transactions-payments')">
+        <div class="nav-link-wrapper" (click)="toggleDropdown('paymentMethods', '/admin/transactions-payments')">
+          <a class="nav-link">
+            <i class="bi bi-credit-card"></i>
+            <span>Transaction & Payments</span>
+            <i class="bi bi-chevron-right arrow-icon" [class.rotated]=""></i>
+          </a>
+        </div>
+        <ul *ngIf="isPaymentMethodOpen" class="submenu">
+          <li class="nav-item" [class.active]="isActive('transactions-payments/payment-methods')">
+            <a class="nav-link" [routerLink]="['/admin/transactions-payments/payment-methods']">
+              <span>Payment methods</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item" [class.active]="isActive('manage-subscriptions')">
+        <div class="nav-link-wrapper" (click)="toggleDropdown('manageSubscriptions', '/admin/manage-subscriptions')">
+          <a class="nav-link">
+            <i class="bi bi-wallet"></i>
+            <span>Manage Subscriptions</span>
+            <i class="bi bi-chevron-right arrow-icon" [class.rotated]="isManageSubscriptionsOpen"></i>
+          </a>
+        </div>
+        <ul *ngIf="isManageSubscriptionsOpen" class="submenu">
+          <li class="nav-item" [class.active]="isActive('manage-subscriptions/subscription-list')">
+            <a class="nav-link" [routerLink]="['/admin/manage-subscriptions/subscription-list']">
+              <span>Subscriptions list</span>
+            </a>
+          </li>
+          <li class="nav-item" [class.active]="isActive('manage-subscriptions/purchased-subscription')">
+            <a class="nav-link" [routerLink]="['/admin/manage-subscriptions/purchased-subscription']">
+              <span>Purchased subscriptions</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+  <li class="nav-item" [class.active]="isActive('manage-blogs')">
+  <div class="nav-link-wrapper" (click)="toggleDropdown('manageBlogs', '/admin/manage-blogs')">
+    <a class="nav-link">
+      <i class="bi bi-file-earmark-text"></i>
+      <span>Manage blogs</span>
+      <i class="bi bi-chevron-right arrow-icon" [class.rotated]=""></i>
+    </a>
+  </div>
+  <ul *ngIf="isBlogsOpen" class="submenu">
+    <li class="nav-item" [class.active]="isActive('manage-blogs/new-blog')">
+      <a class="nav-link" [routerLink]="['/admin/manage-blogs/new-blog']">
+        <span>Create new blog</span>
+      </a>
+    </li>
+    <li class="nav-item" [class.active]="isActive('manage-blogs/all-blogs')">
+      <a class="nav-link" [routerLink]="['/admin/manage-blogs/all-blogs']">
+        <span>All blogs</span>
+      </a>
+    </li>
+    <li class="nav-item" [class.active]="isActive('manage-blogs/categories')">
+      <a class="nav-link" [routerLink]="['/admin/manage-blogs/categories']">
+        <span>Categories</span>
+      </a>
+    </li>
+  </ul>
+</li>
+
+<li class="nav-item" [class.active]="isActive('community')">
+  <div class="nav-link-wrapper" (click)="toggleDropdown('manageCommunity', '/admin/community')">
+    <a class="nav-link">
+      <i class="bi bi-chat-dots"></i>
+      <span>Community</span>
+      <i class="bi bi-chevron-right arrow-icon" [class.rotated]=""></i>
+    </a>
+  </div>
+  <ul *ngIf="isCommunityOpen" class="submenu">
+    <li class="nav-item" [class.active]="isActive('community/communities')">
+      <a class="nav-link" [routerLink]="['/admin/community/communities']">
+        <span>Community</span>
+      </a>
+    </li>
+    <li class="nav-item" [class.active]="isActive('community/categories')">
+      <a class="nav-link" [routerLink]="['/admin/community/categories']">
+        <span>Categories</span>
+      </a>
+    </li>
+  </ul>
+</li>
+
+
+<li class="nav-item" [class.active]="isActive('manage-courses')">
+  <div class="nav-link-wrapper" (click)="toggleDropdown('manageCourses', '/admin/manage-courses')">
+    <a class="nav-link">
+      <i class="bi bi-book"></i>
+      <span>Manage Courses</span>
+      <i class="bi bi-chevron-right arrow-icon" [class.rotated]=""></i>
+    </a>
+  </div>
+  <ul *ngIf="isCoursesOpen" class="submenu">
+    <li class="nav-item" [class.active]="isActive('manage-courses/all-courses')">
+      <a class="nav-link" [routerLink]="['/admin/manage-courses/all-courses']">
+        <span>All courses</span>
+      </a>
+    </li>
+    <li class="nav-item" [class.active]="isActive('manage-courses/course-category')">
+      <a class="nav-link" [routerLink]="['/admin/manage-courses/course-category']">
+        <span>Categories</span>
+      </a>
+    </li>
+    <li class="nav-item" [class.active]="isActive('manage-courses/course-enrollment')">
+      <a class="nav-link" [routerLink]="['/admin/manage-courses/course-enrollment']">
+        <span>Course enrollments</span>
+      </a>
+    </li>
+  </ul>
+</li>
+
+      <li class="nav-item" [class.active]="isActive('badges')">
+        <a class="nav-link" [routerLink]="['/admin/badges']">
+          <i class="bi bi-award"></i>
+          <span>Badges</span>
+        </a>
+      </li>
+
+      <li class="nav-item" [class.active]="isActive('help')">
+        <a class="nav-link" [routerLink]="['/admin/help']">
+          <i class="bi bi-exclamation-triangle"></i>
+          <span>Help</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

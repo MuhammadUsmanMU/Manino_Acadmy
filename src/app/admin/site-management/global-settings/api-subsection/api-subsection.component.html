@@ -1,0 +1,36 @@
+<div class="bg-white p-6 rounded-lg shadow-md mb-6 data">
+  <h3 class="text-xl font-semibold text-gray-800 mb-4">{{ title }}</h3>
+
+  <!-- Enable/Disable Toggle -->
+  <div class="flex items-center justify-between mb-4">
+    <label [htmlFor]="idPrefix + '-toggle'" class="text-gray-700 text-sm font-medium">
+      {{ enableLabel }}
+    </label>
+
+    <!-- enable Disable button  -->
+    <label class="switch">
+      <input type="checkbox" checked />
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <!-- Prompt Text Area -->
+  <div class="mb-6 ">
+    <label [htmlFor]="idPrefix + '-prompt'" class="block text-gray-700 text-sm font-medium mb-2">
+      {{ promptLabel }}
+    </label>
+    <textarea [id]="idPrefix + '-prompt'" rows="4"
+      class="w-full px-3 py-2 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ease-in-out"
+      placeholder="Write a paragraph about the following topic (Topic)" [(ngModel)]="promptText" cols="70"></textarea>
+  </div>
+
+  <!-- Action Buttons -->
+  <!-- <div class="flex justify-end space-x-3">
+    <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 transition duration-200 ease-in-out">
+      Reset section
+    </button>
+    <button class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ease-in-out">
+      Save Changes
+    </button>
+  </div> -->
+</div>

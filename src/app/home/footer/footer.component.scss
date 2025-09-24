@@ -1,0 +1,283 @@
+.main {
+    background: linear-gradient(to right, #05267c, #0466bd);
+    color: white;
+    padding: 10px 10px 48px;
+    box-sizing: border-box;
+
+    .download-app {
+        width: 142px;
+    }
+
+    .logo-img {
+        width: 110px;
+        height: 90px;
+    }
+
+    .contant {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 1366px; // Cap width at 1366px
+        display: flex;
+        justify-content: space-between;
+
+        .container1 {
+            width: 30%;
+            margin-left: 50px;
+
+            p {
+                font-size: 14px;
+                color: #b2bdcf;
+                padding: 5px 0;
+            }
+
+            ul {
+                padding-left: 20px;
+
+                li {
+                    font-size: 1.5vw; // Adjusts with viewport width
+                    margin-block: 11px;
+                    color: #b2bdcf;
+                }
+            }
+
+            button {
+                color: rgb(52 78 209);
+                border-radius: 30px;
+                border: 4px solid rgb(52 78 209);
+                padding: 8px;
+                width: 141px;
+                font-weight: 700;
+                background-color: white; /* Added background for better visibility */
+                transition: background-color 0.3s ease, color 0.3s ease;
+
+                i {
+                    float: right;
+                    position: relative;
+                    top: 4px;
+                }
+
+                &:hover {
+                    background-color: rgb(52 78 209);
+                    color: white;
+                }
+            }
+        }
+
+        .container2 {
+            width: 30%;
+            margin-top: 100px;
+            padding-left: 50px;
+
+            label {
+                color: #b2bdcf;
+                cursor: pointer;
+                margin-bottom: 5px; /* Decreased space between labels, adjust as needed */
+                display: block;
+                
+                a{
+                    text-decoration: none;
+                     color: #b2bdcf;
+                }
+            }
+
+            h5 {
+                margin-top: 25px; /* Add margin to separate sections */
+                margin-bottom: 10px; /* Add some space below the heading before labels start */
+            }
+        }
+
+        .container3 {
+            width: 30%;
+            margin-top: 100px;
+
+            .icons {
+                display: flex;
+                gap: 10px;
+            }
+
+            h3 {
+                margin-block: 19px;
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+                color: #b2bdcf;
+                line-height: 27px;
+            }
+
+            img {
+                height: auto;
+                width: 145px;
+            }
+        }
+    }
+
+    .scroll-to-top {
+    position: relative; /* Or 'fixed' if you want it to float on the page */
+    bottom: 28px;
+    right: 10px;
+    background-color: #05267c;
+    float: right;
+    color: white;
+    width: 50px; /* Width of the circle/button */
+    height: 50px; /* Height of the circle/button */
+    border-radius: 50%; /* Makes it a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em; /* Size of the arrow icon */
+    cursor: pointer;
+    text-decoration: none; /* Remove underline for the link */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add a subtle shadow */
+    z-index: 1000; /* Ensure it's above other content */
+    /* Add a smooth transition for hover effects */
+    transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #615fec; /* Slightly darker orange on hover */
+}
+}
+
+// Mobile (max-width: 767px)
+@media (max-width: 767px) {
+    .main {
+        padding: 30px 30px;; /* Added horizontal padding to .main for overall content alignment */
+        box-sizing: border-box; /* Include padding in element's total width */
+
+        .contant {
+            flex-direction: column;
+            align-items: flex-start; /* Align items to the start (left) */
+            width: 100%; /* Ensure content takes full width within the main padding */
+            gap: 40px;
+            padding-inline: 0; /* Remove any inline padding here if it conflicts */
+
+            .container1,
+            .container2,
+            .container3 {
+                width: 100%; /* Make each container take full available width */
+                margin-left: 0;
+                margin-right: 0; /* Ensure no horizontal margins are pushing content */
+                margin-top: 0; /* Remove top margin that was for web layout */
+                padding-left: 0; /* Remove any container-specific left padding */
+                padding-right: 0; /* Remove any container-specific right padding */
+                text-align: left; /* Align text within these containers to the left */
+            }
+
+            .container1 {
+                .logo-img {
+                    margin-bottom: 20px;
+                    width: 120px;
+                    height: auto;
+                    display: block; /* Make logo a block element to control its alignment */
+                    margin-left: 0; /* Ensure logo starts from the left */
+                }
+
+                button {
+                    margin-top: 25px;
+                    margin-left: 0; /* Ensure button starts from the left */
+                    background-color: white;
+                    color: rgb(52, 78, 209);
+                }
+            }
+
+            .container2 {
+                text-align: left; /* Align text within this container to the left */
+                h5 {
+                    margin-top: 0; /* Reset top margin for mobile */
+                    margin-bottom: 10px;
+                    font-size: 22px;
+                    font-weight: 700;
+                }
+
+                label {
+                    font-size: 16px;
+                    padding-bottom: 8px;
+                    display: block;
+                    text-align: left; /* Ensure labels are left-aligned */
+                }
+            }
+
+            .container3 {
+                .icons {
+                    justify-content: flex-start; /* Align icons to the left */
+                    gap: 15px;
+                    margin-bottom: 25px;
+                }
+
+                h3 {
+                    font-size: 24px;
+                    margin-block: 25px;
+                }
+
+                p {
+                    font-size: 16px;
+                    line-height: 1.6;
+                    /* Removed padding here, relies on .main padding */
+                }
+
+                img {
+                    width: 150px;
+                    height: auto;
+                    margin-top: 0;
+                    margin-left: 0; /* Ensure image starts from the left */
+                    display: block; /* Make image a block element */
+                }
+            }
+            
+            /* General adjustments for text and lists within containers */
+            .container1 p,
+            .container3 p {
+                padding-right: 15px; /* Add some right padding to prevent text from touching the edge */
+            }
+
+            .container1 ul {
+                padding-left: 20px; /* Keep some padding for list bullets */
+                list-style-type: disc;
+                list-style-position: outside;
+                margin-top: 18px;
+
+                li {
+                    font-size: 15px;
+                    margin-block: 8px;
+                    color: #b2bdcf;
+                }
+            }
+        }
+
+        .scroll-to-top {
+            bottom: 35px;
+            right: -15px;
+        }
+
+    }
+}
+
+// Larger than 1366px
+@media (min-width: 1367px) {
+    .main {
+        .contant {
+            max-width: 1366px; // Cap at 1366px, centered
+            margin: 0 auto;
+
+            .container1{
+                p{
+                    font-size: 17px;
+                }
+            }
+
+            .container2{
+                label{
+                    font-size: 17px;
+                }
+            }
+
+            .container3{
+                p{
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+}

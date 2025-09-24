@@ -1,0 +1,287 @@
+<div class="dashboard-wrapper">
+  <div class="content-area">
+    <div class="main-content">
+
+      <div class="chart-section">
+        <div class="chart-header">
+          <h1>Session Details</h1>
+          <div class="sss">
+            <span class="showing-for-text">Showing for:</span>
+            <div class="select-wrapper">
+              <select class="time-period-select">
+                <option>Monthly</option>
+                <option>Weekly</option>
+                <option>Daily</option>
+              </select>
+              <i class="bi bi-chevron-down select-arrow"></i>
+            </div>
+          </div>
+        </div>
+        <div class="chart-content">
+          <div class="bar-container">
+            <div class="y-axis-labels">
+              <span>20</span>
+              <span>15</span>
+              <span>10</span>
+              <span>5</span>
+              <span>0</span>
+            </div>
+            <div class="bars-and-lines">
+              <div class="horizontal-line" style="bottom: 0%;"></div>
+              <div class="horizontal-line" style="bottom: 25%;"></div>
+              <div class="horizontal-line" style="bottom: 50%;"></div>
+              <div class="horizontal-line" style="bottom: 75%;"></div>
+
+              <div class="bar" style="height: 60%;"></div>
+              <div class="bar" style="height: 85%;"></div>
+              <div class="bar" style="height: 60%;"></div>
+              <div class="bar active-bar" style="height: 85%;">
+                <div class="chart-summary-overlay">
+                  <div class="chart-value">17</div>
+                  <div class="chart-label">Sessions</div>
+                </div>
+              </div>
+              <div class="bar" style="height: 45%;"></div>
+              <div class="bar" style="height: 70%;"></div>
+              <div class="bar" style="height: 55%;"></div>
+              <div class="bar" style="height: 80%;"></div>
+              <div class="bar" style="height: 65%;"></div>
+            </div>
+          </div>
+          <div class="month-labels">
+            <span>Jan</span>
+            <span>Feb</span>
+            <span>Mar</span>
+            <span>Apr</span>
+            <span>May</span>
+            <span>Jun</span>
+            <span>Jul</span>
+            <span>Aug</span>
+            <span>Sep</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-section three-columns">
+        <div class="card live-sessions-card">
+          <div class="header d-flex">
+            <h2><i class="fa-solid fa-calendar-days"></i>Live Sessions</h2>
+            <div class="calendar-header">
+              <i class="fa-solid fa-calendar fa-sm"></i>
+              <span>21 Oct 2024 - 27 Oct 2024</span>
+            </div>
+          </div>
+          <div class="calendar-component">
+
+            <div class="calendar-days">
+              <span class="day-header">Mon</span>
+              <span class="day-header">Tue</span>
+              <span class="day-header">Wed</span>
+              <span class="day-header">Thu</span>
+              <span class="day-header">Fri</span> <span class="day-header active">Sat</span> <span
+                class="day-header">Sun</span>
+              <span class="day">21</span>
+              <span class="day">22</span>
+              <span class="day">23</span>
+              <span class="day">24</span>
+              <span class="day">25</span>
+              <span class="day active">26</span> <span class="day">27</span>
+            </div>
+            <div class="search-client-wrapper">
+              <div class="search">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="Search" />
+              </div>
+              <button class="filter-button"> <i class="fa-solid fa-sliders"></i>Filter</button>
+            </div>
+            <ul class="session-list">
+
+              <li>
+                <img src="../../../assets/admin/profile.jpeg" alt="Avatar" class="avatar">
+                <div class="session-details">
+                  <span class="session-title">Team Building</span>
+                  <span class="session-time"><i class="fa-solid fa-clock"></i>08:30 AM • <i
+                      class="fa-solid fa-person-running"></i> Exercise</span>
+                </div>
+                <button class="schedule-button">On Schedule</button>
+                <i class="fa-solid fa-ellipsis three-dots-icon"></i>
+              </li>
+
+
+              <li>
+                <img src="../../../assets/admin/profile.jpeg" alt="Avatar" class="avatar">
+                <div class="session-details">
+                  <span class="session-title">Client Purposal</span>
+                  <span class="session-time"><i class="fa-solid fa-clock"></i>03:00 PM • Consultation</span>
+                </div>
+                <button class="schedule-button" style="background-color: #ffeaea ; color: #e74c3c;">Cancel</button>
+                <i class="fa-solid fa-ellipsis three-dots-icon"></i>
+              </li>
+
+
+              <li>
+                <img src="../../../assets/admin/profile.jpeg" alt="Avatar" class="avatar">
+                <div class="session-details">
+                  <span class="session-title">Iban Duo</span>
+                  <span class="session-time"><i class="fa-solid fa-clock"></i>04:00 PM • Exercise</span>
+                </div>
+                <button class="schedule-button">On Schedule</button>
+                <i class="fa-solid fa-ellipsis three-dots-icon"></i>
+              </li>
+
+
+            </ul>
+          </div>
+        </div>
+
+         <!-- Student's Feedback Card -->
+        <div class="card student-feedback-card">
+          <h2>Student's Feedback</h2>
+          <ul class="feedback-list">
+            <li *ngFor="let item of studentsFeedback">
+              <img [src]="item.avatar" alt="Avatar" class="avatar" />
+              <div class="feedback-info">
+                <span>{{ item.name }}</span>
+                <span>{{ item.email }}</span>
+              </div>
+              <div class="right">
+                <div class="stars">★★★★★</div>
+                <button class="review-button">Full Review</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card manage-subscriptions-card">
+          <h2>Manage Subscriptions</h2>
+          <ul class="subscription-list">
+            <li>
+              <img src="../../../assets/insight/membership/star.png" alt="Platinum Icon" class="sub-icon">
+              <span>Platinum</span>
+              <div class="icon">
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-regular fa-eye"></i>
+              </div>
+              <span class="status active-status">ACTIVE</span>
+            </li>
+            <li>
+              <img src="../../../assets/insight/membership/gold.png" alt="Gold Icon" class="sub-icon">
+              <span>Gold</span>
+              <div class="icon">
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-regular fa-eye"></i>
+              </div>
+              <span class="status active-status">ACTIVE</span>
+            </li>
+            <li>
+              <img src="../../../assets/insight/membership/cart.png" alt="Bronze Icon" class="sub-icon">
+              <span>Add to cart</span>
+              <div class="icon">
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-regular fa-eye"></i>
+              </div>
+              <span class="status active-status">ACTIVE</span>
+            </li>
+            <li>
+              <img src="../../../assets/insight/membership/setting.png" alt="Silver Icon" class="sub-icon">
+             <!-- <span>Bussiness Builder</span> -->
+              <!-- <span class="bussiness">Bussiness Builder</span> -->
+              <span>Bussiness Builder</span>
+              <div class="icon">
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-regular fa-eye"></i>
+              </div>
+              <span class="status active-status">ACTIVE</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <div class="grid-section two-columns">
+        <div class="card revenue-metrics-card">
+          <h2>Revenue & Payment Metrics</h2>
+          <p>Track and manage your income effortlessly a perfect </p>
+
+          <div class="revenue-boxes">
+            <div class="revenue-box total-revenue">
+              <img src="../../../assets/insight/membership/dollar.png" alt="">
+              <span>$50.00</span>
+              <p>Platform Earnings</p>
+            </div>
+            <div class="revenue-box payouts">
+              <img src="../../../assets/insight/membership/stack.png" alt="">
+              <span>$380.00</span>
+              <small>Payouts</small>
+            </div>
+          </div>
+
+          <h2>Session Engagement</h2>
+          <p>Track and manage your income effortlessly a Perfect</p>
+          <div class="card3">
+            <div class="contant">
+              <h5>1</h5>
+              <p>Total Sessions Booked</p>
+            </div>
+            <div class="contant2">
+              <i class="fa-solid fa-calendar-days"></i>
+            </div>
+          </div>
+        </div>
+
+         <div class="card congratulate-student-card">
+          <h2>Congratulate A Student</h2>
+          <ul class="feedback-list">
+            <li *ngFor="let item of congratulateStudents">
+              <img [src]="item.avatar" alt="Avatar" class="avatar" />
+              <div class="feedback-info">
+                <span>{{ item.name }}</span>
+                <span>{{ item.message }}</span>
+              </div>
+              <div class="right">
+                <button class="review-button">Say Congrat!</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-section two-columns">
+        <div class="card instructors-details-card">
+          <h2>View Instructor's Details</h2>
+          <ul class="feedback-list">
+            <li *ngFor="let item of instructorsDetails">
+              <img [src]="item.avatar" alt="Avatar" class="avatar" />
+              <div class="feedback-info">
+                <span>{{ item.name }}</span>
+                <span>{{ item.email }}</span>
+              </div>
+              <div class="right">
+                <div class="stars">★★★★★</div>
+                <button class="review-button">More Info</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card new-users-card">
+          <h2>New User / Students</h2>
+          <ul class="feedback-list">
+            <li *ngFor="let item of newUsers">
+              <img [src]="item.avatar" alt="Avatar" class="avatar" />
+              <div class="feedback-info">
+                <span>{{ item.name }}</span>
+                <span>{{ item.email }}</span>
+              </div>
+              <div class="right">
+                <button class="review-button">Say Welcome!</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,796 @@
+@import '../../../../styles.scss';
+
+.main {
+    width: 100%;
+    background: linear-gradient(to right, #05267c, #0466bd);
+    color: white;
+    padding: 10px 20px 25px;
+
+    .heading {
+        text-align: center;
+
+        h5 {
+            margin: 40px 0;
+            font-size: 50px;
+            font-weight: 600;
+        }
+
+        p{
+            font-size: 29px;
+        }
+    }
+
+    .contant {
+        
+
+        .left {
+            padding: 10px 0 10px 34px;
+
+            h3{
+                font-size: 28px;
+            }
+
+            ul {
+                width: 87%;
+
+                li {
+                    margin-block: 33px;
+                    color: #f1e3e3;
+                    font-size: 17px;
+                }
+            }
+
+            button {
+                color: rgb(5 29 149);
+                border: 5px solid rgb(67 98 251);
+            }
+        }
+
+       .right.cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            // padding: 10px 2%;
+
+            .card {
+                background: white;
+                color: #000;
+                border-radius: 20px;
+                padding: 20px;
+                // width: 30%;
+                // height: 375px;
+                text-align: center;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+                align-items: center;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                img {
+                    // max-width: 100px;
+                    height: auto;
+                    // margin-bottom: 15px;
+                }
+
+                h4 {
+                    // font-size: 20px;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    // font-size: 14px;
+                    color: #444;
+                }
+            }
+        }
+    }
+}
+
+.main2 {
+    color: white;
+    // display: flex;
+    gap: 60px;
+    margin-top: 20px;
+
+    .left {
+        // width: 50%;
+
+        img {
+            width: 100%;
+            margin: auto;
+        }
+    }
+
+    .right {
+        // width: 35%;
+
+        h3 {
+            margin-block: 30px;
+        }
+
+        ul {
+            li {
+                margin-block: 20px;
+                color: #f1e3e3;
+                font-size: 17px;
+            }
+        }
+
+        button {
+            color: rgb(5 29 149);
+            border: 5px solid rgb(67 98 251);
+            font-weight: 700;
+        }
+    }
+}
+
+
+.step3 {
+    color: white;
+    gap: 100px;
+    margin-top: 20px; // This is the default margin-top
+
+    .left {
+        padding: 10px 0 10px 34px;
+
+        h3 {
+            margin-block: 30px;
+        }
+
+        ul {
+            li {
+                margin-block: 20px;
+                color: #f1e3e3;
+                font-size: 17px;
+            }
+        }
+
+        button {
+            color: rgb(5 29 149);
+            border-radius: 45px;
+            border: 5px solid rgb(67 98 251);
+            padding-block: 10px;
+            padding-inline: 47px;
+            margin-inline-start: 30px;
+            font-size: 21px;
+            font-weight: 700;
+        }
+    }
+
+    .right {
+        img {
+            width: 100%;
+            margin: auto;
+        }
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it's on top of other content */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+
+    h3{
+        color: black;
+    }
+}
+
+.modal-button {
+    display: block;
+    width: 80%;
+    margin: 12px auto;
+    padding: 12px 20px;
+    background-color: #003087; // Assuming $blue is #003087
+        background-image: linear-gradient(to right, black, rgb(1, 23, 168));
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+       
+    &:hover {
+        background-color: #003087;
+    }
+}
+
+.modal-close-button {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@media(max-width:767px) {
+    .main {
+        padding: 10px 15px;
+    }
+
+    .main .heading {
+        margin-inline: 0px;
+        text-align: left; /* Ensures text inside is centered */
+        width: 100%;
+
+        h5 {
+            width: 100%;
+            font-size: 5vw;
+            padding: 20px;
+            margin: 10px 0;
+        }
+        p{
+            font-size: 14px;
+            padding: 0 20px; /* Maintains inner padding */
+        }
+    }
+
+    /* Standardize h3 font-size and add bottom margin for consistent spacing */
+    .main h3 {
+        font-size: 24px; /* Consistent font-size for all h3 on mobile */
+        margin-bottom: 15px; /* Add consistent space below h3 elements */
+    }
+
+    /* Standardize button font-size and add bottom margin for consistent spacing */
+    .main button {
+        font-size: 24px; /* Consistent font-size for buttons on mobile */
+        margin-bottom: 15px; /* Add consistent space below buttons */
+    }
+    .main .contant {
+        /* Set 20px padding on all sides for this main section */
+        padding: 20px;
+        /* Make .contant a flex container to center its children (.left, .right) */
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center children horizontally */
+
+        .left {
+            width: 100%;
+            padding: 0; /* No extra padding here, parent .contant handles it */
+            text-align: left;
+            
+            h3{
+                font-size: 20px;
+            }
+
+            button{
+                border-radius: 30px;
+                padding: 12px 10px;
+                width: 165px;
+                font-size: 14px;
+                font-weight: 700;
+            }
+
+            ul{
+                li{
+                    margin-block: 22px;
+                    color: #f1e3e3;
+                    font-size: 15px;
+                }
+            }
+        }
+           .right.cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 10px 0 20px;
+
+            .card {
+                border-radius: 10px;
+                padding: 10px 5px;
+                width: 32%;
+                // height: 310px;
+                padding-top: 30px;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                img {
+                    max-width: 85px;
+                    height: auto;
+                    margin-bottom: 10px;
+                }
+
+                h4 {
+                    font-size: 11px;
+                    margin-bottom: 8px;
+                    font-weight: 700;
+                }
+
+                p {
+                    font-size: 10px;
+                    font-weight: 500
+                }
+            }
+        }
+    }
+
+    .main .main2{
+        /* Set 20px padding on all sides for this main section */
+        padding: 5px 20px;
+        /* Make .main2 a flex container to center its children (.left, .right) */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0; // Ensure no top margin for main2
+
+        .left,
+        .right{
+            width: 100%;
+            padding: 0; /* Remove extra padding, parent .main2 handles it */
+            text-align: left; /* Center content inside these sections */
+        }
+
+        .left{
+            order: 2;
+
+            img{
+                position: relative;
+                bottom: 65px;
+            }
+        }
+
+        .right {
+            order: 1;
+            ul{
+                li{
+                    font-size: 15px;
+                }
+            }
+
+            button{
+                border-radius: 30px;
+                padding: 12px 10px;
+                width: 165px;
+                font-size: 14px;
+                font-weight: 700;
+            }
+
+            h3{
+                font-size: 20px;
+                margin-block: 0;
+            }
+        }
+    }
+
+    .main .step3{
+        /* Set 20px padding on all sides for this main section */
+        padding: 5px 20px;
+        /* Make .step3 a flex container to center its children (.left, .right) */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center children horizontally */
+        margin-top: 0; // <--- ADD THIS LINE TO REDUCE SPACE
+
+        .left,
+        .right{
+            width: 100%;
+            padding: 0; /* Remove extra padding, parent .step3 handles it */
+            text-align: left; /* Center content inside these sections */
+        }
+
+        .left{
+            h3{
+                margin-block: 0;
+                /* Font-size is now handled by the general .main h3 rule above */
+                /* Removed negative margin to ensure centering */
+                margin-left: 0px;
+                font-size: 20px;
+            }
+
+            ul{
+                li{
+                    font-size: 15px;
+                }
+            }
+            button{
+                border-radius: 30px;
+                padding: 12px 10px;
+                width: 165px;
+                font-size: 14px;
+                font-weight: 700;
+            }
+        }
+
+        .right{
+            img{
+                position: relative;
+                bottom: 80px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) { 
+    .main {
+
+        .heading {
+           
+            p {
+                padding: 1px 140px 45px;
+            }
+        }
+
+        .contant {
+            display: flex;
+            gap: 20px;
+
+            .left{
+                width: 40%;
+                padding: 10px 0 10px 34px;
+
+                button{
+                    border-radius: 45px;
+                    padding-block: 10px;
+                    padding-inline: 47px;
+                    margin-inline-start: 30px;
+                    font-size: 21px;
+                    font-weight: 700;
+                }
+            }
+           .right.cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 10px;
+            width: 60%;
+
+            .card {
+                border-radius: 10px;
+                padding: 10px 5px;
+                width: 32%;
+                height: 340px;
+                padding-top: 75px;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                img {
+                    max-width: 100px;
+                    height: auto;
+                    margin-bottom: 10px;
+                }
+
+                h4 {
+                    font-size: 14px;
+                    margin-bottom: 8px;
+                    font-weight: 700;
+                }
+
+                p {
+                    font-size: 12px;
+                    font-weight: 500
+                }
+            }
+          }
+        }
+
+        .main2 {
+            display: flex;
+
+            .right {
+               width: 50%;
+               padding-block: 0;
+                
+               button{
+                    border-radius: 45px;
+                    padding-block: 10px;
+                    padding-inline: 47px;
+                    margin-inline-start: 30px;
+                    font-size: 21px;
+                    font-weight: 700;
+               }
+            }
+
+            .left {
+                width: 35%;
+            }
+        }
+
+        .step3 {
+              display: flex;
+            .left {
+                width: 41%;
+
+                button{
+                    border-radius: 45px;
+                    padding-block: 10px;
+                    padding-inline: 47px;
+                    margin-inline-start: 30px;
+                    font-size: 21px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) { 
+    .main {
+        .heading {
+           
+            p {
+                padding: 1px 140px 45px;
+            }
+        }
+
+        .contant {
+            display: flex;
+            gap: 20px;
+
+            .left{
+                width: 40%;
+
+                button{
+                    border-radius: 45px;
+                    padding-block: 10px;
+                    padding-inline: 47px;
+                    margin-inline-start: 30px;
+                    font-size: 21px;
+                    font-weight: 700;
+                }
+
+                ul{
+                    li{
+                        font-size: 20px;
+                    }
+                }
+
+                h3{
+                    font-size: 30px;
+                }
+            }
+            .right.cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0;
+            width: 60%;
+            margin: 10px;
+
+            .card {
+                border-radius: 10px;
+                padding: 10px 12px;
+                width: 32%;
+                height: 368px;
+                padding-top: 80px;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                img {
+                    max-width: 110px;
+                    height: auto;
+                    margin-bottom: 12px;
+                }
+
+                h4 {
+                    font-size: 15px;
+                    margin-bottom: 8px;
+                    font-weight: 700;
+                }
+
+                p {
+                    font-size: 13px;
+                    font-weight: 500
+                }
+            }
+          }
+        }
+
+        .main2 {
+            display: flex;
+
+            .right {
+               width: 50%;
+                
+               button{
+                    border-radius: 45px;
+                    padding-block: 10px;
+                    padding-inline: 47px;
+                    margin-inline-start: 30px;
+                    font-size: 21px;
+                    font-weight: 700;
+               }
+
+                ul{
+                    li{
+                        font-size: 20px;
+                    }
+                }
+
+                h3{
+                    font-size: 30px;
+                }
+            }
+
+            .left {
+                width: 35%;
+            }
+        }
+
+        .step3 {
+              display: flex;
+            .left {
+                width: 35%;
+
+                button{
+                    border-radius: 45px;
+                    padding-block: 10px;
+                    padding-inline: 47px;
+                    margin-inline-start: 30px;
+                    font-size: 21px;
+                    font-weight: 700;
+                }
+
+                ul{
+                    li{
+                        font-size: 20px;
+                    }
+                }
+
+                h3{
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1441px) {
+    .main {
+        .heading {
+           
+            p {
+                padding: 1px 140px 45px;
+            }
+        }
+
+        .contant {
+            display: flex;
+            gap: 20px;
+
+            .left{
+                width: 40%;
+
+                button{
+                    border-radius: 45px;
+                    padding-block: 10px;
+                    padding-inline: 47px;
+                    margin-inline-start: 30px;
+                    font-size: 21px;
+                    font-weight: 700;
+                }
+
+                ul{
+                    li{
+                        font-size: 20px;
+                    }
+                }
+
+                h3{
+                    font-size: 30px;
+                }
+            }
+            .right.cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 10px;
+            width: 60%;
+
+            .card {
+                border-radius: 10px;
+                padding: 10px 11px;;
+                width: 32%;
+                padding-top: 70px;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                img {
+                    max-width: 120px;
+                    height: auto;
+                    margin-bottom: 10px;
+                }
+
+                h4 {
+                    font-size: 18px;
+                    margin-bottom: 8px;
+                    font-weight: 700;
+                }
+
+                p {
+                    font-size: 15px;
+                    font-weight: 500
+                }
+            }
+          }
+        }
+
+        .main2 {
+            display: flex;
+
+            .right {
+               width: 50%;
+                
+               button{
+                    border-radius: 45px;
+                    padding-block: 10px;
+                    padding-inline: 47px;
+                    margin-inline-start: 30px;
+                    font-size: 21px;
+                    font-weight: 700;
+               }
+
+                ul{
+                    li{
+                        font-size: 20px;
+                    }
+                }
+
+                h3{
+                    font-size: 30px;
+                }
+            }
+
+            .left {
+                width: 35%;
+            }
+        }
+
+        .step3 {
+              display: flex;
+            .left {
+                width: 40%;
+
+                button{
+                    border-radius: 45px;
+                    padding-block: 10px;
+                    padding-inline: 47px;
+                    margin-inline-start: 30px;
+                    font-size: 21px;
+                    font-weight: 700;
+                }
+
+                ul{
+                    li{
+                        font-size: 20px;
+                    }
+                }
+
+                h3{
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}

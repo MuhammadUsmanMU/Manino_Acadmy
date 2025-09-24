@@ -1,0 +1,531 @@
+.manage-pages-container {
+  display: flex;
+  gap: 18px;
+  border-radius: 17px;
+  border: 3px solid rgb(233 231 231);
+  padding: 17px;
+  margin: 5px;
+
+  .add-page-form {
+    flex: 1;
+    max-width: 340px;
+    min-width: 280px;
+    margin-top: 10px;
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #686666;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0px 0px 3px #c3c0c0;
+
+      input,
+      textarea {
+        padding: 8px 10px;
+        border-radius: 8px;
+        font-size: 11px;
+        background-color: #f3f3f3;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        border: none;
+        color: #afacac;
+
+        &::placeholder {
+          color: #afacac;
+        }
+        &:not(:placeholder-shown) {
+          color: #333;
+        }
+
+        &:focus {
+          outline: none;
+          border-color: #1f64ff;
+          box-shadow: 0 0 0 3px rgba(31, 100, 255, 0.1);
+        }
+      }
+
+      label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #686666;
+        position: relative;
+        top: 5px;
+      }
+
+     pre {
+    overflow: hidden;
+    padding: 8px 10px; /* Keep your existing padding */
+    border-radius: 8px;
+    font-size: 11px;
+    background-color: #f3f3f3;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    /* Add these properties for left alignment */
+    text-align: left; /* Ensure text is aligned to the left */
+    white-space: pre-wrap; /* Allows the content to wrap, but preserves whitespace */
+    word-break: break-all; /* Breaks long words if they exceed the container */
+    margin-left: 0; /* Remove any default left margin from the pre tag */
+    padding-left: 10px; /* Adjust as needed to match the subject input's padding */
+}
+
+
+      textarea {
+        height: 100px;
+        resize: vertical;
+      }
+
+      button {
+        background-image: linear-gradient(
+          to left,
+          rgb(58, 66, 151),
+          rgba(71, 120, 235, 0.76)
+        ) !important;
+        color: #ffffff !important;
+        border: none;
+            font-size: 9px;
+        padding: 10px 5px;
+        width: 120px;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #5f89eb;
+          transform: translateY(-1px);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+
+      .status-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px; // Adjust as needed
+  border: 1px solid #e0e0e0; // Light border
+  border-radius: 8px; // Rounded corners
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // Subtle shadow
+
+  span {
+        font-size: 14px;
+    color: #818181;
+    font-weight: 600;
+    
+    &:first-of-type {
+      flex-grow: 1; // Allows "Set email status as" to take available space
+    }
+  }
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+      width: 35px;
+    height: 15px;
+  margin-left: 10px; // Space between "Enabled" and the toggle
+  
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0a6a4a; // Default grey color when unchecked
+  transition: .4s; // Smooth transition for color and shape
+  border-radius: 34px; // Rounded slider
+  
+  &:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 0px;
+    bottom: -2px;
+    background-color: white;
+    border: 1px solid #0a6a4a;
+    transition: .4s; // Smooth transition for circle movement
+    border-radius: 50%; // Makes it a circle
+  }
+}
+
+input:checked + .slider {
+         background: none;
+    border: 1px solid #0a6a4a;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #0a6a4a; // Focus outline
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px);
+  background-color: #0a6a4a;
+  left: 3px;
+  bottom: -3px;
+   }
+  }
+}
+
+  .pages-table {
+    flex: 2;
+    min-width: 600px;
+
+    .table-header {
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 10px;
+
+      h3 {
+        font-size: 17px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #686666;
+      }
+
+      .filters {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .search {
+          display: flex;
+          align-items: center;
+          border: none;
+          border-radius: 8px;
+          padding: 0px 15px;
+          font-weight: 600;
+          font-size: 15px;
+          background-color: #f3f3f3;
+          transition: border-color 0.2s ease, box-shadow 0.2s ease;
+          color: gray;
+          cursor: pointer;
+
+           &:hover{
+              background: none;
+              box-shadow: none;
+              box-shadow: 0px 0px 3px #c3c0c0;
+            }
+
+          i {
+            color: gray;
+            font-size: 20px;
+          }
+
+          input {
+            background: none;
+            border: none;
+            width: 180px;
+            border: none;
+          border-radius: 8px;
+          padding: 10px 15px;
+          font-weight: 600;
+          font-size: 15px;
+          transition: border-color 0.2s ease, box-shadow 0.2s ease;
+          color: gray;
+          cursor: pointer;
+
+            &:focus {
+              outline: none;
+              box-shadow: none;
+            }
+          }
+        }
+
+        button {
+            background-color: #0f3197;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 15px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+             .custom-dropdown {
+               position: relative;
+  background-color: #f3f3f3;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+  width: 145px;
+
+  i {
+    float: right;
+    position: relative;
+    top: 4px;
+    color: gray;
+  }
+
+  &:hover {
+    background: none;
+    box-shadow: 0px 0px 3px #c3c0c0;
+  }
+
+  .dropdown-options {
+    position: absolute;
+    top: 105%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 10px 15px;
+      font-weight: 500;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+   }
+  }
+ }
+}
+
+    /* TABLE STYLING */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+      border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 3px #c3c0c0;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  min-width: 900px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 0.90rem;
+  white-space: nowrap;
+  font-weight: 600;
+  color: gray;
+}
+
+th {
+  background-color: #f3f3f3;
+  color: #333;
+  font-weight: 600;
+}
+
+tr.data {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+tr.data:hover {
+  background-color: #fdfdfd;
+  transform: translateY(-1px);
+}
+
+img {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: #f7f7f7;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.actions-heading{
+  text-align: center;
+}
+.action-icons {
+  justify-content: center; 
+  display: flex; // Already set in previous solution, confirming
+  gap: 8px; /* Gap between icons on large screens */
+  align-items: center;
+  min-width: 120px; // Adjust this value as needed based on how many icons and desired spacing
+
+  i {
+    font-size: 14px;
+    color: #888;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      color: #555;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+    .pagination {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 15px;
+      gap: 5px;
+
+      span {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        background-color: #f3f3f3;
+        color: #959494;
+        font-size: 12px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: #e0e0e0;
+        }
+
+        &:first-of-type {
+          background-color: rgb(58, 66, 151); // Active page color
+          color: white;
+        }
+      }
+
+      i {
+        font-size: 12px;
+        color: #959494;
+        cursor: pointer;
+        padding: 5px;
+      }
+    }
+  }
+
+  /* --- Responsive Breakpoints --- */
+
+  /* Mobile: up to 767px - This section remains unchanged as per your request */
+  @media (max-width: 767px) {
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+
+    .add-page-form,
+    .pages-table {
+      max-width: 100%;
+      min-width: unset;
+      padding: 15px;
+    }
+
+    .add-page-form {
+      form {
+        padding: 15px;
+
+        .status-toggle{
+           span{
+            font-size: 12px;
+            font-weight: 600;
+           }
+        }
+      }
+      h3 {
+        text-align: center;
+      }
+      button {
+        width: 100%;
+        font-size: 13px;
+        padding: 10px;
+      }
+      label {
+        top: 0;
+        margin-top: 10px;
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .pages-table {
+      .table-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 15px;
+
+        h3 {
+          width: 100%;
+        }
+      }
+
+       table,
+       th,
+       td {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  /* Tablet: 768px–1024px */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    flex-direction: column;
+    .add-page-form,
+    .pages-table {
+      max-width: 100%;
+      min-width: unset;
+    }
+    // Revert table header filters for tablet, if they stack on mobile
+    .pages-table {
+      min-width: unset;
+    }
+  }
+}

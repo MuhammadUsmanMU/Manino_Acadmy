@@ -1,0 +1,76 @@
+<div class="ai-settings-container">
+  <div class="ai-settings-header">
+    <h2>AI writer settings</h2>
+    <div class="bottom-buttons-container">
+      <button class="reset-all">Reset all</button>
+      <button class="reset-section">Reset section</button>
+      <button class="save-button">Save Changes</button>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button
+      *ngFor="let tab of tabs"
+      [ngClass]="{ active: activeTab === tab.id }"
+      (click)="setActiveTab(tab.id)"
+    >
+      {{ tab.label }}
+    </button>
+  </div>
+
+  <div class="tab-section">
+    <div *ngIf="activeTab === 'profile'">
+      <app-ai-writer-subsection
+        [title]="'Profile Settings'"
+        [enableLabel]="'Enable AI writer on profile fields'"
+        [promptLabel]="'Prompt for profile summary'"
+        [idPrefix]="'profile-summary'"
+        [(isEnabled)]="profileSettings.enableProfile"
+        [(promptText)]="profileSettings.profilePrompt"
+      ></app-ai-writer-subsection>
+
+      <app-ai-writer-subsection
+        [title]="'Headline Settings'"
+        [enableLabel]="'Enable AI writer on headline'"
+        [promptLabel]="'Prompt for headline'"
+        [idPrefix]="'profile-headline'"
+        [(isEnabled)]="profileSettings.enableHeadline"
+        [(promptText)]="profileSettings.headlinePrompt"
+      ></app-ai-writer-subsection>
+    </div>
+
+    <div *ngIf="activeTab === 'resume'">
+      <app-ai-writer-subsection
+        *ngFor="let field of resumeFields"
+        [enableLabel]="field.toggleLabel"
+         [promptLabel]="field.promptLabel"
+        [title]="field.title"
+        [idPrefix]="field.idPrefix"
+        [(isEnabled)]="field.enabled"
+        [(promptText)]="field.promptText"
+      ></app-ai-writer-subsection>
+    </div>
+
+    <div *ngIf="activeTab === 'sessions'">
+      <app-ai-writer-subsection
+        [title]="'Session Notes'"
+        [enableLabel]="'Enable AI writer for session notes'"
+        [promptLabel]="'Prompt for session notes'"
+        [idPrefix]="'session-notes'"
+        [(isEnabled)]="sessionSettings.enableSessionNotes"
+        [(promptText)]="sessionSettings.sessionNotesPrompt"
+      ></app-ai-writer-subsection>
+    </div>
+
+    <div *ngIf="activeTab === 'assignment'">
+      <app-ai-writer-subsection
+        [title]="'Enable on Assignments Creation'"
+        [enableLabel]="'Enable the setting to allow the creation of assignment with AI'"
+        [promptLabel]="'Assignments Prompt'"
+        [idPrefix]="'assignment-description'"
+        [(isEnabled)]="assignmentSettings.enableAssignmentDescription"
+        [(promptText)]="assignmentSettings.assignmentDescriptionPrompt"
+      ></app-ai-writer-subsection>
+    </div>
+  </div>
+</div>

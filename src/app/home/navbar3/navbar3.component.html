@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-md navbar-light" id="navbar">
+  <img src="../../assets/transparent-logo.png" alt="" routerLink="/home" class="navbar-brand" />
+
+  <button class="navbar-toggler" type="button" aria-label="Toggle navigation" (click)="toggleNavbar()" >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div [class.show]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="nav-container">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" routerLink="/home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/about-us">About Us</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+             (click)="toggleDropdown($event)"
+             [class.active]="isDropdownOpen"
+             role="button">
+            Certification Programs
+          </a>
+          <ul class="dropdown-menu" [class.show]="isDropdownOpen">
+            <li><a class="dropdown-item" routerLink="/platinum-package">Platinum Packages</a></li>
+            <li><a class="dropdown-item" routerLink="/gold-package">Gold Packages</a></li>
+            <li><a class="dropdown-item" routerLink="/program-page">Program Packages</a></li>
+          <li><a class="dropdown-item" routerLink="/business-builder">Business Builders</a></li>
+          <li><a class="dropdown-item" routerLink="/leadership-certificates">Sales Leadership Certificates</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" routerLink="/instructor">Instructors</a></li>
+      </ul>
+    </div>
+
+    <div class="button d-flex">
+      <button id="button1" routerLink="/login">Sign In</button>
+      <button id="button2" routerLink="/signup">Get Started</button>
+    </div>
+  </div>
+</nav>

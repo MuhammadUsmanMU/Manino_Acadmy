@@ -1,0 +1,32 @@
+.admin-layout {
+  display: flex;
+  height: calc(100vh - var(--header-height)); // Adjust based on your header's actual height
+  overflow: hidden;
+      background: #f3f3f3;
+      border: none;
+
+  .admin-content {
+    flex-grow: 1;
+    border-radius: 12px;
+    background-color: white;
+    margin: 0 10px 10px 0;
+    border: none;
+    overflow-y: auto; // Allow content to scroll
+    transition: transform 0.3s ease-in-out; // For sliding effect on mobile
+  }
+}
+
+// Media query for mobile view
+@media (max-width: 768px) {
+  .admin-layout {
+    flex-direction: column; // Stack header, sidebar, and content
+    height: 100vh; // Take full viewport height
+
+    .admin-content {
+      // When sidebar is open, push content to the right
+      &.sidebar-open {
+        transform: translateX(225px); // Should match your sidebar width
+      }
+    }
+  }
+}
